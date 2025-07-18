@@ -1,0 +1,5854 @@
+{
+  "openscad": [
+    "janitor-team/proposed/openscad-mcad",
+    "bap/openscad",
+    "knielsen-guest/openscad-mcad",
+    "knielsen-guest/openscad",
+    "chrysn-guest/openscad"
+  ],
+  "gocr": [
+    "janitor-team/proposed/gocr",
+    "debian/gocr",
+    "go-team/packages/golang-github-go-co-op-gocron",
+    "go-team/packages/gocryptfs"
+  ],
+  "python-caja": [
+    "janitor-team/proposed/python-caja",
+    "debian-mate-team/python-caja"
+  ],
+  "lcdproc": [
+    "janitor-team/proposed/lcdproc",
+    "debian/lcdproc",
+    "perl-team/modules/packages/libio-lcdproc-perl",
+    "perl-team/modules/packages/libconfig-model-lcdproc-perl",
+    "vdr-team/vdr-plugin-lcdproc"
+  ],
+  "backuppc": [
+    "carlespina/po-debconf-manager-backuppc",
+    "fernando-guest/backuppc-rsync",
+    "janitor-team/proposed/libbackuppc-xs-perl",
+    "janitor-team/proposed/backuppc-rsync",
+    "rhansen/backuppc",
+    "debian/backuppc-rsync",
+    "fernando-guest/libbackuppc-xs-perl",
+    "fernando-guest/backuppc",
+    "raoulbhatia-guest/libbackuppc-xs-perl",
+    "debian/libbackuppc-xs-perl",
+    "ahasenack/backuppc",
+    "debian/backuppc"
+  ],
+  "tetgen": [
+    "science-team/tetgen"
+  ],
+  "jsch": [
+    "janitor-team/proposed/jschema-to-python",
+    "janitor-team/proposed/jsch-agent-proxy",
+    "python-team/packages/jschema-to-python",
+    "calebpitan/node-jschardet",
+    "nilesh/node-jschardet",
+    "java-team/jsch",
+    "java-team/jsch-agent-proxy",
+    "js-team/node-jschardet"
+  ],
+  "thc-ipv6": [
+    "pkg-security-team/thc-ipv6"
+  ],
+  "python-dbfread": [
+    "janitor-team/proposed/python-dbfread",
+    "python-team/packages/python-dbfread"
+  ],
+  "qstat": [
+    "janitor-team/proposed/qstat",
+    "debian/qstats",
+    "debian/qstat"
+  ],
+  "opendkim": [
+    "lts-team/packages/opendkim",
+    "janitor-bot/opendkim",
+    "tachi/opendkim",
+    "janitor-team/proposed/opendkim",
+    "debian/opendkim"
+  ],
+  "arj": [
+    "arlissonjaques/arjun",
+    "debian-astro-team/starjava-auth",
+    "janitor-team/proposed/starjava-tfcat",
+    "pkg-security-team/arjun",
+    "janitor-team/proposed/jarjar-maven-plugin",
+    "michel/sugarjar",
+    "debian-astro-team/starjava-tfcat",
+    "janitor-team/proposed/starjava-util",
+    "janitor-team/proposed/starjava-fits",
+    "janitor-team/proposed/starjava-ttools",
+    "janitor-team/proposed/starjava-topcat",
+    "janitor-team/proposed/starjava-tjoin",
+    "janitor-team/proposed/starjava-vo",
+    "janitor-team/proposed/starjava-table",
+    "debian-astro-team/starjava-ecsv",
+    "debian-astro-team/starjava-tjoin",
+    "janitor-team/proposed/starjava-pal",
+    "janitor-team/proposed/starjava-votable",
+    "janitor-team/proposed/starjava-registry",
+    "janitor-team/proposed/starjava-dpac"
+  ],
+  "cohomcalg": [
+    "janitor-bot/cohomcalg",
+    "janitor-team/proposed/cohomcalg",
+    "math-team/cohomcalg"
+  ],
+  "ocamlify": [
+    "ocaml-team/ocamlify"
+  ],
+  "marisa": [
+    "janitor-team/proposed/marisa",
+    "input-method-team/marisa"
+  ],
+  "vlc": [
+    "homeassistant-team/deps/python-aiovlc",
+    "janitor-team/proposed/phonon-backend-vlc",
+    "lts-team/packages/vlc",
+    "multimedia-team/vlc-plugin-pipewire",
+    "eiro-guest/vlc",
+    "hypra-team/vlc",
+    "python-team/packages/python-vlc",
+    "debian/vlc-plugin-bittorrent",
+    "qt-kde-team/extras/phonon-backend-vlc",
+    "hashar-guest/vlc",
+    "multimedia-team/attic/npapi-vlc",
+    "multimedia-team/vlc"
+  ],
+  "qm-dsp": [
+    "janitor-team/proposed/qm-dsp",
+    "multimedia-team/qm-dsp"
+  ],
+  "docbook2x": [
+    "sthibault/docbook2x",
+    "xml-sgml-team/docbook2x"
+  ],
+  "splint": [
+    "janitor-team/proposed/splint",
+    "python-team/packages/python-splinter",
+    "debian/splint",
+    "bsnehaTW-guest/splinter",
+    "sultanahamer-guest/pytest-splinter"
+  ],
+  "lib3ds": [
+    "janitor-team/proposed/lib3ds",
+    "science-team/lib3ds"
+  ],
+  "mftrace": [
+    "debian/mftrace"
+  ],
+  "wordnet": [
+    "aelmahmoudy/wordnet",
+    "janitor-team/proposed/wordnet",
+    "perl-team/modules/packages/libwordnet-querydata-perl",
+    "science-team/wordnet"
+  ],
+  "gpm": [
+    "janitor-team/proposed/gpm",
+    "go-team/packages/golang-github-emersion-go-pgpmail",
+    "lubos-guest/gpmd85emu",
+    "debian/gpm"
+  ],
+  "xautomation": [
+    "janitor-team/proposed/xautomation",
+    "debian/xautomation"
+  ],
+  "bogl": [
+    "janitor-team/proposed/bogl",
+    "zhangboyang/bogl-20220529-abandoned",
+    "zhangboyang/bogl-patched-20220523-merged",
+    "debichem-team/liboglappth",
+    "debian/bogl"
+  ],
+  "oddjob": [
+    "janitor-team/proposed/oddjob",
+    "freeipa-team/oddjob"
+  ],
+  "djvulibre": [
+    "jnpf/python-djvulibre-fork",
+    "rinni/python-djvulibre",
+    "janitor-team/proposed/djvulibre",
+    "debian/djvulibre",
+    "python-team/packages/python-djvulibre"
+  ],
+  "stormbaancoureur": [
+    "janitor-team/proposed/stormbaancoureur",
+    "games-team/stormbaancoureur"
+  ],
+  "pyjokes": [
+    "python-team/packages/pyjokes"
+  ],
+  "joe": [
+    "salvage-team/joe",
+    "janitor-team/proposed/golang-github-sjoerdsimons-ostree-go",
+    "jelle/bjoern",
+    "go-team/packages/golang-github-sjoerdsimons-ostree-go"
+  ],
+  "sbd": [
+    "paelzer-guest/sbd",
+    "ha-team/sbd"
+  ],
+  "octave-io": [
+    "janitor-team/proposed/octave-io",
+    "pkg-octave-team/octave-io"
+  ],
+  "jssc": [
+    "janitor-team/proposed/jssc",
+    "java-team/jssc"
+  ],
+  "arachne-pnr": [
+    "janitor-team/proposed/arachne-pnr",
+    "science-team/arachne-pnr"
+  ],
+  "deepin-image-viewer": [
+    "janitor-team/proposed/deepin-image-viewer",
+    "pkg-deepin-team/deepin-image-viewer"
+  ],
+  "httpcomponents-core": [
+    "janitor-bot/httpcomponents-core",
+    "janitor-team/proposed/httpcomponents-core5",
+    "janitor-team/proposed/httpcomponents-core",
+    "java-team/httpcomponents-core5",
+    "java-team/httpcomponents-core"
+  ],
+  "ucl": [
+    "polkorny/upx-ucl",
+    "jare_Arias/micronucleus",
+    "pushkarnk/libeuclid-java",
+    "janitor-team/proposed/ucl",
+    "janitor-team/proposed/jeuclid",
+    "tar/upx-ucl",
+    "janitor-team/proposed/upx-ucl",
+    "java-team/libeuclid-java"
+  ],
+  "rkdeveloptool": [
+    "js/rkdeveloptool",
+    "diederik/rkdeveloptool",
+    "janitor-team/proposed/rkdeveloptool",
+    "debian/rkdeveloptool"
+  ],
+  "radvd": [
+    "bluca/radvd",
+    "debian/radvd"
+  ],
+  "python-astor": [
+    "python-team/packages/python-astor"
+  ],
+  "zxcvbn-c": [],
+  "cryfs": [
+    "steele/cryfs"
+  ],
+  "openvpn-auth-ldap": [
+    "janitor-team/proposed/openvpn-auth-ldap",
+    "ahasenack/openvpn-auth-ldap",
+    "debian/openvpn-auth-ldap"
+  ],
+  "pax-utils": [
+    "ahasenack/pax-utils",
+    "debian/pax-utils"
+  ],
+  "python-logutils": [
+    "janitor-team/proposed/python-logutils",
+    "openstack-team/python/python-logutils"
+  ],
+  "python-django-gravatar2": [
+    "python-team/packages/python-django-gravatar2"
+  ],
+  "zip": [
+    "hypervanse/libquazip",
+    "sanvila/zip",
+    "zemingl/reprozip",
+    "sanvila/unzip",
+    "debian/fuse-zip",
+    "debian/lbzip2",
+    "jas/golang-github-saracen-fastzip",
+    "jas/golang-github-saracen-zipextra",
+    "go-team/packages/golang-github-saracen-zipextra",
+    "go-team/packages/golang-github-saracen-fastzip",
+    "ColinKing/qatzip",
+    "python-team/packages/python-zipfile-zstd",
+    "salvage-team/rzip",
+    "jas/gzip",
+    "ahmedsiam/mount-zip",
+    "games-team/xzip",
+    "debian-gis-team/stream-zip",
+    "debian/zziplib",
+    "nthykier/fcrackzip",
+    "mitya57/7zip"
+  ],
+  "rust-filedescriptor": [],
+  "rsakeyfind": [
+    "jgru/rsakeyfind",
+    "pkg-security-team/rsakeyfind"
+  ],
+  "libdvbpsi": [
+    "janitor-team/proposed/libdvbpsi",
+    "multimedia-team/libdvbpsi"
+  ],
+  "python-iniparse": [
+    "stuart/python-iniparse",
+    "debian/python-iniparse"
+  ],
+  "zeitgeist": [
+    "janitor-team/proposed/zeitgeist",
+    "crvi-guest/zeitgeist",
+    "debian/zeitgeist",
+    "dotnet-team/zeitgeist-sharp"
+  ],
+  "golang-github-google-gofuzz": [
+    "janitor-team/proposed/golang-github-google-gofuzz",
+    "go-team/packages/golang-github-google-gofuzz"
+  ],
+  "dvd+rw-tools": [],
+  "python-oauth2client": [
+    "openstack-team/python/python-oauth2client"
+  ],
+  "cutecom": [],
+  "rust-getopts": [],
+  "since": [
+    "debian/since"
+  ],
+  "gnugo": [],
+  "golang-github-minio-highwayhash": [
+    "go-team/packages/golang-github-minio-highwayhash"
+  ],
+  "tcptrack": [
+    "janitor-team/proposed/tcptrack",
+    "debian/tcptrack"
+  ],
+  "xvkbd": [
+    "janitor-team/proposed/xvkbd",
+    "debian/xvkbd"
+  ],
+  "tayga": [
+    "janitor-team/proposed/tayga",
+    "debian/tayga"
+  ],
+  "luminance-hdr": [
+    "janitor-team/proposed/luminance-hdr",
+    "debian-phototools-team/luminance-hdr"
+  ],
+  "duktape": [
+    "bandali/duktape",
+    "smcv/duktape",
+    "janitor-team/proposed/duktape",
+    "themusicgod1-guest/golang-salsa-themusicgod1-guest-go-duktape-dev",
+    "debian-iot-team/duktape"
+  ],
+  "liboggz": [
+    "janitor-team/proposed/liboggz",
+    "multimedia-team/liboggz"
+  ],
+  "pamtester": [
+    "3v1n0/pamtester",
+    "janitor-team/proposed/pamtester",
+    "carnil/pamtester"
+  ],
+  "liquidwar": [
+    "games-team/liquidwar"
+  ],
+  "icon-naming-utils": [
+    "janitor-team/proposed/icon-naming-utils",
+    "debian/icon-naming-utils"
+  ],
+  "woff2": [
+    "janitor-team/proposed/woff2",
+    "fonts-team/woff2"
+  ],
+  "mmc-utils": [
+    "debian/mmc-utils"
+  ],
+  "neartree": [
+    "janitor-team/proposed/neartree",
+    "science-team/neartree"
+  ],
+  "dataquay": [
+    "janitor-team/proposed/dataquay",
+    "multimedia-team/dataquay"
+  ],
+  "python-xstatic-bootswatch": [
+    "janitor-team/proposed/python-xstatic-bootswatch",
+    "openstack-team/xstatic/python-xstatic-bootswatch"
+  ],
+  "git-filter-repo": [
+    "vpa1977/git-filter-repo",
+    "python-team/packages/git-filter-repo"
+  ],
+  "rust-rusty-fork": [],
+  "plib": [
+    "debian-gis-team/jeolib-jiplib",
+    "debian/plib-doc",
+    "python-team/packages/aioimaplib",
+    "debian/zziplib",
+    "doge-tech/python-httplib2",
+    "janitor-team/proposed/google-auth-httplib2",
+    "janitor-team/proposed/sbbi-upnplib",
+    "janitor-team/proposed/fsplib",
+    "janitor-team/proposed/ocplib-simplex",
+    "go-team/packages/golang-github-c-robinson-iplib",
+    "DebianOnMobile-team/puremaps/maplibre-gl-native",
+    "janitor-team/proposed/ftplib",
+    "debian/cpp-httplib",
+    "tachi/cpp-httplib",
+    "janitor-team/proposed/plib",
+    "lts-team/packages/plib",
+    "debian/plib",
+    "openstack-team/third-party/python-icmplib",
+    "python-team/packages/aiosmtplib",
+    "janitor-team/proposed/python-amqplib"
+  ],
+  "ck": [],
+  "codeblocks": [
+    "python-team/packages/pytest-codeblocks",
+    "vimerbf-guest/codeblocks",
+    "debian/codeblocks"
+  ],
+  "wbox": [
+    "janitor-team/proposed/wbox",
+    "debian/wbox"
+  ],
+  "libecpint": [
+    "janitor-team/proposed/libecpint",
+    "debichem-team/libecpint"
+  ],
+  "pngnq": [
+    "byang/pngnq",
+    "debian-phototools-team/pngnq"
+  ],
+  "chkrootkit": [
+    "Seb35/chkrootkit",
+    "rpil2/chkrootkit",
+    "pkg-security-team/chkrootkit"
+  ],
+  "vobcopy": [
+    "debian/vobcopy"
+  ],
+  "tagsoup": [
+    "java-team/tagsoup"
+  ],
+  "golang-github-elazarl-goproxy": [
+    "janitor-team/proposed/golang-github-elazarl-goproxy",
+    "go-team/packages/golang-github-elazarl-goproxy"
+  ],
+  "ahcpd": [
+    "janitor-team/proposed/ahcpd",
+    "debian/ahcpd"
+  ],
+  "rust-num-rational": [],
+  "atlas": [
+    "nteodosio/atlas",
+    "janitor-team/proposed/atlas-cpp",
+    "go-team/packages/golang-ariga-atlas",
+    "janitor-team/proposed/golang-github-hashicorp-atlas-go",
+    "janitor-team/proposed/atlas-ecmwf",
+    "janitor-team/proposed/ripe-atlas-tools",
+    "ruby-team/ruby-omniauth-atlassian-oauth2",
+    "science-team/atlas-ecmwf",
+    "ruby-team/ruby-atlassian-jwt",
+    "debian/ripe-atlas-tools",
+    "games-team/atlas-cpp",
+    "neurodebian-team/mclaren-rhesus-macaque-atlas",
+    "python-team/packages/ripe-atlas-sagan",
+    "python-team/packages/ripe-atlas-cousteau",
+    "python-team/packages/python-ripe-atlas-cousteau",
+    "science-team/atlas",
+    "go-team/packages/golang-github-hashicorp-atlas-go"
+  ],
+  "jcal": [
+    "danialbehzadi/jcal",
+    "salman-guest/jcal",
+    "java-team/libjcalendar-java"
+  ],
+  "xclip": [
+    "janitor-team/proposed/xclip",
+    "debian/xclip"
+  ],
+  "guilt": [
+    "schopin/guilt",
+    "debian/guilt"
+  ],
+  "eterm": [
+    "alexm/strip-nondeterminism",
+    "janitor-team/proposed/python-ceilometermiddleware",
+    "obfusk/strip-nondeterminism",
+    "janitor-team/proposed/strip-nondeterminism",
+    "janitor-team/proposed/golang-github-petermattis-goid",
+    "diabonas/strip-nondeterminism",
+    "go-team/packages/golang-github-petermattis-goid",
+    "bmwiedemann-guest/strip-nondeterminism",
+    "joachim-guest/strip-nondeterminism",
+    "marc-guest/strip-nondeterminism",
+    "lamby/strip-nondeterminism"
+  ],
+  "ecdsautils": [
+    "communitywlan-team/ecdsautils"
+  ],
+  "swayidle": [
+    "janitor-team/proposed/swayidle",
+    "swaywm-team/swayidle"
+  ],
+  "range-v3": [
+    "crusoe/range-v3",
+    "debian/range-v3"
+  ],
+  "uhubctl": [
+    "debian/uhubctl"
+  ],
+  "fuse-emulator-utils": [
+    "janitor-team/proposed/fuse-emulator-utils",
+    "berto/fuse-emulator-utils"
+  ],
+  "dumpet": [
+    "janitor-team/proposed/dumpet",
+    "debian/dumpet"
+  ],
+  "libmusicbrainz5": [],
+  "httpcomponents-client": [
+    "java-team/httpcomponents-client5",
+    "merkys/httpcomponents-client",
+    "java-team/httpcomponents-client"
+  ],
+  "cdlabelgen": [
+    "perl-team/modules/packages/cdlabelgen"
+  ],
+  "python-cymruwhois": [
+    "jnpf/python-cymruwhois-fork",
+    "ineteng-team/python-cymruwhois"
+  ],
+  "golang-github-agnivade-levenshtein": [
+    "go-team/packages/golang-github-agnivade-levenshtein"
+  ],
+  "blobwars": [
+    "games-team/blobwars"
+  ],
+  "opusfile": [
+    "janitor-team/proposed/opusfile",
+    "multimedia-team/opusfile",
+    "smcv/opusfile",
+    "ron/opusfile"
+  ],
+  "steghide": [
+    "aquilamacedo/steghide",
+    "pkg-security-team/steghide"
+  ],
+  "sword": [
+    "carlespina/po-debconf-manager-cryptsetup-nuke-password",
+    "danielemiliogarcia/password-store",
+    "athos/php-text-password",
+    "phls/cryptsetup-nuke-password",
+    "janitor-team/proposed/passwordsafe",
+    "MalikMlitat/flufl.password",
+    "jelmer/rt-extension-resetpassword",
+    "janitor-bot/sword-dict-strongs-greek",
+    "micah/ruby-password"
+  ],
+  "libgnomecanvas": [],
+  "python-anyjson": [
+    "python-team/packages/python-anyjson"
+  ],
+  "libotr": [
+    "janitor-team/proposed/libotr",
+    "micah/libotr",
+    "rhonda/libotr",
+    "pkg-privacy-team/libotr"
+  ],
+  "libxdg-basedir": [],
+  "id3v2": [
+    "janitor-team/proposed/id3v2",
+    "sudip/id3v2",
+    "debian/id3v2"
+  ],
+  "metapixel": [
+    "janitor-team/proposed/metapixel",
+    "debian/metapixel"
+  ],
+  "golang-github-knetic-govaluate": [
+    "go-team/packages/golang-github-knetic-govaluate"
+  ],
+  "infinipath-psm": [
+    "elbrus/infinipath-psm",
+    "hpc-team/infinipath-psm"
+  ],
+  "sparsehash": [],
+  "tcpreen": [],
+  "maloc": [
+    "janitor-team/proposed/maloc",
+    "debichem-team/maloc"
+  ],
+  "purple-mm-sms": [
+    "selrahal/purple-mm-sms",
+    "DebianOnMobile-team/purple-mm-sms"
+  ],
+  "ssss": [
+    "debian/ssss"
+  ],
+  "kst": [
+    "porridge/kstars",
+    "salvage-team/darkstat",
+    "pheeef/nook-dekstop",
+    "debian/kst",
+    "qt-kde-team/kde/kf6-kstatusnotifieritem",
+    "bananas-team/bankstown-lv2",
+    "nthykier/kstart",
+    "janitor-team/proposed/kstars",
+    "janitor-team/proposed/sockstat",
+    "Mobian-team/packages/rust-tweakster",
+    "go-team/packages/golang-github-haya14busa-go-checkstyle",
+    "rra/kstart",
+    "janitor-team/proposed/skstream",
+    "janitor-team/proposed/golang-github-erikstmartin-go-testdb",
+    "lpfll/kst",
+    "python-team/packages/qdarkstyle"
+  ],
+  "seahorse-nautilus": [
+    "e7appew-guest/seahorse-nautilus",
+    "pkg-privacy-team/seahorse-nautilus"
+  ],
+  "gnome-packagekit": [
+    "janitor-team/proposed/gnome-packagekit",
+    "fatih/gnome-packagekit",
+    "pkgutopia-team/gnome-packagekit"
+  ],
+  "libcli": [
+    "taziden/libcli",
+    "janitor-team/proposed/libcli",
+    "perl-team/modules/packages/libcli-osprey-perl",
+    "noodles/libcli",
+    "perl-team/modules/packages/libclipboard-perl",
+    "perl-team/modules/packages/libcli-framework-perl"
+  ],
+  "python-respx": [
+    "python-team/packages/python-respx"
+  ],
+  "taglib-sharp": [
+    "janitor-team/proposed/taglib-sharp",
+    "dotnet-team/taglib-sharp"
+  ],
+  "grhino": [
+    "janitor-team/proposed/grhino",
+    "games-team/grhino"
+  ],
+  "python-adal": [
+    "python-team/packages/python-adal"
+  ],
+  "python-xstatic-roboto-fontface": [
+    "janitor-team/proposed/python-xstatic-roboto-fontface",
+    "openstack-team/xstatic/python-xstatic-roboto-fontface"
+  ],
+  "python-parsel": [
+    "nyov-guest/python-parsel",
+    "python-team/packages/python-parsel"
+  ],
+  "sl": [
+    "bdrung/sl",
+    "henrich/sl",
+    "debian/sl"
+  ],
+  "toilet": [
+    "debian/toilet",
+    "zaharazod/toilet"
+  ],
+  "taskd": [
+    "sergiosacj/taskd",
+    "tasktools-team/taskd"
+  ],
+  "ypserv": [
+    "janitor-team/proposed/ypserv",
+    "debian-nis-team/ypserv"
+  ],
+  "cctz": [
+    "janitor-team/proposed/cctz",
+    "edd/r-cran-rcppcctz",
+    "science-team/cctz"
+  ],
+  "syncevolution": [
+    "debian/syncevolution"
+  ],
+  "foremost": [
+    "janitor-team/proposed/foremost",
+    "rul/foremost"
+  ],
+  "emacs-python-environment": [
+    "janitor-team/proposed/emacs-python-environment",
+    "emacsen-team/emacs-python-environment"
+  ],
+  "judy": [
+    "debian/judy"
+  ],
+  "docbook-utils": [
+    "xml-sgml-team/docbook-utils"
+  ],
+  "libmms": [
+    "multimedia-team/libmms"
+  ],
+  "kexi": [
+    "qt-kde-team/kde/libkexiv2",
+    "janitor-team/proposed/kexi",
+    "janitor-team/proposed/golang-github-likexian-gokit",
+    "janitor-team/proposed/libkexiv2",
+    "go-team/packages/golang-github-likexian-gokit",
+    "qt-kde-team/extras/kexi",
+    "qt-kde-team/kde/libkf5kexiv2"
+  ],
+  "python-geoip": [
+    "python-team/packages/python-geoip2",
+    "python-team/packages/python-geoip"
+  ],
+  "cdw": [],
+  "shc": [
+    "go-team/packages/golang-github-ashcrow-osrelease",
+    "debian/hashcash",
+    "ftobich/sshcommand",
+    "salvage-team/libdshconfig",
+    "homeassistant-team/deps/python-boschshcpy",
+    "dviererbe/shc",
+    "josch/sshcommand",
+    "ndamiens/shc",
+    "janitor-team/proposed/hashcat",
+    "skangas/hashcash",
+    "debian/hashcheck",
+    "debian-astro-team/indi-fishcamp",
+    "debian-astro-team/libfishcamp",
+    "debian/sshcommand",
+    "janitor-team/proposed/hashcheck",
+    "janitor-team/proposed/siphashc",
+    "debian/shc",
+    "ana-pez/siphashc"
+  ],
+  "golang-github-gorilla-handlers": [
+    "janitor-team/proposed/golang-github-gorilla-handlers",
+    "go-team/packages/golang-github-gorilla-handlers"
+  ],
+  "golang-github-containernetworking-plugins": [
+    "ritesh-kumar/golang-github-containernetworking-plugins",
+    "janitor-team/proposed/golang-github-containernetworking-plugins",
+    "dklein/golang-github-containernetworking-plugins",
+    "go-team/packages/golang-github-containernetworking-plugins"
+  ],
+  "librist": [
+    "debian/librist"
+  ],
+  "catatonit": [
+    "debian/catatonit"
+  ],
+  "zile": [
+    "debian/zile"
+  ],
+  "clusterssh": [
+    "janitor-team/proposed/clusterssh",
+    "debian/clusterssh"
+  ],
+  "smbldap-tools": [
+    "janitor-team/proposed/smbldap-tools",
+    "debian/smbldap-tools"
+  ],
+  "nyancat": [],
+  "libkkc-data": [
+    "input-method-team/libkkc-data"
+  ],
+  "arc-kde": [
+    "desktop-themes-team/arc-kde"
+  ],
+  "moon-buggy": [
+    "janitor-team/proposed/moon-buggy",
+    "debian/moon-buggy"
+  ],
+  "php-masterminds-html5": [
+    "php-team/pear/php-masterminds-html5"
+  ],
+  "libsmi": [
+    "med-team/libsmithlab",
+    "med-team/libsmithwaterman"
+  ],
+  "jumpnbump": [
+    "janitor-team/proposed/jumpnbump",
+    "games-team/jumpnbump-levels",
+    "games-team/jumpnbump"
+  ],
+  "pdsh": [
+    "arif-ali/pdsh",
+    "gioele/pdsh",
+    "dannf/pdsh",
+    "bpellin/pdsh"
+  ],
+  "serialdv": [
+    "debian-hamradio-team/serialdv"
+  ],
+  "antiword": [
+    "olly/antiword"
+  ],
+  "fusioninventory-agent": [
+    "perl-team/modules/packages/fusioninventory-agent"
+  ],
+  "libwebcam": [
+    "janitor-team/proposed/libwebcam",
+    "debian/libwebcam"
+  ],
+  "dcm2niix": [
+    "rmb/dcm2niix",
+    "med-team/dcm2niix"
+  ],
+  "python-untangle": [
+    "python-team/packages/python-untangle"
+  ],
+  "wordgrinder": [],
+  "libfakekey": [],
+  "rtmidi": [
+    "janitor-team/proposed/python-rtmidi",
+    "debian/portmidi",
+    "janitor-team/proposed/rtmidi",
+    "debian/python-rtmidi",
+    "multimedia-team/rtmidi"
+  ],
+  "libx86emu": [
+    "mika/libx86emu",
+    "guillem/libx86emu",
+    "debian/libx86emu"
+  ],
+  "quassel": [
+    "nteodosio/quassel",
+    "janitor-team/proposed/quassel",
+    "cgzones/quassel",
+    "digitalcircuit-guest/quassel",
+    "qt-kde-team/extras/quassel",
+    "jelmer/quassel-irssi"
+  ],
+  "yp-tools": [],
+  "python-dirq": [
+    "kretcheu/python-dirq",
+    "python-team/packages/python-dirq"
+  ],
+  "john": [
+    "janitor-team/proposed/golang-github-benbjohnson-clock",
+    "janitor-team/proposed/fonts-johnsmith-induni",
+    "jgru/john",
+    "pkg-security-team/john",
+    "debian/john",
+    "janitor-team/proposed/golang-github-benbjohnson-immutable",
+    "go-team/packages/golang-github-benbjohnson-immutable",
+    "go-team/packages/golang-github-benbjohnson-clock",
+    "fonts-team/fonts-johnsmith-induni",
+    "go-team/packages/golang-github-benbjohnson-tmpl"
+  ],
+  "libclaw": [
+    "games-team/libclaw"
+  ],
+  "python-datrie": [
+    "python-team/packages/python-datrie"
+  ],
+  "libuninum": [
+    "science-team/libuninum"
+  ],
+  "rust-sequoia-openpgp-mt": [],
+  "openzwave": [
+    "debian-iot-team/openzwave-controlpanel",
+    "viiru/openzwave",
+    "debian-iot-team/openzwave"
+  ],
+  "rust-expat-sys": [],
+  "cpmtools": [
+    "debian/cpmtools"
+  ],
+  "asylum": [
+    "nthykier/asylum",
+    "janitor-team/proposed/asylum",
+    "games-team/asylum"
+  ],
+  "convmv": [
+    "nabijaczleweli/fuse-convmvfs",
+    "janitor-team/proposed/convmv",
+    "debian/convmv"
+  ],
+  "erlang-lager": [
+    "janitor-team/proposed/erlang-lager",
+    "ejabberd-packaging-team/erlang-lager"
+  ],
+  "gliv": [],
+  "libsignal-protocol-c": [
+    "janitor-team/proposed/libsignal-protocol-c",
+    "xmpp-team/libsignal-protocol-c"
+  ],
+  "gperf": [
+    "sergiodj/gperf",
+    "debian/gperf"
+  ],
+  "ucarp": [
+    "eriberto/ucarp",
+    "janitor-team/proposed/ucarp",
+    "gpxlnx/ucarp",
+    "mike.stuffel/ucarp",
+    "debian/ucarp",
+    "eevans/ucarp"
+  ],
+  "cpp-hocon": [
+    "janitor-team/proposed/cpp-hocon",
+    "puppet-team/cpp-hocon"
+  ],
+  "aircrack-ng": [
+    "gjolly/aircrack-ng",
+    "Manas-kashyap-guest/aircrack-ng",
+    "pkg-security-team/aircrack-ng"
+  ],
+  "vagrant-sshfs": [
+    "ruby-team/vagrant-sshfs"
+  ],
+  "xmakemol": [
+    "janitor-team/proposed/xmakemol",
+    "debichem-team/xmakemol"
+  ],
+  "anyremote": [
+    "janitor-team/proposed/ganyremote",
+    "janitor-team/proposed/anyremote",
+    "janitor-team/proposed/kanyremote",
+    "janitor-bot/ganyremote",
+    "debian/kanyremote",
+    "debian/ganyremote",
+    "debian/anyremote"
+  ],
+  "bgpq3": [
+    "janitor-team/proposed/bgpq3",
+    "debian/bgpq3"
+  ],
+  "mussh": [],
+  "meterbridge": [
+    "multimedia-team/meterbridge"
+  ],
+  "hevea": [
+    "janitor-bot/hevea-doc",
+    "janitor-team/proposed/hevea",
+    "janitor-team/proposed/hevea-doc",
+    "ocaml-team/hevea",
+    "ocaml-team/hevea-doc"
+  ],
+  "tworld": [
+    "Peutch-guest/tworld",
+    "games-team/tworld"
+  ],
+  "ncrack": [
+    "vpa1977/ncrack",
+    "pkg-security-team/ncrack"
+  ],
+  "sailcut": [
+    "janitor-team/proposed/sailcut",
+    "debian/sailcut"
+  ],
+  "usermode": [
+    "janitor-team/proposed/usermode",
+    "debian/usermode"
+  ],
+  "rsnapshot": [
+    "janitor-team/proposed/rsnapshot",
+    "LeePen/rsnapshot",
+    "gratuxri/rsnapshot"
+  ],
+  "soundmodem": [
+    "anarcat/soundmodem",
+    "janitor-team/proposed/soundmodem",
+    "debian-hamradio-team/soundmodem"
+  ],
+  "ri-li": [
+    "games-team/ri-li"
+  ],
+  "tcputils": [
+    "debian/tcputils"
+  ],
+  "flpsed": [
+    "janitor-team/proposed/flpsed",
+    "debian/flpsed",
+    "e7appew-guest/flpsed"
+  ],
+  "otf2bdf": [],
+  "php-league-flysystem": [
+    "php-team/pear/php-league-flysystem"
+  ],
+  "ocamlmod": [
+    "janitor-team/proposed/ocamlmod",
+    "ocaml-team/ocamlmod"
+  ],
+  "python-murano-pkg-check": [
+    "janitor-team/proposed/python-murano-pkg-check",
+    "openstack-team/libs/python-murano-pkg-check"
+  ],
+  "xdms": [],
+  "icedtea-web": [
+    "pushkarnk/icedtea-web",
+    "ebourg/icedtea-web",
+    "don-vip-guest/icedtea-web",
+    "java-team/icedtea-web"
+  ],
+  "pal": [
+    "rslabiski-gmail/pal",
+    "tai271828/palabos",
+    "kathenas/starlink-pal",
+    "homeassistant-team/deps/python-songpal",
+    "kalyaniknkr/python-pallets-sphinx-themes",
+    "debian/topal",
+    "debian/pal",
+    "a.apostoliuk/pkg-keepalived",
+    "iwj/coffee-machine-keepalive-firmware",
+    "debian/rust-palette",
+    "janitor-team/proposed/libpalm-pdb-perl",
+    "lts-team/packages/keepalived",
+    "janitor-team/proposed/libkeepalive",
+    "janitor-team/proposed/libaopalliance-java",
+    "janitor-team/proposed/palbart"
+  ],
+  "kcc": [
+    "debian/kcc"
+  ],
+  "raptor2": [
+    "debian/raptor2"
+  ],
+  "compiz-plugins-extra": [
+    "jmichalon-guest/compiz-plugins-extra",
+    "hypra-team/compiz-plugins-extra",
+    "compiz-team/compiz-plugins-extra"
+  ],
+  "rust-aliasable": [],
+  "gcolor3": [
+    "debian/gcolor3"
+  ],
+  "soapysdr": [
+    "janitor-team/proposed/soapysdr",
+    "debian-hamradio-team/soapysdr/soapysdr"
+  ],
+  "libbs2b": [
+    "janitor-team/proposed/libbs2b",
+    "debian/libbs2b"
+  ],
+  "bmon": [
+    "python-team/packages/usbmonitor",
+    "salvage-team/xmbmon",
+    "janitor-team/proposed/libmonitoring-icinga2-client-rest-perl",
+    "debian/libmongo-client",
+    "nagios-team/libmonitoring-livestatus-perl",
+    "nagios-team/pkg-libmonitoring-availability-perl",
+    "perl-team/modules/packages/libmonkey-patch-perl",
+    "perl-team/modules/packages/libmonkey-patch-action-perl",
+    "perl-team/modules/packages/libmonitoring-plugin-perl",
+    "perl-team/modules/packages/libmonitoring-icinga2-client-rest-perl",
+    "perl-team/modules/packages/libmongodb-perl",
+    "perl-team/modules/attic/libmongodbx-class-perl"
+  ],
+  "tcpflow": [
+    "janitor-team/proposed/tcpflow",
+    "debian/tcpflow"
+  ],
+  "libopusenc": [
+    "janitor-team/proposed/libopusenc",
+    "multimedia-team/libopusenc",
+    "dh/libopusenc",
+    "ron/libopusenc"
+  ],
+  "aeskeyfind": [
+    "jgru/aeskeyfind",
+    "pkg-security-team/aeskeyfind"
+  ],
+  "topcom": [
+    "math-team/topcom"
+  ],
+  "phasex": [
+    "sam-gq/phasex",
+    "janitor-team/proposed/phasex",
+    "multimedia-team/phasex"
+  ],
+  "grace": [
+    "janitor-team/proposed/pygrace",
+    "janitor-team/proposed/grace",
+    "janitor-team/proposed/golang-github-facebookgo-grace",
+    "janitor-team/proposed/golang-gopkg-tylerb-graceful.v1",
+    "georgesk/pygrace",
+    "js-team/node-graceful-fs",
+    "js-team/node-graceful-readlink",
+    "go-team/packages/golang-gopkg-tylerb-graceful.v1",
+    "go-team/packages/golang-github-facebookgo-grace",
+    "debian/grace"
+  ],
+  "firewalk": [
+    "pkg-security-team/firewalk"
+  ],
+  "pavumeter": [],
+  "glew": [
+    "carlespina/po-debconf-manager-glewlwyd",
+    "janitor-team/proposed/glew",
+    "jelmer/glewlwyd",
+    "federico/glewlwyd",
+    "debian/glew",
+    "babelouest/glewlwyd",
+    "debian-iot-team/oauth2/glewlwyd",
+    "python-team/packages/python-pyglew"
+  ],
+  "urlview": [
+    "janitor-team/proposed/urlview",
+    "jmroot/urlview",
+    "debian/urlview"
+  ],
+  "mcpp": [
+    "janitor-team/proposed/mcpp",
+    "debian/mcpp"
+  ],
+  "pbzip2": [
+    "wg-guest/pbzip2"
+  ],
+  "python-etcd3": [
+    "janitor-bot/python-etcd3gw",
+    "janitor-team/proposed/python-etcd3gw",
+    "janitor-team/proposed/python-etcd3",
+    "hlemon/python-etcd3gw",
+    "openstack-team/python/python-etcd3",
+    "openstack-team/python/python-etcd3gw"
+  ],
+  "rust-users": [],
+  "mtr": [
+    "python-team/packages/pykmtronic",
+    "janitor-team/proposed/golang-github-vbatts-go-mtree",
+    "janitor-team/proposed/wmsystemtray",
+    "go-team/packages/golang-github-mtrmac-gpgme",
+    "debian/mtr",
+    "debian/xf86-input-mtrack",
+    "go-team/packages/golang-github-vbatts-go-mtree",
+    "wmaker-team/wmsystemtray",
+    "ruby-team/ruby-mtrc"
+  ],
+  "lxlauncher": [
+    "lxde-team/lxlauncher"
+  ],
+  "shntool": [
+    "spg/shntool",
+    "debian/shntool"
+  ],
+  "aiksaurus": [
+    "debian/aiksaurus"
+  ],
+  "gnome-chemistry-utils": [
+    "debichem-team/gnome-chemistry-utils"
+  ],
+  "hercules": [
+    "debian/hercules",
+    "janitor-team/proposed/herculesstudio",
+    "debian/herculesstudio"
+  ],
+  "guichan": [],
+  "lastpass-cli": [
+    "janitor-team/proposed/pkg-lastpass-cli",
+    "lamby/pkg-lastpass-cli"
+  ],
+  "ghemical": [
+    "janitor-team/proposed/ghemical",
+    "merkys/ghemical",
+    "moeller/ghemical",
+    "debichem-team/ghemical",
+    "debichem-team/libghemical"
+  ],
+  "dvtm": [
+    "polkorny/dvtm",
+    "janitor-team/proposed/dvtm",
+    "debian/dvtm",
+    "iu-guest/dvtm"
+  ],
+  "rust-lmdb-sys": [],
+  "e3": [
+    "janitor-team/proposed/e3",
+    "debian/e3"
+  ],
+  "zynaddsubfx": [
+    "janitor-team/proposed/zynaddsubfx",
+    "aerostitch-guest/zynaddsubfx",
+    "multimedia-team/zynaddsubfx"
+  ],
+  "gummi": [
+    "mdosch/gummi",
+    "janitor-team/proposed/gummi",
+    "science-team/gummi"
+  ],
+  "cksfv": [],
+  "rust-prometheus": [],
+  "zopfli": [
+    "python-team/packages/python-zopfli",
+    "viccie30/zopfli",
+    "fonts-team/sfnt2woff-zopfli"
+  ],
+  "uisp": [],
+  "libmongo-client": [
+    "debian/libmongo-client"
+  ],
+  "cbonsai": [
+    "janitor-team/proposed/cbonsai",
+    "rgson/cbonsai"
+  ],
+  "efax": [
+    "debian/efax"
+  ],
+  "kshutdown": [],
+  "givaro": [
+    "janitor-team/proposed/givaro",
+    "math-team/givaro"
+  ],
+  "maliit-framework": [
+    "janitor-team/proposed/maliit-framework",
+    "debian/maliit-framework",
+    "qt-kde-team/extras/maliit-framework"
+  ],
+  "python-i3ipc": [
+    "python-team/packages/python-i3ipc"
+  ],
+  "libdmtx": [
+    "python-team/packages/python-pylibdmtx"
+  ],
+  "rust-adler32": [],
+  "mikmod": [
+    "janitor-team/proposed/libmikmod",
+    "mod-player-team/mikmod",
+    "mod-player-team/libmikmod"
+  ],
+  "php-guzzlehttp-promises": [
+    "php-team/pear/php-guzzlehttp-promises"
+  ],
+  "python-prov": [
+    "python-team/packages/python-prov"
+  ],
+  "cmatrix": [
+    "r-pkg-team/r-cran-qlcmatrix",
+    "debian/cmatrix"
+  ],
+  "gemdropx": [
+    "debian/gemdropx"
+  ],
+  "python-itsdangerous": [
+    "janitor-team/proposed/python-itsdangerous",
+    "python-team/packages/python-itsdangerous"
+  ],
+  "sharutils": [
+    "sanvila/sharutils"
+  ],
+  "cubicsdr": [
+    "janitor-team/proposed/cubicsdr",
+    "CSylvain-guest/cubicsdr",
+    "debian-hamradio-team/cubicsdr"
+  ],
+  "nrg2iso": [
+    "debian/nrg2iso"
+  ],
+  "tikzit": [
+    "janitor-team/proposed/tikzit",
+    "debian/tikzit"
+  ],
+  "freealut": [
+    "janitor-team/proposed/freealut",
+    "games-team/freealut"
+  ],
+  "dsfmt": [
+    "janitor-team/proposed/dsfmt",
+    "julia-team/dsfmt"
+  ],
+  "tmispell-voikko": [],
+  "ecryptfs-utils": [],
+  "japa": [
+    "ysaito/minidebconf-japan-2025",
+    "tokyodebian-team/minidebconf-japan-2025",
+    "dictoss-guest/minidebconf2025japan-alpha",
+    "janitor-team/proposed/latex-cjk-japanese-wadalab",
+    "janitor-team/proposed/japa",
+    "janitor-team/proposed/tegaki-zinnia-japanese",
+    "debian/tegaki-zinnia-japanese",
+    "tex-team/latex-cjk-japanese-wadalab"
+  ],
+  "flobopuyo": [
+    "games-team/flobopuyo"
+  ],
+  "libconfuse": [
+    "aurel32/libconfuse"
+  ],
+  "netsed": [
+    "debian/netsed"
+  ],
+  "spice": [
+    "debian-astro-team/naif-cspice",
+    "dkg/spice-vdagent",
+    "televic-team/spice",
+    "ubuntu-desktop-helper/spice-gtk",
+    "jardon/spice-gtk",
+    "janitor-team/proposed/spice-vdagent",
+    "janitor-team/proposed/spice-html5",
+    "janitor-team/proposed/spice",
+    "gnome-team/spice-gtk",
+    "jbicha/spice",
+    "linqigang/spice-gtk",
+    "janitor-team/proposed/spice-gtk",
+    "janitor-team/proposed/gspiceui",
+    "carnil/spice",
+    "med-team/auspice",
+    "paelzer-guest/spice",
+    "jnumm-guest/ngspice"
+  ],
+  "zita-at1": [
+    "janitor-team/proposed/zita-at1",
+    "multimedia-team/zita-at1"
+  ],
+  "icoutils": [
+    "debian/icoutils"
+  ],
+  "libmygpo-qt": [
+    "janitor-team/proposed/pkg-libmygpo-qt",
+    "thomaspi-guest/pkg-libmygpo-qt"
+  ],
+  "basez": [
+    "debian/basez"
+  ],
+  "bless": [
+    "janitor-team/proposed/fbless",
+    "felixdoerre-guest/bless",
+    "janitor-team/proposed/bless",
+    "janitor-team/proposed/blessings",
+    "java-team/liblessen-java",
+    "teward/bless",
+    "debian/fbless",
+    "jbicha/bless",
+    "dotnet-team/bless",
+    "iu-guest/fbless",
+    "perl-team/modules/packages/libmoosex-blessed-reconstruct-perl",
+    "python-team/packages/python-blessed",
+    "python-team/packages/blessings"
+  ],
+  "autossh": [
+    "schaliasos-guest/autossh",
+    "debian/autossh"
+  ],
+  "imvirt": [],
+  "glob2": [
+    "games-team/glob2",
+    "python-team/packages/python-glob2"
+  ],
+  "par": [
+    "sanvila/esys-particle",
+    "lgarrett/piuparts",
+    "dheerajre/piuparts",
+    "rnpalmer-guest/r-bioc-affxparser",
+    "rnpalmer-guest/r-cran-sparr",
+    "rnpalmer-guest/r-cran-argparser",
+    "holgerw/partman-crypto-fix-overlong-line",
+    "pham/partman-btrfs",
+    "pham/parted",
+    "debian/parser-mysql",
+    "jas/golang-github-transparency-dev-trillian-tessera",
+    "jas/golang-github-transparency-dev-formats",
+    "go-team/packages/golang-github-transparency-dev-formats",
+    "go-team/packages/golang-github-transparency-dev-trillian-tessera",
+    "prahal/apparmor",
+    "nschodet/ldraw-parts-free",
+    "go-team/packages/golang-github-poy-onpar",
+    "go-team/packages/golang-github-astromechza-etcpwdparse",
+    "bayle/hipsparse",
+    "bayle/rocsparse"
+  ],
+  "udt": [
+    "multimedia-team/audtty",
+    "janitor-team/proposed/globus-xio-udt-driver",
+    "janitor-team/proposed/golang-github-jimstudt-http-authentication",
+    "go-team/packages/golang-github-jimstudt-http-authentication",
+    "ellert/globus-xio-udt-driver"
+  ],
+  "golang-github-marten-seemann-qpack": [
+    "go-team/packages/golang-github-marten-seemann-qpack"
+  ],
+  "lutok": [
+    "debian/lutok"
+  ],
+  "gnome-dictionary": [
+    "gnome-team/gnome-dictionary"
+  ],
+  "cpp-jwt": [
+    "debian/cpp-jwt"
+  ],
+  "httpry": [
+    "janitor-team/proposed/httpry",
+    "debian/httpry"
+  ],
+  "glade": [
+    "janitor-team/proposed/python-babelgladeextractor",
+    "nteodosio/glade",
+    "janitor-team/proposed/wxglade",
+    "debian/python-babelgladeextractor",
+    "swt2c-guest/wxglade",
+    "georgesk/wxglade",
+    "perl-team/modules/attic/libgtk2-gladexml-simple-perl",
+    "perl-team/modules/attic/libgtk2-gladexml-perl",
+    "gnome-team/glade"
+  ],
+  "octave-interval": [
+    "janitor-team/proposed/octave-interval",
+    "pkg-octave-team/octave-interval"
+  ],
+  "libpst": [
+    "noloader/libpst",
+    "janitor-team/proposed/libpst",
+    "debian/libpst"
+  ],
+  "xosd": [
+    "salvage-team/xosd"
+  ],
+  "nuget": [
+    "dotnet-team/nuget"
+  ],
+  "fatresize": [
+    "kraj/fatresize",
+    "rzr/fatresize",
+    "parted-team/fatresize"
+  ],
+  "bam": [
+    "debian/libam7xxx",
+    "braiam/libamf-headers",
+    "janitor-team/proposed/bambamc",
+    "janitor-team/proposed/fcitx5-bamboo",
+    "input-method-team/fcitx5-bamboo",
+    "mymedia/libam7xxx",
+    "janitor-team/proposed/bamf",
+    "med-team/bamclipper",
+    "janitor-team/proposed/libambix",
+    "med-team/libamplsolver",
+    "ruby-team/ruby-rubame",
+    "med-team/bamkit",
+    "multimedia-team/bambootracker"
+  ],
+  "cppunit": [
+    "janitor-team/proposed/cppunit",
+    "libreoffice-team/libs/cppunit"
+  ],
+  "python-ws4py": [
+    "wg-guest/python-ws4py",
+    "python-team/packages/python-ws4py"
+  ],
+  "sbc": [
+    "jas/sbctl",
+    "go-team/packages/sbctl",
+    "md/sbctl",
+    "janitor-team/proposed/cl-clx-sbcl",
+    "common-lisp-team/cl-clx-sbcl",
+    "athos/sbcl",
+    "darabi-guest/sbcl",
+    "janitor-team/proposed/sbc",
+    "ralt/sbcl",
+    "bluetooth-team/sbc",
+    "common-lisp-team/sbcl"
+  ],
+  "saclib": [
+    "janitor-team/proposed/saclib",
+    "math-team/saclib"
+  ],
+  "python-django-debreach": [
+    "janitor-team/proposed/python-django-debreach",
+    "openstack-team/python/python-django-debreach"
+  ],
+  "voms": [
+    "janitor-bot/voms-api-java",
+    "janitor-team/proposed/voms-clients-java",
+    "janitor-team/proposed/voms",
+    "janitor-team/proposed/voms-api-java",
+    "java-team/voms-api-java",
+    "ellert/voms",
+    "ellert/voms-mysql-plugin",
+    "ellert/voms-clients-java",
+    "ellert/voms-api-java"
+  ],
+  "libcompizconfig": [
+    "hypra-team/libcompizconfig",
+    "compiz-team/libcompizconfig"
+  ],
+  "lxmenu-data": [],
+  "pads": [
+    "janitor-team/proposed/pads",
+    "debian/pads"
+  ],
+  "fastd": [
+    "java-team/fastdoubleparser",
+    "jpd/fastdoubleparser",
+    "jpd/libfastdoubleparser-java",
+    "python-team/packages/fastdtw",
+    "r-pkg-team/r-cran-fastdummies",
+    "janitor-team/proposed/fastddsgen",
+    "robotics-team/fastddsgen",
+    "communitywlan-team/fastd",
+    "robotics-team/fastdds",
+    "med-team/fastdnaml"
+  ],
+  "netmask": [
+    "js-team/node-netmask",
+    "mikemando/node-netmask",
+    "debian/netmask",
+    "perl-team/modules/packages/libnet-netmask-perl"
+  ],
+  "screenkey": [
+    "otto/screenkey",
+    "janitor-team/proposed/screenkey",
+    "wavexx-guest/screenkey",
+    "georgesk/screenkey"
+  ],
+  "memtest86+": [],
+  "string-template-maven-plugin": [
+    "janitor-team/proposed/string-template-maven-plugin",
+    "java-team/string-template-maven-plugin",
+    "merkys-guest/string-template-maven-plugin"
+  ],
+  "yagf": [],
+  "veusz": [
+    "mitya57/veusz",
+    "science-team/veusz"
+  ],
+  "ldapvi": [],
+  "emboss": [
+    "med-team/emboss",
+    "med-team/emboss-explorer"
+  ],
+  "festival-freebsoft-utils": [
+    "janitor-team/proposed/festival-freebsoft-utils",
+    "tts-team/festival-freebsoft-utils"
+  ],
+  "libtheora": [
+    "janitor-team/proposed/libtheora",
+    "multimedia-team/libtheora"
+  ],
+  "timeshift": [
+    "debian/timeshift",
+    "yanhao/timeshift"
+  ],
+  "ldns": [
+    "perl-team/modules/packages/libzonemaster-ldns-perl",
+    "schopin/ldns",
+    "janitor-team/proposed/ldns",
+    "janitor-team/proposed/rbldnsd",
+    "janitor-team/proposed/dnstap-ldns",
+    "dns-team/ldns",
+    "md/rbldnsd",
+    "perl-team/modules/packages/libnet-ldns-perl",
+    "dns-team/dnstap-ldns"
+  ],
+  "ppl": [
+    "debian/mate-equake-applet",
+    "pino/usbguard-applet-qt",
+    "wontfix/network-manager-applet",
+    "manuziny/python-applicationinsights",
+    "aleasto/poppler"
+  ],
+  "figlet": [
+    "janitor-team/proposed/php-text-figlet",
+    "php-team/pear/php-text-figlet",
+    "debian/figlet",
+    "python-team/packages/pyfiglet"
+  ],
+  "ocaml-mccs": [
+    "janitor-team/proposed/ocaml-mccs",
+    "ocaml-team/ocaml-mccs"
+  ],
+  "python-jsonpath-rw-ext": [
+    "janitor-team/proposed/python-jsonpath-rw-ext",
+    "openstack-team/python/python-jsonpath-rw-ext"
+  ],
+  "pass-otp": [
+    "perl-team/modules/packages/libpass-otp-perl",
+    "debian/pass-otp",
+    "janitor-team/proposed/pass-otp",
+    "rinni/pass-otp"
+  ],
+  "sympow": [
+    "saraedum-guest/sympow",
+    "science-team/sympow"
+  ],
+  "anjuta": [
+    "janitor-team/proposed/anjuta",
+    "gnome-team/anjuta-extras",
+    "gnome-team/anjuta"
+  ],
+  "nacl": [
+    "java-team/jnacl",
+    "janitor-team/proposed/nacl",
+    "janitor-team/proposed/python-libnacl",
+    "themusicgod1-guest/evacuated-tweetnacl-js",
+    "debian/nacl",
+    "js-team/node-tweetnacl",
+    "med-team/dnaclust",
+    "python-team/packages/python-libnacl",
+    "python-team/packages/python-nacl",
+    "science-team/viennacl",
+    "science-team/pyviennacl",
+    "ruby-team/ruby-rbnacl"
+  ],
+  "x-tile": [
+    "debian/x-tile"
+  ],
+  "git-secrets": [
+    "debian/git-secrets"
+  ],
+  "gphotofs": [
+    "debian-phototools-team/gphotofs"
+  ],
+  "prelude-lml": [
+    "janitor-team/proposed/prelude-lml-rules",
+    "totol-guest/prelude-lml-rules",
+    "totol-guest/prelude-lml"
+  ],
+  "rust-cursive": [],
+  "argus": [
+    "janitor-team/proposed/kodi-pvr-argustv",
+    "multimedia-team/kodi-media-center/kodi-pvr-argustv"
+  ],
+  "dbus-c++": [
+    "uhle/dbus-cplusplus",
+    "janitor-team/proposed/dbus-cplusplus",
+    "debian/dbus-cplusplus"
+  ],
+  "adjtimex": [
+    "carlespina/po-debconf-manager-adjtimex",
+    "janitor-team/proposed/adjtimex",
+    "debian/adjtimex"
+  ],
+  "input-pad": [
+    "janitor-team/proposed/input-pad",
+    "janitor-team/proposed/ibus-input-pad",
+    "input-method-team/ibus-input-pad",
+    "input-method-team/input-pad"
+  ],
+  "emacs-epc": [
+    "janitor-team/proposed/emacs-epc",
+    "emacsen-team/emacs-epc"
+  ],
+  "rust-publicsuffix": [],
+  "mpdas": [
+    "debian/mpdas"
+  ],
+  "gl2ps": [
+    "janitor-team/proposed/gl2ps",
+    "nilesh/gl2ps",
+    "science-team/gl2ps"
+  ],
+  "scorched3d": [
+    "pafera/scorched3d",
+    "janitor-team/proposed/scorched3d",
+    "games-team/scorched3d"
+  ],
+  "a52dec": [
+    "janitor-team/proposed/a52dec",
+    "multimedia-team/a52dec"
+  ],
+  "djview4": [
+    "debian/djview4"
+  ],
+  "teg": [
+    "aquilamacedo/steghide",
+    "games-team/play.it-strategy",
+    "pmc/plasma-browser-integration",
+    "math-team/sagemath-categories",
+    "debian/integrit",
+    "debian/rust-event-listener-strategy"
+  ],
+  "statserial": [
+    "janitor-team/proposed/statserial",
+    "debian/statserial"
+  ],
+  "ndppd": [
+    "janitor-team/proposed/ndppd",
+    "debian/ndppd"
+  ],
+  "mtx": [
+    "mtx-team/mtx",
+    "bacula-team/mtx",
+    "python-team/packages/python-pylibdmtx"
+  ],
+  "zsh": [
+    "franklinyu-guest/zsh",
+    "brianrobt/zsh",
+    "cb/zsh",
+    "fladi/zsh-antidote",
+    "henk/zsh",
+    "janitor-team/proposed/zsh-antigen",
+    "janitor-team/proposed/ros2-colcon-zsh",
+    "robotics-team/ros2-colcon-zsh",
+    "dxld/zsh-histdb",
+    "janitor-team/proposed/zsh-autosuggestions",
+    "eiro-guest/zsh",
+    "jubnzv/zsh-completions",
+    "danielsh/zsh-syntax-highlighting",
+    "3v1n0/zsh",
+    "roehling/ros-colcon-zsh",
+    "debian/zshdb",
+    "skirit-guest/zsh"
+  ],
+  "dvdbackup": [
+    "debian/dvdbackup"
+  ],
+  "warmux": [
+    "games-team/warmux"
+  ],
+  "yelp": [
+    "gnome-team/yelp-xsl",
+    "gnome-team/yelp-tools",
+    "gnome-team/yelp"
+  ],
+  "cmospwd": [],
+  "python-libdiscid": [
+    "janitor-team/proposed/python-libdiscid",
+    "mitya57/python-libdiscid",
+    "multimedia-team/python-libdiscid"
+  ],
+  "python-uinput": [
+    "python-team/packages/python-uinput"
+  ],
+  "ampr-ripd": [
+    "debian-hamradio-team/ampr-ripd"
+  ],
+  "python-xstatic-jsencrypt": [
+    "janitor-team/proposed/python-xstatic-jsencrypt",
+    "openstack-team/xstatic/python-xstatic-jsencrypt"
+  ],
+  "zegrapher": [
+    "janitor-team/proposed/zegrapher",
+    "georgesk/zegrapher"
+  ],
+  "tse3": [
+    "debian/tse3"
+  ],
+  "unzip": [
+    "sanvila/unzip",
+    "atzlinux-guest/unzip",
+    "js-team/node-gunzip-maybe",
+    "science-team/reprounzip"
+  ],
+  "rust-assert-json-diff": [
+    "debian/rust-assert-json-diff"
+  ],
+  "nsca": [
+    "carlespina/po-debconf-manager-nsca",
+    "debian/openscap",
+    "janitor-team/proposed/pkg-nsca",
+    "janitor-team/proposed/pkg-nsca-ng",
+    "janitor-team/proposed/openscad-mcad",
+    "henrich/openscap",
+    "philou/openscap",
+    "janitor-team/proposed/golang-github-viki-org-dnscache",
+    "bap/openscad",
+    "szlin/pnscan",
+    "knielsen-guest/openscad-mcad",
+    "knielsen-guest/openscad",
+    "chrysn-guest/openscad",
+    "go-team/packages/golang-github-viki-org-dnscache",
+    "nagios-team/nsca-ng",
+    "nagios-team/nsca",
+    "pkg-security-team/pnscan",
+    "pkg-security-team/openscap-daemon",
+    "js-team/node-dnscache"
+  ],
+  "uget": [
+    "elias/uget",
+    "dotnet-team/nuget"
+  ],
+  "gcal": [
+    "homeassistant-team/deps/python-gcal-sync",
+    "janitor-team/proposed/gcal",
+    "janitor-team/proposed/gcalcli",
+    "debian/gcalcli",
+    "alteholz/gcal"
+  ],
+  "rust-fasteval": [],
+  "hunt": [
+    "carlespina/po-debconf-manager-rkhunter",
+    "puck/rkhunter",
+    "janitor-team/proposed/alien-hunter",
+    "debian/hunt",
+    "janitor-team/proposed/elisp-bug-hunter",
+    "braulio/hunt",
+    "rpil2/rkhunter",
+    "rdratlos/rkhunter",
+    "janitor-team/proposed/rkhunter",
+    "liskin/rkhunter",
+    "deZillium-guest/rkhunter",
+    "emacsen-team/elisp-bug-hunter",
+    "med-team/alien-hunter",
+    "pkg-security-team/rkhunter"
+  ],
+  "plexus-sec-dispatcher": [
+    "janitor-team/proposed/plexus-sec-dispatcher",
+    "java-team/plexus-sec-dispatcher"
+  ],
+  "python-bsddb3": [
+    "debian/python-bsddb3"
+  ],
+  "rust-xz2": [],
+  "lifeograph": [],
+  "clthreads": [
+    "janitor-team/proposed/clthreads",
+    "multimedia-team/clthreads"
+  ],
+  "irrlicht": [
+    "janitor-team/proposed/irrlicht",
+    "games-team/irrlicht"
+  ],
+  "hawtjni": [
+    "janitor-team/proposed/hawtjni",
+    "java-team/hawtjni"
+  ],
+  "flann": [
+    "jlblancoc/nanoflann",
+    "science-team/nanoflann",
+    "go-team/packages/flannel",
+    "science-team/flann"
+  ],
+  "mgetty": [
+    "salvage-team/mgetty",
+    "gioele/mgetty",
+    "philh/mgetty"
+  ],
+  "jboss-logging-tools": [
+    "pushkarnk/jboss-logging-tools",
+    "janitor-team/proposed/jboss-logging-tools",
+    "java-team/jboss-logging-tools"
+  ],
+  "php-zmq": [
+    "php-team/pecl/php-zmq"
+  ],
+  "jack-keyboard": [
+    "janitor-team/proposed/jack-keyboard",
+    "multimedia-team/jack-keyboard"
+  ],
+  "emerald": [
+    "moin-team/emeraldtree",
+    "moin-team/old-emeraldtree",
+    "hypra-team/emerald",
+    "compiz-team/emerald-themes",
+    "compiz-team/emerald",
+    "a11y-team/emerald"
+  ],
+  "bsdiff": [
+    "debian/bsdiff",
+    "mehdi/debsdiff"
+  ],
+  "gnome-2048": [
+    "KushagraKarira/gnome-2048",
+    "gnome-team/gnome-2048"
+  ],
+  "mdk": [
+    "janitor-team/proposed/vmdk-stream-converter",
+    "janitor-team/proposed/xcb-imdkit",
+    "janitor-team/proposed/libvmdk",
+    "python-team/packages/vmdk-stream-converter",
+    "pkg-security-team/mdk4",
+    "input-method-team/xcb-imdkit",
+    "debian/vmdk-stream-converter",
+    "debian/mdk-doc",
+    "debian/mdk",
+    "pkg-security-team/libvmdk",
+    "pkg-security-team/mdk3"
+  ],
+  "frotz": [
+    "Peutch-guest/frotz",
+    "janitor-team/proposed/frotz",
+    "games-team/frotz"
+  ],
+  "maelstrom": [
+    "pino/maelstrom"
+  ],
+  "gnome-taquin": [
+    "janitor-bot/gnome-taquin",
+    "janitor-team/proposed/gnome-taquin",
+    "gnome-team/gnome-taquin"
+  ],
+  "eurephia": [
+    "debian/eurephia"
+  ],
+  "gdbm": [
+    "janitor-team/proposed/gdbm",
+    "janitor-team/proposed/slgdbm",
+    "debian/gdbm",
+    "debian/slgdbm",
+    "iu-guest/gdbm"
+  ],
+  "abi-compliance-checker": [
+    "janitor-team/proposed/abi-compliance-checker",
+    "debian/abi-compliance-checker"
+  ],
+  "librasterlite2": [
+    "debian-gis-team/librasterlite2"
+  ],
+  "rust-quickcheck": [],
+  "libomemo-c": [
+    "xmpp-team/libomemo-c",
+    "coucouf/libomemo-c"
+  ],
+  "ioport": [
+    "janitor-team/proposed/ioport",
+    "lkundrak-guest/ioport"
+  ],
+  "atf": [
+    "vidplace7/platformio",
+    "rousseau/globalplatform",
+    "jak/dpl-platform",
+    "debian/rust-rustls-platform-verifier",
+    "vpa1977/android-platform-tools-base",
+    "jpd/libnative-platform-java",
+    "bananas-team/meta-asahi-platform"
+  ],
+  "wkhtmltopdf": [
+    "kolter/wkhtmltopdf",
+    "debian/django-wkhtmltopdf"
+  ],
+  "golang-github-containerd-stargz-snapshotter": [
+    "jas/golang-github-containerd-stargz-snapshotter",
+    "go-team/packages/golang-github-containerd-stargz-snapshotter"
+  ],
+  "libquvi-scripts": [
+    "janitor-team/proposed/libquvi-scripts",
+    "debian/libquvi-scripts"
+  ],
+  "golang-github-containerd-cgroups": [
+    "siretart/golang-github-containerd-cgroups",
+    "janitor-team/proposed/golang-github-containerd-cgroups",
+    "go-team/packages/golang-github-containerd-cgroups"
+  ],
+  "swami": [
+    "janitor-team/proposed/swami",
+    "multimedia-team/swami"
+  ],
+  "kproperty": [
+    "janitor-team/proposed/kproperty",
+    "qt-kde-team/extras/kproperty"
+  ],
+  "dash": [
+    "44yu5h/salsa-ci-dashboard",
+    "openstack-team/horizon-plugins/blazar-dashboard",
+    "r-pkg-team/r-cran-flexdashboard",
+    "Fat-Zer/dash",
+    "python-team/packages/python-pydash",
+    "williamdes/debian-dashboard",
+    "homeassistant-team/deps/esphome-dashboard-api",
+    "dviererbe/dash",
+    "bluca/dash",
+    "janitor-team/proposed/python-xstatic-lodash",
+    "bignose/emacs-dashboard",
+    "janitor-bot/senlin-dashboard",
+    "janitor-bot/mistral-dashboard",
+    "janitor-team/proposed/senlin-dashboard",
+    "janitor-team/proposed/masakari-dashboard",
+    "janitor-team/proposed/dashel",
+    "janitor-team/proposed/emacs-dashboard",
+    "janitor-team/proposed/sahara-dashboard",
+    "js-team/node-lodash-es",
+    "janitor-team/proposed/vitrage-dashboard"
+  ],
+  "spandsp": [
+    "daissi/spandsp",
+    "janitor-team/proposed/spandsp",
+    "janitor-bot/spandsp",
+    "pkg-voip-team/spandsp"
+  ],
+  "msr-tools": [],
+  "grfcodec": [
+    "janitor-team/proposed/grfcodec",
+    "openttd-team/grfcodec"
+  ],
+  "phodav": [
+    "janitor-team/proposed/phodav",
+    "gnome-team/phodav"
+  ],
+  "python-scantree": [],
+  "libxpresent": [
+    "xorg-team/lib/libxpresent"
+  ],
+  "svn2cl": [],
+  "libemf": [
+    "janitor-team/proposed/libemf2svg",
+    "multimedia-team/libemf2svg",
+    "debian/libemf"
+  ],
+  "supertuxkart": [
+    "crusoe/supertuxkart",
+    "sam-gq/supertuxkart",
+    "jscott/supertuxkart",
+    "ina/supertuxkart",
+    "QwertyChouskie-guest/supertuxkart",
+    "games-team/supertuxkart"
+  ],
+  "eblook": [
+    "janitor-team/proposed/eblook",
+    "yyabuki/vim-eblook",
+    "debian/eblook"
+  ],
+  "atool": [
+    "vpa1977/javatools",
+    "janitor-team/proposed/r-cran-coarsedatatools",
+    "janitor-team/proposed/quotatool",
+    "janitor-team/proposed/javatools",
+    "debian/quotatool",
+    "janitor-team/proposed/megatools",
+    "janitor-team/proposed/patool",
+    "karthik/patool",
+    "r-pkg-team/r-cran-coarsedatatools",
+    "darkdragon-001-guest/javatools",
+    "realslimshanky-guest/patool",
+    "nthykier/javatools",
+    "debian/atool",
+    "java-team/javatools",
+    "debian/patool",
+    "reproducible-builds/packages/javatools",
+    "berto/megatools"
+  ],
+  "mdns-scan": [
+    "janitor-team/proposed/mdns-scan",
+    "alteholz/mdns-scan"
+  ],
+  "uptimed": [
+    "unit193/uptimed",
+    "debian/uptimed"
+  ],
+  "mopac7": [
+    "debichem-team/mopac7"
+  ],
+  "mac-robber": [
+    "pkg-security-team/mac-robber"
+  ],
+  "nip2": [],
+  "schedtool": [
+    "debian/schedtool"
+  ],
+  "python-parsley": [
+    "python-team/packages/python-parsley"
+  ],
+  "fcgiwrap": [
+    "mitchdz/fcgiwrap",
+    "janitor-team/proposed/fcgiwrap",
+    "janitor-bot/fcgiwrap",
+    "debian/fcgiwrap"
+  ],
+  "pentaho-reporting-flow-engine": [
+    "janitor-team/proposed/pentaho-reporting-flow-engine",
+    "java-team/pentaho-reporting-flow-engine"
+  ],
+  "rust-prettytable-rs": [],
+  "ddgr": [
+    "janitor-team/proposed/ddgr",
+    "kkremitzki/ddgr",
+    "debian/ddgr"
+  ],
+  "safelease": [
+    "debian/safelease"
+  ],
+  "golang-github-kurin-blazer": [
+    "janitor-team/proposed/golang-github-kurin-blazer",
+    "go-team/packages/golang-github-kurin-blazer"
+  ],
+  "dee": [
+    "Revy/deepin-boot-maker",
+    "python-team/packages/nodeenv",
+    "homeassistant-team/deps/pytedee-async",
+    "go-team/packages/golang-github-maxatome-go-testdeep",
+    "python-team/packages/deepdish",
+    "mr.winz/node-deepmerge",
+    "debichem-team/frugally-deep",
+    "janitor-team/proposed/deepboof",
+    "janitor-team/proposed/node-deep-for-each",
+    "janitor-team/proposed/libdbm-deep-perl",
+    "python-team/packages/python-qtpynodeeditor",
+    "janitor-team/proposed/mergedeep",
+    "janitor-team/proposed/node-deepmerge",
+    "janitor-team/proposed/r-cran-modeest",
+    "janitor-team/proposed/python-babelgladeextractor",
+    "janitor-team/proposed/golang-github-gcla-deep",
+    "python-team/packages/python-ssdeep",
+    "janitor-team/proposed/golang-github-powerman-deepequal",
+    "janitor-team/proposed/golang-github-openpeedeep-xdg"
+  ],
+  "octave-parallel": [
+    "paelzer-guest/octave-parallel",
+    "pkg-octave-team/octave-parallel"
+  ],
+  "viking": [
+    "debian/viking"
+  ],
+  "cachefilesd": [
+    "debian/cachefilesd"
+  ],
+  "eigen3": [
+    "cosurgi-guest/eigen3",
+    "science-team/eigen3"
+  ],
+  "d52": [],
+  "autogen": [
+    "janitor-team/proposed/autogen",
+    "debian/autogen"
+  ],
+  "opendmarc": [
+    "carlespina/po-debconf-manager-opendmarc",
+    "ricorambo/opendmarc",
+    "lts-team/packages/opendmarc",
+    "janitor-team/proposed/opendmarc",
+    "scc/opendmarc",
+    "nottheoilrig-guest/opendmarc",
+    "debian/opendmarc"
+  ],
+  "rust-bit-vec": [],
+  "vorbisgain": [
+    "multimedia-team/vorbisgain"
+  ],
+  "rust-dirs-next": [],
+  "libapreq2": [
+    "lts-team/packages/libapreq2",
+    "debian/libapreq2"
+  ],
+  "zaz": [
+    "games-team/zaz"
+  ],
+  "volumeicon": [],
+  "yaml-cpp": [
+    "emrahayanoglu_cheetahtech/yaml-cpp",
+    "janitor-team/proposed/yaml-cpp",
+    "raof-guest/yaml-cpp",
+    "debian/yaml-cpp0.3",
+    "debian/yaml-cpp"
+  ],
+  "openocd": [
+    "martin.kaiser/openocd",
+    "crosstoolchain-team/openocd",
+    "electronics-team/openocd"
+  ],
+  "libgadu": [
+    "janitor-team/proposed/libgadu",
+    "debian/libgadu"
+  ],
+  "ocaml-gettext": [
+    "ocaml-team/ocaml-gettext"
+  ],
+  "python-pytest-trio": [
+    "python-team/packages/python-pytest-trio"
+  ],
+  "arptables": [
+    "pkg-netfilter-team/pkg-arptables"
+  ],
+  "caribou": [
+    "janitor-team/proposed/caribou",
+    "fantu/caribou",
+    "gnome-team/caribou"
+  ],
+  "vim-ale": [
+    "mymedia/vim-ale"
+  ],
+  "libxklavier": [
+    "janitor-team/proposed/libxklavier",
+    "gnome-team/libxklavier"
+  ],
+  "pngcheck": [
+    "lts-team/packages/pngcheck",
+    "debian/pngcheck"
+  ],
+  "rust-libmount": [],
+  "abiword": [
+    "rpavlik/abiword",
+    "jbicha/abiword",
+    "jelmer/abiword",
+    "debian/abiword"
+  ],
+  "libdca": [
+    "janitor-team/proposed/libdca",
+    "multimedia-team/libdca"
+  ],
+  "tlf": [
+    "debian/intlfonts",
+    "tsgracini/intlfonts",
+    "janitor-team/proposed/tlf",
+    "debian-hamradio-team/tlf"
+  ],
+  "rust-codespan-reporting": [],
+  "rust-socks": [
+    "debian/rust-socks"
+  ],
+  "flickcurl": [
+    "debian/flickcurl",
+    "janitor-team/proposed/flickcurl",
+    "akumar/flickcurl"
+  ],
+  "alienblaster": [
+    "games-team/alienblaster"
+  ],
+  "rear": [
+    "lts-team/packages/rear",
+    "debian/rear"
+  ],
+  "pem": [
+    "cb/pipemixer",
+    "werdahias/pipemixer",
+    "python-team/packages/python-opem",
+    "janitor-team/proposed/pompem",
+    "r-pkg-team/r-bioc-spem",
+    "janitor-bot/nss-pem",
+    "debian/pem",
+    "python-team/packages/pem",
+    "AlexFomin/telescopemotorctli2c",
+    "js-team/node-ripemd160",
+    "perl-team/modules/packages/libextutils-typemaps-default-perl",
+    "perl-team/modules/packages/libextutils-typemap-perl",
+    "perl-team/modules/packages/libconvert-pem-perl",
+    "python-team/packages/ropemode",
+    "python-team/packages/ropemacs",
+    "freeipa-team/nss-pem",
+    "pkg-security-team/pompem",
+    "pkg-security-team/pipemeter"
+  ],
+  "fontforge": [
+    "gioele/fontforge",
+    "lts-team/packages/fontforge",
+    "tar/fontforge",
+    "reproducible-builds/packages/fontforge",
+    "fonts-team/fontforge",
+    "fonts-team/fontforge-extras",
+    "fonts-team/fontforge-doc"
+  ],
+  "pmars": [
+    "games-team/pmars"
+  ],
+  "dateutils": [
+    "nabijaczleweli/dateutils",
+    "python-team/packages/python-dateutils",
+    "alteholz/dateutils"
+  ],
+  "rust-tracing-futures": [],
+  "lv": [
+    "AkihiroSuda/lv",
+    "tmtms/lv",
+    "debian/lv"
+  ],
+  "python-zeep": [
+    "detiste-guest/python-zeep",
+    "tryton-team/python-zeep"
+  ],
+  "smem": [
+    "janitor-team/proposed/smem",
+    "python-team/packages/smem"
+  ],
+  "odt2txt": [
+    "lpfll/odt2txt",
+    "debian/odt2txt"
+  ],
+  "cscope": [
+    "toblux/cscope",
+    "janitor-team/proposed/xcscope-el",
+    "janitor-team/proposed/cscope",
+    "debian/xcscope-el",
+    "debian/cscope"
+  ],
+  "mscgen": [
+    "debian/mscgen"
+  ],
+  "scamp": [
+    "marek22k/scamper",
+    "janitor-team/proposed/scamper",
+    "janitor-team/proposed/scamp",
+    "janitor-bot/scamper",
+    "ineteng-team/scamper",
+    "debian-astro-team/scamp"
+  ],
+  "w3m": [
+    "abhijith/w3m-el",
+    "paelzer-guest/w3m",
+    "lts-team/packages/w3m",
+    "janitor-team/proposed/w3m",
+    "janitor-team/proposed/w3m-el-snapshot",
+    "janitor-team/proposed/w3m-el",
+    "debian/w3m-el-snapshot",
+    "debian/w3m-el",
+    "debian/w3m"
+  ],
+  "firejail": [
+    "janitor-team/proposed/firejail",
+    "lts-team/packages/firejail",
+    "aerusso/firejail",
+    "reiner/firejail"
+  ],
+  "edac-utils": [],
+  "octave-quaternion": [
+    "pkg-octave-team/octave-quaternion"
+  ],
+  "mathgl": [
+    "science-team/mathgl",
+    "ruby-team/ruby-mathgl"
+  ],
+  "torcs": [
+    "games-team/torcs"
+  ],
+  "tuxmath": [
+    "roehling/tuxmath",
+    "tux4kids-pkg-team/tuxmath"
+  ],
+  "cloudcompare": [
+    "debian/cloudcompare"
+  ],
+  "ramond": [
+    "fonts-team/fonts-ebgaramond-initials",
+    "debian/ramond",
+    "fonts-team/fonts-ebgaramond"
+  ],
+  "unclutter-xfixes": [
+    "skangas/unclutter-xfixes"
+  ],
+  "golang-github-creack-goselect": [
+    "go-team/packages/golang-github-creack-goselect"
+  ],
+  "libmatheval": [
+    "janitor-team/proposed/libmatheval",
+    "science-team/libmatheval"
+  ],
+  "bwm-ng": [
+    "janitor-team/proposed/bwm-ng",
+    "debian/bwm-ng"
+  ],
+  "python-xstatic-mdi": [
+    "janitor-team/proposed/python-xstatic-mdi",
+    "openstack-team/xstatic/python-xstatic-mdi"
+  ],
+  "lightdm-gtk-greeter-settings": [
+    "janitor-team/proposed/lightdm-gtk-greeter-settings",
+    "Roxfr-guest/lightdm-gtk-greeter-settings",
+    "xfce-extras-team/lightdm-gtk-greeter-settings"
+  ],
+  "numad": [
+    "janitor-team/proposed/numad",
+    "debian/numad"
+  ],
+  "five-or-more": [
+    "janitor-team/proposed/five-or-more",
+    "gnome-team/five-or-more"
+  ],
+  "gtkglext": [
+    "janitor-team/proposed/gtkglext",
+    "violethaze74/gtkglextmm",
+    "janitor-team/proposed/gtkglextmm",
+    "gewo/gtkglext",
+    "med-team/gtkglextmm"
+  ],
+  "libdfp": [
+    "jscott/libdfp",
+    "janitor-team/proposed/libdfp",
+    "debian/libdfp"
+  ],
+  "libcdaudio": [
+    "janitor-team/proposed/libcdaudio",
+    "debian/libcdaudio"
+  ],
+  "libtomcrypt": [
+    "janitor-team/proposed/libtomcrypt",
+    "debian/libtomcrypt"
+  ],
+  "teeworlds": [
+    "janitor-team/proposed/teeworlds",
+    "daissi/teeworlds",
+    "games-team/teeworlds"
+  ],
+  "fig2ps": [
+    "janitor-team/proposed/fig2ps",
+    "lpfll/fig2ps",
+    "debian/fig2ps"
+  ],
+  "mate-user-admin": [
+    "debian-mate-team/mate-user-admin"
+  ],
+  "pymol": [
+    "moeller/pymol",
+    "debichem-team/pymol"
+  ],
+  "pngcrush": [
+    "detiste-guest/pngcrush",
+    "debian-phototools-team/pngcrush",
+    "janitor-team/proposed/pngcrush",
+    "debian/pngcrush"
+  ],
+  "mxml": [],
+  "rust-crypto-hash": [],
+  "choqok": [
+    "janitor-team/proposed/choqok",
+    "sgmoore/choqok",
+    "qt-kde-team/extras/choqok"
+  ],
+  "poezio": [
+    "janitor-team/proposed/poezio",
+    "xmpp-team/poezio"
+  ],
+  "quesoglc": [
+    "janitor-team/proposed/quesoglc",
+    "games-team/quesoglc"
+  ],
+  "alpine": [
+    "justin319-guest/alpine",
+    "debian/alpine"
+  ],
+  "libotf": [
+    "janitor-team/proposed/libotf",
+    "debian/libotf"
+  ],
+  "lua-lgi": [
+    "lua-team/lua-lgi"
+  ],
+  "python-testing.common.database": [
+    "python-team/packages/python-testing.common.database"
+  ],
+  "python-django-tagging": [
+    "lvoytek/python-django-tagging",
+    "python-team/packages/python-django-tagging"
+  ],
+  "nsca-ng": [
+    "janitor-team/proposed/pkg-nsca-ng",
+    "nagios-team/nsca-ng"
+  ],
+  "njam": [
+    "janitor-team/proposed/njam",
+    "debian/njam"
+  ],
+  "brightnessctl": [
+    "janitor-team/proposed/brightnessctl",
+    "debian/brightnessctl"
+  ],
+  "libkate": [
+    "janitor-team/proposed/libkate",
+    "multimedia-team/libkate"
+  ],
+  "libwpd": [
+    "libreoffice-team/document-liberation/libwpd"
+  ],
+  "python-demjson": [
+    "python-team/packages/python-demjson"
+  ],
+  "libgtextutils": [
+    "frediz/libgtextutils",
+    "med-team/libgtextutils"
+  ],
+  "xmlstarlet": [
+    "debian/xmlstarlet"
+  ],
+  "python-xstatic-magic-search": [
+    "janitor-team/proposed/python-xstatic-magic-search",
+    "openstack-team/xstatic/python-xstatic-magic-search"
+  ],
+  "golang-github-matryer-try": [
+    "janitor-team/proposed/golang-github-matryer-try",
+    "go-team/packages/golang-github-matryer-try"
+  ],
+  "utox": [
+    "yangfl-guest/uTox",
+    "pkg-voip-team/utox"
+  ],
+  "rust-datetime": [],
+  "libssh": [
+    "jas/libssh2",
+    "jas/libssh",
+    "cjwatson/libssh2",
+    "lts-team/packages/libssh",
+    "lts-team/packages/libssh2",
+    "janitor-team/proposed/libssh",
+    "debian/libssh2",
+    "cjwatson/libssh",
+    "dottedmag/libssh2",
+    "debian/libssh"
+  ],
+  "libmspub": [
+    "libreoffice-team/document-liberation/libmspub"
+  ],
+  "pachi": [],
+  "easytag": [
+    "janitor-team/proposed/easytag",
+    "jssotomdz/easytag",
+    "multimedia-team/easytag"
+  ],
+  "fcitx-libpinyin": [
+    "janitor-team/proposed/fcitx-libpinyin",
+    "input-method-team/fcitx-libpinyin"
+  ],
+  "liboping": [
+    "janitor-team/proposed/liboping",
+    "debian/liboping"
+  ],
+  "rust-skeptic": [],
+  "herbstluftwm": [
+    "janitor-team/proposed/herbstluftwm",
+    "dario-guest/herbstluftwm",
+    "debian/herbstluftwm"
+  ],
+  "gforth": [],
+  "regionset": [
+    "debian/regionset"
+  ],
+  "dbus-sharp": [
+    "janitor-team/proposed/dbus-sharp-glib",
+    "dotnet-team/dbus-sharp-legacy-glib",
+    "dotnet-team/dbus-sharp-legacy",
+    "dotnet-team/dbus-sharp-glib",
+    "dotnet-team/dbus-sharp"
+  ],
+  "maven-jar-plugin": [
+    "java-team/maven-jar-plugin"
+  ],
+  "dhex": [
+    "debian/dhex"
+  ],
+  "grisbi": [
+    "janitor-team/proposed/grisbi",
+    "debian/grisbi"
+  ],
+  "ratpoison": [
+    "brlink/ratpoison"
+  ],
+  "opendoas": [
+    "debian/opendoas"
+  ],
+  "vlc-plugin-pipewire": [
+    "multimedia-team/vlc-plugin-pipewire"
+  ],
+  "mono-tools": [
+    "dotnet-team/mono-tools"
+  ],
+  "xdg-user-dirs-gtk": [
+    "janitor-team/proposed/xdg-user-dirs-gtk",
+    "gnome-team/xdg-user-dirs-gtk"
+  ],
+  "redeclipse": [
+    "games-team/redeclipse-data",
+    "games-team/redeclipse"
+  ],
+  "mimetic": [],
+  "luabind": [],
+  "psi-notify": [
+    "michel/psi-notify"
+  ],
+  "gphoto2": [
+    "aleasto/libgphoto2",
+    "smcv/libgphoto2",
+    "zeha/libgphoto2",
+    "janitor-team/proposed/python-gphoto2",
+    "janitor-team/proposed/gphoto2",
+    "willat8/libgphoto2",
+    "janitor-team/proposed/libgphoto2",
+    "bremner/libgphoto2",
+    "debian-phototools-team/libgphoto2",
+    "debian-phototools-team/gphoto2",
+    "debian/python-gphoto2"
+  ],
+  "minisat2": [],
+  "ocproxy": [
+    "debian/ocproxy"
+  ],
+  "libatasmart": [
+    "janitor-team/proposed/libatasmart",
+    "janitor-bot/libatasmart",
+    "utopia-team/libatasmart"
+  ],
+  "golang-github-fogleman-gg": [
+    "go-team/packages/golang-github-fogleman-gg"
+  ],
+  "libxsmm": [
+    "janitor-team/proposed/libxsmm",
+    "science-team/libxsmm"
+  ],
+  "shtool": [
+    "janitor-team/proposed/redfishtool",
+    "janitor-team/proposed/shtool",
+    "janitor-team/proposed/rkflashtool",
+    "java-team/xperia-flashtool",
+    "debian/shtool",
+    "openstack-team/third-party/redfishtool",
+    "debian/rkflashtool"
+  ],
+  "grammalecte": [
+    "python-team/packages/grammalecte"
+  ],
+  "cdargs": [
+    "janitor-team/proposed/cdargs",
+    "mtmiller/cdargs",
+    "debian/cdargs"
+  ],
+  "masscan": [
+    "pkg-security-team/masscan"
+  ],
+  "spatialite-gui": [
+    "debian-gis-team/spatialite-gui"
+  ],
+  "grafx2": [
+    "janitor-team/proposed/grafx2",
+    "multimedia-team/grafx2"
+  ],
+  "pasdoc": [
+    "janitor-team/proposed/pasdoc",
+    "pascal-team/pasdoc"
+  ],
+  "disorderfs": [
+    "Cerenia/disorderfs",
+    "jayaddison/disorderfs",
+    "fepitre/disorderfs",
+    "bmwiedemann-guest/disorderfs",
+    "reproducible-builds/disorderfs"
+  ],
+  "brutalchess": [
+    "janitor-team/proposed/brutalchess",
+    "games-team/brutalchess"
+  ],
+  "discount": [
+    "janitor-team/proposed/ruby-rdiscount",
+    "janitor-team/proposed/lua-discount",
+    "tryton-team/tryton-modules-sale-discount",
+    "rbalint/discount",
+    "janitor-bot/lua-discount",
+    "reproducible-builds/packages/discount",
+    "lua-team/lua-discount",
+    "perl-team/modules/packages/libtext-markdown-discount-perl",
+    "debian/discount",
+    "ruby-team/ruby-rdiscount"
+  ],
+  "vcftools": [
+    "med-team/vcftools"
+  ],
+  "corosync-qdevice": [
+    "rafaeldtinoco/corosync-qdevice",
+    "ha-team/corosync-qdevice"
+  ],
+  "libutempter": [
+    "cgzones/libutempter"
+  ],
+  "gxemul": [
+    "janitor-team/proposed/gxemul",
+    "debian/gxemul"
+  ],
+  "guitarix": [
+    "janitor-team/proposed/guitarix",
+    "multimedia-team/guitarix"
+  ],
+  "rapidxml": [
+    "debian/rapidxml"
+  ],
+  "fcitx-fbterm": [
+    "janitor-bot/fcitx-fbterm",
+    "janitor-team/proposed/fcitx-fbterm",
+    "input-method-team/fcitx-fbterm"
+  ],
+  "openhpi": [],
+  "trafficserver": [
+    "tobi/trafficserver",
+    "lts-team/packages/trafficserver",
+    "janitor-team/proposed/trafficserver",
+    "janitor-team/proposed/prometheus-trafficserver-exporter",
+    "vgutierrez-guest/prometheus-trafficserver-exporter",
+    "ema/trafficserver",
+    "debian/prometheus-trafficserver-exporter",
+    "debian/trafficserver"
+  ],
+  "source-highlight": [
+    "janitor-team/proposed/source-highlight",
+    "debian/source-highlight",
+    "kartik-karz/source-highlight",
+    "zumbi/source-highlight"
+  ],
+  "python-tempita": [
+    "python-team/packages/python-tempita"
+  ],
+  "log4cpp": [
+    "debian/log4cpp-doc",
+    "debian/log4cpp",
+    "science-team/log4cpp"
+  ],
+  "rust-adler": [],
+  "tkabber-plugins": [
+    "xmpp-team/tkabber-plugins"
+  ],
+  "lame": [
+    "freylint/flamenco-worker",
+    "davidpolverari/flameshot",
+    "debian/rcs-blame",
+    "daissi/filament",
+    "janitor-team/proposed/flamerobin",
+    "dickey/rcs-blame",
+    "janitor-team/proposed/twolame",
+    "janitor-team/proposed/flameshot",
+    "atzlinux-guest/flameshot",
+    "multimedia-team/kodi-media-center/kodi-audioencoder-lame",
+    "janitor-team/proposed/lame",
+    "dannf/flamethrower",
+    "roehling/filament",
+    "janitor-team/proposed/ocaml-lame"
+  ],
+  "ann": [
+    "php-team/pear/cmsscanner",
+    "carlespina/po-debconf-manager-canna",
+    "mantas/git-annex",
+    "go-team/packages/golang-github-johanneskaufmann-dom",
+    "holgerw/anna-change-install-path-for-usrmerge-ready",
+    "luanduartee/golang-github-adam-hanna-arrayoperations",
+    "homeassistant-team/deps/pymeteireann",
+    "jpd/jackson-annotations",
+    "debian/pct-scanner-scripts",
+    "debian/canna-shion",
+    "hknox/gnome-shell-extension-no-annoyance",
+    "go-team/packages/golang-github-sourcegraph-annotate",
+    "BrunoRibeiro/golang-github-adam-hanna-arrayoperations"
+  ],
+  "terminology": [
+    "janitor-team/proposed/terminology",
+    "salman-guest/terminology",
+    "pkg-e-team/terminology"
+  ],
+  "curlpp": [
+    "janitor-team/proposed/curlpp",
+    "creekorful/curlpp",
+    "jarrocha-guest/curlpp",
+    "SpaceWhite-guest/curlpp",
+    "infinity0/curlpp"
+  ],
+  "nethogs": [
+    "polkorny/nethogs-teste",
+    "polkorny/nethogs",
+    "debian/nethogs",
+    "kretcheu/nethogs"
+  ],
+  "prelude-lml-rules": [
+    "janitor-team/proposed/prelude-lml-rules",
+    "totol-guest/prelude-lml-rules"
+  ],
+  "chromaprint": [
+    "janitor-team/proposed/chromaprint",
+    "multimedia-team/chromaprint"
+  ],
+  "berusky2": [
+    "janitor-team/proposed/berusky2",
+    "games-team/berusky2-data",
+    "games-team/berusky2"
+  ],
+  "rust-bzip2": [],
+  "git-remote-hg": [
+    "janitor-team/proposed/git-remote-hg",
+    "schopin/git-remote-hg",
+    "smcv/git-remote-hg",
+    "debian/git-remote-hg",
+    "jmccrohan-guest/git-remote-hg"
+  ],
+  "libdvdread": [
+    "jmtd/libdvdread",
+    "multimedia-team/libdvdread"
+  ],
+  "playerctl": [
+    "debian/gtklock-playerctl-module",
+    "cb/playerctl",
+    "janitor-team/proposed/playerctl",
+    "edward/playerctl",
+    "multimedia-team/playerctl",
+    "smcv/playerctl"
+  ],
+  "xautolock": [
+    "des_ar/xautolock",
+    "jraviles/xautolock",
+    "santiago/xautolock",
+    "janitor-team/proposed/xautolock",
+    "friki/xautolock"
+  ],
+  "libicns": [],
+  "mp3gain": [
+    "janitor-team/proposed/mp3gain",
+    "sf/mp3gain",
+    "snhardin-guest/mp3gain",
+    "kaliko/mp3gain"
+  ],
+  "gcin": [
+    "mitya57/gcin",
+    "janitor-team/proposed/gcin-voice",
+    "debian/gcin-voice",
+    "input-method-team/gcin"
+  ],
+  "mapbox-variant": [
+    "debian-gis-team/mapbox-variant"
+  ],
+  "daa2iso": [],
+  "xbindkeys": [
+    "isidroas/xbindkeys",
+    "janitor-team/proposed/xbindkeys",
+    "debian/xbindkeys"
+  ],
+  "lugaru": [
+    "Peutch-guest/lugaru",
+    "games-team/lugaru"
+  ],
+  "entangle": [
+    "janitor-team/proposed/entangle",
+    "perl-team/modules/packages/libquantum-entanglement-perl",
+    "debian-phototools-team/entangle"
+  ],
+  "liblastfm": [
+    "janitor-team/proposed/liblastfm",
+    "debian/liblastfm",
+    "java-team/liblastfm-java"
+  ],
+  "python-yubico": [
+    "dlitz/python-yubico",
+    "auth-team/python-yubico"
+  ],
+  "p7zip": [
+    "sam-gq/p7zip",
+    "janitor-team/proposed/p7zip",
+    "janitor-team/proposed/p7zip-rar",
+    "3lbios-guest/p7zip",
+    "debian/p7zip",
+    "debian/p7zip-rar"
+  ],
+  "api-sanity-checker": [],
+  "libbinio": [
+    "janitor-team/proposed/libbinio",
+    "tar/libbinio",
+    "amoog-guest/libbinio"
+  ],
+  "jflex": [
+    "janitor-team/proposed/jflex",
+    "janitor-team/proposed/gradle-jflex-plugin",
+    "java-team/maven-jflex-plugin",
+    "java-team/jflex",
+    "java-team/gradle-jflex-plugin"
+  ],
+  "ustr": [
+    "Arturo_Teslao/tracks_for_dustracing2d",
+    "janitor-team/proposed/dustrac",
+    "janitor-team/proposed/ustreamer",
+    "med-team/illustrate",
+    "pino/dustrac",
+    "reedy/ustreamer",
+    "r-pkg-team/r-cran-robustrankaggreg",
+    "zito-guest/pkg-ustr"
+  ],
+  "osgi-compendium": [
+    "janitor-team/proposed/osgi-compendium",
+    "java-team/osgi-compendium"
+  ],
+  "freedink": [
+    "debian/freedink-data",
+    "games-team/freedink-dfarc",
+    "games-team/freedink"
+  ],
+  "macchanger": [
+    "carlespina/po-debconf-manager-macchanger",
+    "janitor-team/proposed/golang-pault-go-macchanger",
+    "debian/macchanger",
+    "go-team/packages/golang-pault-go-macchanger"
+  ],
+  "python-wadllib": [
+    "janitor-team/proposed/python-wadllib",
+    "python-team/packages/python-wadllib"
+  ],
+  "taglib-extras": [
+    "janitor-team/proposed/taglib-extras",
+    "multimedia-team/taglib-extras"
+  ],
+  "hdparm": [
+    "panjunzhong/hdparm",
+    "janitor-team/proposed/hdparm",
+    "schaliasos-guest/hdparm",
+    "juliencc-guest/hdparm",
+    "debian/hdparm"
+  ],
+  "libresample": [
+    "debian/libresample"
+  ],
+  "python-cotyledon": [
+    "janitor-team/proposed/python-cotyledon",
+    "openstack-team/python/python-cotyledon"
+  ],
+  "light": [
+    "schoekek-guest/mkdocs-glightbox",
+    "init-diversity-team/s6-66/66-service-lightdm",
+    "python-team/packages/cleware-traffic-light",
+    "games-team/flight-of-the-amazon-queen",
+    "EiPiFun/lightspark",
+    "sulincix/lightdm",
+    "yifei/lightsend",
+    "go-team/packages/golang-github-sourcegraph-syntaxhighlight",
+    "debian/pidgin-blinklight",
+    "vpinon/filelight",
+    "vimerbf-guest/hol-light",
+    "python-team/packages/pyeverlights",
+    "mitya57/flightgear"
+  ],
+  "libsigrokdecode": [
+    "electronics-team/sigrok/libsigrokdecode"
+  ],
+  "sunpinyin": [
+    "zhangdandan/sunpinyin",
+    "janitor-team/proposed/ucimf-sunpinyin",
+    "janitor-team/proposed/ibus-sunpinyin",
+    "janitor-team/proposed/fcitx-sunpinyin",
+    "cwryu/sunpinyin",
+    "input-method-team/ibus-sunpinyin",
+    "input-method-team/ucimf-sunpinyin",
+    "input-method-team/xsunpinyin",
+    "zouyoo-guest/xsunpinyin",
+    "input-method-team/fcitx-sunpinyin",
+    "debian/sunpinyin"
+  ],
+  "patool": [
+    "janitor-team/proposed/patool",
+    "karthik/patool",
+    "realslimshanky-guest/patool",
+    "debian/patool"
+  ],
+  "ioping": [
+    "janitor-team/proposed/ioping",
+    "debian/ioping"
+  ],
+  "shairplay": [
+    "janitor-team/proposed/shairplay",
+    "multimedia-team/shairplay"
+  ],
+  "clementine": [
+    "debian/clementine",
+    "sam-gq/pkg-clementine",
+    "aerusso/pkg-clementine",
+    "thomaspi-guest/pkg-clementine"
+  ],
+  "gnurobbo": [
+    "janitor-team/proposed/gnurobbo",
+    "games-team/gnurobbo"
+  ],
+  "kakasi": [
+    "janitor-team/proposed/kakasi",
+    "debian/libtext-kakasi-perl",
+    "debian/kakasi",
+    "perl-team/modules/packages/libtext-kakasi-perl",
+    "ruby-team/attic/ruby-kakasi",
+    "ruby-team/ruby-kakasi-ffi"
+  ],
+  "pixiewps": [
+    "pkg-security-team/pixiewps"
+  ],
+  "dmtx-utils": [],
+  "sombok": [
+    "janitor-team/proposed/sombok",
+    "kolter/sombok"
+  ],
+  "docbook-slides": [],
+  "shim": [
+    "carlespina/po-debconf-manager-shim-signed",
+    "zulcss/shim",
+    "fg/shim",
+    "knelsonmeister/systemd-shim",
+    "nthykier/shim",
+    "lts-team/packages/shim-signed",
+    "lts-team/packages/shim",
+    "fg/shim-signed",
+    "init-diversity-team/systemd/systemd-shim",
+    "bluca/shim-signed",
+    "debian/olpc-kbdshim",
+    "rouca/shim",
+    "python-team/packages/notebook-shim",
+    "tai271828/rshim-user-space",
+    "pham/shim",
+    "pham/shim-signed",
+    "qqaysaneah/shim",
+    "qqaysaneah/shim-signed",
+    "janitor-team/proposed/node-zkochan-cmd-shim"
+  ],
+  "scottfree": [
+    "janitor-team/proposed/scottfree",
+    "games-team/scottfree"
+  ],
+  "mairix": [
+    "janitor-team/proposed/mairix",
+    "debian/mairix"
+  ],
+  "httptunnel": [],
+  "meanwhile": [
+    "briant/meanwhile",
+    "janitor-team/proposed/meanwhile",
+    "debian/meanwhile"
+  ],
+  "mpqc": [
+    "janitor-team/proposed/mpqc",
+    "nilesh/mpqc",
+    "debichem-team/mpqc3",
+    "debichem-team/mpqc"
+  ],
+  "xboard": [
+    "nteodosio/xboard",
+    "games-team/xboard"
+  ],
+  "altermime": [
+    "debian/altermime"
+  ],
+  "scim": [
+    "janitor-bot/scim-pinyin",
+    "janitor-team/proposed/scim-pinyin",
+    "janitor-team/proposed/scim-m17n",
+    "debian/scim-unikey",
+    "janitor-team/proposed/scim-chewing",
+    "janitor-team/proposed/scim-thai",
+    "input-method-team/scim-m17n",
+    "input-method-team/scim-pinyin",
+    "debian/scim-chewing",
+    "debian/scim-thai"
+  ],
+  "pyserial-asyncio": [
+    "homeassistant-team/deps/pyserial-asyncio-fast",
+    "python-team/packages/pyserial-asyncio"
+  ],
+  "orocos-kdl": [
+    "janitor-team/proposed/orocos-kdl",
+    "science-team/orocos-kdl"
+  ],
+  "dfc": [
+    "lts-team/packages/pdfcrack",
+    "janitor-team/proposed/dfc",
+    "debian/pdfchain",
+    "openstack-team/third-party/python-sphinxcontrib-svg2pdfconverter",
+    "debian/pdfcrack",
+    "amoog-guest/pdfcube",
+    "debian/dfc",
+    "science-team/netcdfc",
+    "science-team/dfcgen-gtk"
+  ],
+  "galculator": [
+    "debian/galculator"
+  ],
+  "cool-retro-term": [
+    "debian/cool-retro-term"
+  ],
+  "bzflag": [
+    "detiste-guest/bzflag",
+    "blast/bzflag",
+    "janitor-team/proposed/bzflag",
+    "games-team/bzflag"
+  ],
+  "netpanzer": [
+    "jelmer/netpanzer",
+    "games-team/netpanzer"
+  ],
+  "dtach": [
+    "janitor-team/proposed/dtach",
+    "voelkel-guest/dtach"
+  ],
+  "libdaemon": [
+    "janitor-team/proposed/libdaemon-generic-perl",
+    "perl-team/modules/packages/libdaemon-generic-perl",
+    "perl-team/modules/packages/libdaemon-control-perl",
+    "utopia-team/libdaemon"
+  ],
+  "ccze": [
+    "debian/ccze"
+  ],
+  "bibtool": [
+    "janitor-team/proposed/bibtool",
+    "tex-team/bibtool"
+  ],
+  "rust-structopt": [],
+  "mpsolve": [
+    "math-team/mpsolve"
+  ],
+  "erlang-idna": [
+    "janitor-team/proposed/erlang-idna",
+    "ejabberd-packaging-team/erlang-idna"
+  ],
+  "python-marathon": [
+    "openstack-team/libs/python-marathon"
+  ],
+  "tolua++": [
+    "debian/toluaplusplus"
+  ],
+  "proguard": [
+    "janitor-team/proposed/proguard-core",
+    "java-team/proguard-core",
+    "janitor-team/proposed/proguard",
+    "java-team/proguard"
+  ],
+  "task": [
+    "jspricke/tasksel",
+    "nogajun-guest/tasksel",
+    "rclobus-guest/live-tasks",
+    "mitya57/tasksel",
+    "Ebele/hugotask",
+    "danialbehzadi/tasksel",
+    "python-team/packages/python-taskipy",
+    "go-team/packages/golang-github-go-task-template",
+    "go-team/packages/go-task",
+    "gber/tasksel",
+    "debian/taskflow",
+    "agx/tasksel",
+    "rene/tasksel"
+  ],
+  "gtkspell": [
+    "janitor-team/proposed/pygtkspellcheck",
+    "werdahias/pygtkspellcheck",
+    "janitor-bot/gtkspell3",
+    "janitor-team/proposed/gtkspell3",
+    "janitor-team/proposed/gtkspellmm",
+    "python-team/packages/pygtkspellcheck",
+    "gnome-team/gtkspell3",
+    "debian/gtkspellmm"
+  ],
+  "xpenguins": [
+    "games-team/xpenguins"
+  ],
+  "micro": [
+    "jas/golang-github-micromdm-scep",
+    "jare_Arias/micronucleus",
+    "kathenas/firmware-microbit-micropython",
+    "manuziny/microsoft-authentication-library-for-python",
+    "manuziny/micropython-mpremote",
+    "ema/micronews",
+    "spk-guest/antimicro",
+    "homeassistant-team/deps/pymicrobot",
+    "noahm/microsoft-authentication-library-for-python",
+    "noahm/microsoft-authentication-extensions-for-python",
+    "homeassistant-team/deps/microbeespy",
+    "edd/r-cran-microbenchmark"
+  ],
+  "golang-github-gorilla-schema": [
+    "go-team/packages/golang-github-gorilla-schema"
+  ],
+  "fspy": [
+    "bean/fspy",
+    "debian/fspy"
+  ],
+  "libdbi": [
+    "perl-team/modules/packages/libdbix-easy-perl",
+    "debian/libdbix-class-htmlwidget-perl",
+    "mjames/libdbix-tableloader-perl",
+    "mjames/libdbix-tableloader-csv-perl",
+    "mjames/libdbix-roboquery-perl",
+    "mjames/libdbix-quickdb-perl",
+    "mjames/libdbix-handler-perl",
+    "mjames/libdbix-class-schema-resultsetnames-perl",
+    "mjames/libdbix-class-indexed-perl",
+    "mjames/libdbix-class-graph-perl",
+    "mjames/libdbix-class-fixtures-perl",
+    "mjames/libdbix-class-migration-perl",
+    "mjames/libdbix-class-journal-perl",
+    "mjames/libdbix-simple-class-perl",
+    "mjames/libdbix-class-sims-perl",
+    "perl-team/modules/packages/libdbix-class-toposort-perl",
+    "mjames/libdbix-class-toposort-perl",
+    "janitor-team/proposed/libdbix-dr-perl",
+    "janitor-team/proposed/libdbi-perl",
+    "perl-team/modules/packages/libdbix-bulkloader-mysql-perl"
+  ],
+  "fuse-emulator": [
+    "janitor-team/proposed/fuse-emulator-utils",
+    "berto/fuse-emulator-utils",
+    "berto/fuse-emulator"
+  ],
+  "flatpak-xdg-utils": [
+    "debian/flatpak-xdg-utils"
+  ],
+  "genromfs": [],
+  "clamsmtp": [
+    "janitor-team/proposed/clamsmtp",
+    "clamav-team/clamsmtp"
+  ],
+  "expect": [
+    "ananorberto/ruby-rspec-block-is-expected",
+    "upils/pexpect",
+    "doge-tech/pexpect",
+    "perl-team/modules/packages/libtest-expectandcheck-perl",
+    "deeplearning-team/python-expecttest",
+    "ocaml-team/ppx-expect",
+    "ruby-team/ruby-rspec-block-is-expected",
+    "sergiodj/pexpect",
+    "janitor-team/proposed/golang-github-thomasrooney-gexpect",
+    "janitor-team/proposed/golang-github-gomagedon-expectate",
+    "go-team/packages/golang-github-gomagedon-expectate",
+    "perl-team/modules/packages/libexpect-perl",
+    "janitor-team/proposed/ocaml-expect",
+    "janitor-team/proposed/golang-github-coreos-gexpect",
+    "go-team/packages/golang-github-thomasrooney-gexpect",
+    "perl-team/modules/packages/libtest-synopsis-expectation-perl",
+    "jpaulo/golang-github-netflix-go-expect",
+    "go-team/packages/golang-github-netflix-go-expect",
+    "janitor-team/proposed/pexpect"
+  ],
+  "gsettings-qt": [
+    "janitor-team/proposed/gsettings-qt",
+    "mariogrip/gsettings-qt",
+    "ubports-team/gsettings-qt"
+  ],
+  "perl-tk": [
+    "janitor-team/proposed/perl-tk",
+    "georgesk/perl-tk",
+    "dmn/perl-tk"
+  ],
+  "renrot": [
+    "debian/renrot"
+  ],
+  "par2cmdline": [
+    "janitor-team/proposed/par2cmdline",
+    "jcfp/par2cmdline"
+  ],
+  "aggregate": [
+    "salvage-team/aggregate",
+    "janitor-team/proposed/ruby-aggregate",
+    "perl-team/modules/attic/libtest-aggregate-perl",
+    "ruby-team/ruby-aggregate"
+  ],
+  "algobox": [
+    "debian-edu-pkg-team/algobox"
+  ],
+  "extundelete": [
+    "pkg-security-team/extundelete"
+  ],
+  "gtkmm2.4": [
+    "janitor-team/proposed/gtkmm2.4",
+    "janitor-bot/gtkmm2.4",
+    "gnome-team/gtkmm2.4"
+  ],
+  "python-funcsigs": [
+    "janitor-team/proposed/python-funcsigs",
+    "openstack-team/python/python-funcsigs"
+  ],
+  "emacs-deferred": [
+    "emacsen-team/emacs-deferred"
+  ],
+  "libuser": [
+    "erpel/libuser",
+    "kimmoritz/libuser",
+    "ubports-team/libusermetrics",
+    "janitor-team/proposed/libuser",
+    "debian/libuser",
+    "perl-team/modules/packages/libuser-simple-perl",
+    "perl-team/modules/packages/libuser-identity-perl"
+  ],
+  "uucp": [
+    "ocaml-team/ocaml-uucp",
+    "janitor-team/proposed/uucp",
+    "jgoerzen/docker-uucp",
+    "jelmer/uucpsend",
+    "debian/uucpsend",
+    "alteholz/uucp"
+  ],
+  "log4c": [
+    "debian/log4cpp-doc",
+    "debian/log4c",
+    "athos/log4cplus",
+    "debian/log4cplus",
+    "debian/log4cpp",
+    "debian/log4cxx",
+    "science-team/log4cpp"
+  ],
+  "revelation": [],
+  "python-ldap3": [
+    "python-team/packages/python-ldap3"
+  ],
+  "extractpdfmark": [
+    "mzf/extractpdfmark",
+    "debian/extractpdfmark"
+  ],
+  "xz-java": [
+    "java-team/xz-java"
+  ],
+  "torsocks": [
+    "janitor-team/proposed/torsocks",
+    "pkg-privacy-team/torsocks"
+  ],
+  "gnujump": [
+    "games-team/gnujump",
+    "kainonex-guest/gnujump",
+    "kainonex-guest/gnujump_backup"
+  ],
+  "needrestart": [
+    "openstack-team/third-party/needrestart-gui",
+    "openstack-team/services/needrestart-gui",
+    "lts-team/packages/needrestart"
+  ],
+  "brasero": [
+    "rnpalmer-guest/brasero",
+    "jssotomdz/brasero",
+    "janitor-team/proposed/brasero",
+    "gnome-team/brasero"
+  ],
+  "system-config-printer": [
+    "chaeya/system-config-printer",
+    "mattia/system-config-printer",
+    "gnome-team/system-config-printer"
+  ],
+  "python-os-client-config": [
+    "janitor-team/proposed/python-os-client-config",
+    "openstack-team/libs/python-os-client-config"
+  ],
+  "lxde-common": [],
+  "dirvish": [
+    "freexian-team/ansible/dirvish"
+  ],
+  "python-boolean.py": [],
+  "python-rfc3986": [
+    "janitor-bot/python-rfc3986",
+    "janitor-team/proposed/python-rfc3986",
+    "openstack-team/python/python-rfc3986"
+  ],
+  "libcdio": [
+    "aleasto/libcdio",
+    "janitor-team/proposed/libcdio-paranoia",
+    "prahal/libcdio",
+    "phsw/libcdio-paranoia",
+    "janitor-team/proposed/libcdio",
+    "debian/libcdio",
+    "gabrielftg-guest/libcdio",
+    "debian/libcdio-paranoia"
+  ],
+  "dogtail": [
+    "debian/dogtail"
+  ],
+  "crrcsim": [
+    "janitor-team/proposed/crrcsim",
+    "debian/crrcsim"
+  ],
+  "mousetweaks": [
+    "janitor-team/proposed/mousetweaks",
+    "gnome-team/mousetweaks"
+  ],
+  "uudeview": [
+    "debian/uudeview"
+  ],
+  "dumb-init": [
+    "debian/dumb-init"
+  ],
+  "rust-resolv-conf": [],
+  "m2vrequantiser": [
+    "debian/m2vrequantiser"
+  ],
+  "subtitleeditor": [
+    "janitor-team/proposed/subtitleeditor",
+    "debian/subtitleeditor"
+  ],
+  "e00compr": [
+    "debian-gis-team/e00compr"
+  ],
+  "incron": [
+    "janitor-team/proposed/incron",
+    "mika/incron",
+    "kolter/incron"
+  ],
+  "cxxtest": [],
+  "vinagre": [
+    "lts-team/packages/vinagre",
+    "ubuntu-desktop-helper/vinagre",
+    "jardon/vinagre",
+    "sunweaver/vinagre",
+    "kenhys/vinagre",
+    "gnome-team/vinagre"
+  ],
+  "fakechroot": [
+    "debian/fakechroot",
+    "dexter/fakechroot",
+    "dexter/pkg-fakechroot",
+    "josch/fakechroot"
+  ],
+  "esmtp": [
+    "carlespina/po-debconf-manager-esmtp",
+    "janitor-team/proposed/esmtp",
+    "js-team/node-simplesmtp",
+    "carnil/esmtp",
+    "debian/libesmtp"
+  ],
+  "nicstat": [
+    "salvage-team/nicstat"
+  ],
+  "soundkonverter": [
+    "janitor-team/proposed/soundkonverter",
+    "qt-kde-team/extras/soundkonverter"
+  ],
+  "rust-utf-8": [],
+  "shelldap": [
+    "janitor-team/proposed/shelldap",
+    "carnil/shelldap"
+  ],
+  "nload": [
+    "ubuntu-desktop-helper/gnome-font-downloader",
+    "jardon/gnome-font-downloader",
+    "pklausner/snmp-mibs-downloader",
+    "gnome-team/gnome-font-downloader"
+  ],
+  "rifiuti2": [
+    "polkorny/rifiuti2",
+    "pkg-security-team/rifiuti2"
+  ],
+  "milkytracker": [
+    "utkarsh2102/milkytracker",
+    "multimedia-team/milkytracker"
+  ],
+  "binwalk": [
+    "jnpf/binwalk-fork",
+    "mwhudson/binwalk",
+    "lts-team/packages/binwalk",
+    "pkg-security-team/binwalk"
+  ],
+  "dia": [
+    "sylvestre/nvidia-graphics-drivers",
+    "carlespina/po-debconf-manager-rocksndiamonds",
+    "carlespina/po-debconf-manager-nvidia-support",
+    "carlespina/po-debconf-manager-nvidia-graphics-drivers",
+    "carlespina/po-debconf-manager-nvidia-cudnn",
+    "deeplearning-team/kleidiai",
+    "carlespina/po-debconf-manager-diaspora-installer",
+    "andersson123/media-types",
+    "cielavenir/kdiagram",
+    "mok0/endian-packaging",
+    "sanvila/dialog",
+    "mdosch/mediathekview",
+    "perl-team/modules/packages/libwww-mediawiki-client-perl",
+    "rnpalmer-guest/kdiagram",
+    "gitbmvb/python-railroad-diagrams",
+    "a-wai/debian-multimedia",
+    "nabijaczleweli/mediawiki"
+  ],
+  "libgringotts": [
+    "josgalo-guest/libgringotts"
+  ],
+  "zita-rev1": [
+    "janitor-team/proposed/zita-rev1",
+    "multimedia-team/zita-rev1"
+  ],
+  "ruby-augeas": [
+    "ruby-team/ruby-augeas"
+  ],
+  "zita-convolver": [
+    "janitor-team/proposed/zita-convolver",
+    "multimedia-team/zita-convolver"
+  ],
+  "rkhunter": [
+    "carlespina/po-debconf-manager-rkhunter",
+    "puck/rkhunter",
+    "rpil2/rkhunter",
+    "rdratlos/rkhunter",
+    "janitor-team/proposed/rkhunter",
+    "liskin/rkhunter",
+    "deZillium-guest/rkhunter",
+    "pkg-security-team/rkhunter"
+  ],
+  "mirmon": [
+    "debian/mirmon"
+  ],
+  "silly": [],
+  "biloba": [
+    "janitor-team/proposed/biloba",
+    "games-team/biloba"
+  ],
+  "blis": [
+    "enr0n/blis",
+    "mjames/liblist-objects-types-perl",
+    "ruby-team/ruby-google-apis-androidpublisher-v3",
+    "janitor-team/proposed/liblist-utilsby-perl",
+    "janitor-team/proposed/ros-joint-state-publisher",
+    "janitor-team/proposed/emacs-tablist",
+    "janitor-team/proposed/ros-robot-state-publisher",
+    "pkg-security-team/sublist3r",
+    "perl-team/modules/packages/liblist-keywords-perl",
+    "janitor-team/proposed/bliss",
+    "r-pkg-team/r-cran-publish"
+  ],
+  "ccfits": [
+    "debian-astro-team/ccfits"
+  ],
+  "qbrew": [
+    "janitor-team/proposed/qbrew",
+    "debian/qbrew"
+  ],
+  "python-pydotplus": [
+    "janitor-team/proposed/python-pydotplus",
+    "openstack-team/python/python-pydotplus"
+  ],
+  "clutter-gtk": [
+    "janitor-team/proposed/clutter-gtk",
+    "gnome-team/clutter-gtk"
+  ],
+  "xmake": [
+    "janitor-team/proposed/xmakemol",
+    "shouhuanxiaoji/xmake-core-sv",
+    "xmake-team/xmake",
+    "shouhuanxiaoji/xmake",
+    "yangfl-guest/xmake",
+    "debichem-team/xmakemol",
+    "science-team/texmaker"
+  ],
+  "stun": [
+    "jnpf/mistune-fork",
+    "smcv/stunnel",
+    "weepingclown/erlang-p1-stun",
+    "janitor-team/proposed/golang-github-ccding-go-stun",
+    "j.r/erlang-p1-stun",
+    "bluca/stunnel",
+    "go-team/packages/golang-github-pion-stun",
+    "benharri/erlang-p1-stun",
+    "schopin/stunnel",
+    "python-team/packages/mistune0",
+    "ahasenack/stunnel",
+    "python-team/packages/astunparse",
+    "janitor-team/proposed/erlang-p1-stun",
+    "debian/stunnel",
+    "debian/stunnel4",
+    "python-team/packages/mistune",
+    "pkg-voip-team/stunserver",
+    "pkg-voip-team/stun",
+    "go-team/packages/golang-github-ccding-go-stun",
+    "ejabberd-packaging-team/erlang-p1-stun"
+  ],
+  "golang-github-francoispqt-gojay": [
+    "go-team/packages/golang-github-francoispqt-gojay"
+  ],
+  "apcupsd": [
+    "sarunasb/apcupsd",
+    "janitor-team/proposed/apcupsd",
+    "morph/apcupsd",
+    "alteholz/apcupsd"
+  ],
+  "loudmouth": [
+    "jelmer/loudmouth",
+    "perl-team/modules/packages/libnet-jabber-loudmouth-perl",
+    "xmpp-team/loudmouth"
+  ],
+  "check": [
+    "smellman/aws-checksums",
+    "mika/cppcheck",
+    "kathenas/licensecheck",
+    "debian/vcheck",
+    "go-team/packages/golang-github-titanous-rocacheck",
+    "toabctl/flycheck",
+    "arnaudr/salsa-ci-misc-checks",
+    "alissonsilva/abicheck",
+    "debian/check-all-the-things",
+    "kathenas/abicheck",
+    "js-team/node-sumchecker",
+    "talau/node-sumchecker",
+    "rpil2/checksecurity"
+  ],
+  "liblognorm": [
+    "debian/liblognorm"
+  ],
+  "monsterz": [
+    "games-team/monsterz"
+  ],
+  "rtaudio": [
+    "janitor-team/proposed/rtaudio",
+    "janitor-team/proposed/ocaml-portaudio",
+    "ocaml-team/ocaml-portaudio",
+    "pkg-voip-team/portaudio19",
+    "multimedia-team/rtaudio"
+  ],
+  "0ad": [
+    "osomon-guest/0ad",
+    "dh/0ad",
+    "olek/0ad",
+    "wraitii/0ad",
+    "taha/0ad",
+    "games-team/0ad-data",
+    "games-team/0ad"
+  ],
+  "rust-quantiles": [],
+  "gr-iqbal": [
+    "janitor-bot/pkg-gr-iqbal",
+    "janitor-team/proposed/pkg-gr-iqbal",
+    "bottoms/pkg-gr-iqbal"
+  ],
+  "rdesktop": [
+    "rnpalmer-guest/xrdesktop",
+    "debian/grdesktop",
+    "janitor-team/proposed/kdeplasma-applets-xrdesktop",
+    "janitor-team/proposed/gnome-shell-extension-xrdesktop",
+    "xrdesktop-team/gnome-shell-xrdesktop",
+    "xrdesktop-team/gnome-shell-extension-xrdesktop",
+    "xrdesktop-team/kdeplasma-applets-xrdesktop",
+    "xrdesktop-team/kwin-effect-xrdesktop",
+    "xrdesktop-team/xrdesktop"
+  ],
+  "spice-vdagent": [
+    "dkg/spice-vdagent",
+    "janitor-team/proposed/spice-vdagent",
+    "debian/spice-vdagent"
+  ],
+  "tpm2-abrmd": [
+    "janitor-team/proposed/tpm2-abrmd",
+    "moonape1226/tpm2-abrmd",
+    "smcv/tpm2-abrmd",
+    "debian/tpm2-abrmd"
+  ],
+  "ahven": [],
+  "scim-pinyin": [
+    "janitor-bot/scim-pinyin",
+    "janitor-team/proposed/scim-pinyin",
+    "input-method-team/scim-pinyin"
+  ],
+  "ssmtp": [
+    "carlespina/po-debconf-manager-ssmtp",
+    "janitor-team/proposed/ssmtp",
+    "debian/ssmtp"
+  ],
+  "gnupg-pkcs11-scd": [
+    "janitor-team/proposed/gnupg-pkcs11-scd",
+    "eaaltonen/gnupg-pkcs11-scd",
+    "alteholz/gnupg-pkcs11-scd"
+  ],
+  "wcstools": [
+    "janitor-team/proposed/wcstools",
+    "debian-astro-team/wcstools"
+  ],
+  "dietlibc": [
+    "debian/dietlibc"
+  ],
+  "printrun": [
+    "janitor-team/proposed/printrun",
+    "3dprinting-team/printrun"
+  ],
+  "gnome-icon-theme": [
+    "ubuntu-desktop-helper/gnome-icon-theme",
+    "jardon/gnome-icon-theme",
+    "leoncwb/gnome-icon-theme",
+    "ftobich/gnome-icon-theme",
+    "3v1n0/gnome-icon-theme",
+    "gnome-team/gnome-icon-theme"
+  ],
+  "vagrant": [
+    "lgarrett/vagrant",
+    "aquilamacedo/vagrant-autopkgtest-vm",
+    "rvandegrift/debian-vagrant-images",
+    "janitor-team/proposed/vagrant-cachier",
+    "vblut/vagrant",
+    "eighthave/debian-vagrant-images",
+    "jspricke/debian-vagrant-images",
+    "janitor-team/proposed/vagrant-hostmanager",
+    "janitor-team/proposed/ruby-vagrant-cloud",
+    "henningsprang/vagrant-boxes",
+    "tvincent/vagrant-boxes",
+    "francisco1code/ruby-vagrant-cloud",
+    "filippo/vagrant-boxes",
+    "greut/vagrant-boxes",
+    "vagrant-boxes-admin-team/debian-vagrant-boxes-release",
+    "cloud-team/debian-vagrant-images",
+    "debian/vagrant-bindfs",
+    "kkremitzki/vagrant-boxes",
+    "ruby-team/vagrant-librarian-puppet",
+    "kenhys/vagrant-disksize"
+  ],
+  "pulseview": [
+    "electronics-team/sigrok/pulseview"
+  ],
+  "libkeepalive": [
+    "janitor-team/proposed/libkeepalive",
+    "alteholz/libkeepalive"
+  ],
+  "trousers": [
+    "debian/trousers"
+  ],
+  "prelude-manager": [
+    "janitor-team/proposed/prelude-manager",
+    "totol-guest/prelude-manager"
+  ],
+  "picosat": [
+    "science-team/picosat"
+  ],
+  "xsane": [],
+  "git-crypt": [],
+  "xine-ui": [
+    "debian/xine-ui",
+    "janitor-team/proposed/xine-ui"
+  ],
+  "hsetroot": [
+    "janitor-team/proposed/hsetroot",
+    "debian/hsetroot"
+  ],
+  "arc-gui-clients": [
+    "janitor-team/proposed/arc-gui-clients",
+    "ellert/arc-gui-clients"
+  ],
+  "ettercap": [
+    "go-team/packages/golang-github-bettercap-gatt",
+    "pkg-security-team/bettercap-ui",
+    "janitor-team/proposed/bettercap-caplets",
+    "pkg-security-team/bettercap-caplets",
+    "janitor-team/proposed/ettercap",
+    "go-team/packages/golang-github-bettercap-nrf24",
+    "go-team/packages/golang-github-bettercap-readline",
+    "pkg-security-team/ettercap",
+    "debian/ettercap",
+    "pkg-security-team/bettercap"
+  ],
+  "libgovirt": [
+    "gnome-team/libgovirt"
+  ],
+  "txt2man": [
+    "debian/txt2man",
+    "reproducible-builds/packages/txt2man"
+  ],
+  "rust-rust-ini": [],
+  "tasksh": [
+    "janitor-team/proposed/tasksh",
+    "tasktools-team/tasksh"
+  ],
+  "xbanish": [],
+  "python-testscenarios": [
+    "openstack-team/python/python-testscenarios",
+    "openstack-team/python/old.python-testscenarios"
+  ],
+  "newlisp": [
+    "janitor-team/proposed/newlisp",
+    "debian/newlisp"
+  ],
+  "jbigkit": [
+    "debian-phototools-team/jbigkit"
+  ],
+  "malaga": [],
+  "oxygen-fonts": [
+    "janitor-team/proposed/oxygen-fonts",
+    "qt-kde-team/kde/oxygen-fonts"
+  ],
+  "frobby": [
+    "janitor-team/proposed/frobby",
+    "math-team/frobby"
+  ],
+  "mpdris2": [
+    "debian/mpdris2"
+  ],
+  "gecode": [
+    "kaol/gecode-snapshot",
+    "kaol/gecode",
+    "python-team/packages/python-languagecodes"
+  ],
+  "php-geos": [
+    "janitor-team/proposed/php-geos",
+    "debian-gis-team/php-geos"
+  ],
+  "makebootfat": [
+    "debian/makebootfat"
+  ],
+  "glpk": [
+    "janitor-team/proposed/glpk-java",
+    "janitor-team/proposed/r-cran-rglpk",
+    "edd/r-cran-rglpk",
+    "science-team/swiglpk",
+    "science-team/glpk-java",
+    "science-team/glpk"
+  ],
+  "lftp": [
+    "debian/curlftpfs",
+    "zhangdandan/lftp",
+    "gratuxri/lftp",
+    "shankerwangmiao/lftp",
+    "rbalint/lftp",
+    "debian/lftp",
+    "noel/lftp"
+  ],
+  "chemical-mime-data": [
+    "janitor-team/proposed/chemical-mime-data",
+    "smcv/chemical-mime-data",
+    "debichem-team/chemical-mime-data"
+  ],
+  "time": [
+    "krekhov/xfce4-time-out-plugin",
+    "ocaml-team/ocaml-mirage-ptime",
+    "lgarrett/hardening-runtime",
+    "debian/pam-session-timelimit",
+    "gnome-team/showtime",
+    "danialbehzadi/showtime",
+    "carlespina/po-debconf-manager-adjtimex",
+    "cb/ruptime",
+    "buhtz/pkg-backintime",
+    "kubernetes-team/packages/golang-k8s-cli-runtime",
+    "arlissonjaques/time-decode",
+    "mateus-morais/onnxruntime"
+  ],
+  "kasumi": [
+    "debian/kasumi"
+  ],
+  "dhcping": [
+    "bbonev/dhcping",
+    "debian/dhcping"
+  ],
+  "golang-github-muesli-crunchy": [
+    "janitor-team/proposed/golang-github-muesli-crunchy",
+    "go-team/packages/golang-github-muesli-crunchy"
+  ],
+  "privoxy": [
+    "carlespina/po-debconf-manager-privoxy",
+    "janitor-team/proposed/privoxy",
+    "tin/privoxy",
+    "salsa-pipeline-guest/privoxy",
+    "debian/privoxy",
+    "freedombox-team/freedombox-privoxy"
+  ],
+  "rust-lazycell": [],
+  "owfs": [
+    "janitor-team/proposed/owfs",
+    "debian/owfs"
+  ],
+  "libavc1394": [
+    "janitor-team/proposed/libavc1394",
+    "multimedia-team/libavc1394"
+  ],
+  "ntl": [
+    "puida/ruby-rantly",
+    "nilesh/libntlm",
+    "jas/libntlm",
+    "vpa1977/antlr-maven-plugin",
+    "openstack-team/third-party/python-eventlet",
+    "janitor-team/proposed/r-cran-fontliberation"
+  ],
+  "xteddy": [
+    "games-team/xteddy"
+  ],
+  "erlang-bitcask": [
+    "janitor-team/proposed/erlang-bitcask",
+    "erlang-team/packages/erlang-bitcask"
+  ],
+  "python-lockfile": [
+    "debian/pkg-python-lockfile"
+  ],
+  "ogmtools": [
+    "multimedia-team/ogmtools",
+    "erpel/ogmtools"
+  ],
+  "lagan": [
+    "med-team/lagan"
+  ],
+  "hmmer": [
+    "med-team/libbio-searchio-hmmer-perl",
+    "med-team/hmmer",
+    "med-team/hmmer2"
+  ],
+  "awesome": [
+    "Kiruthika/awesome",
+    "python-team/packages/python-fonticon-fontawesome6",
+    "crusoe/doxygen-awesome-css",
+    "janitor-team/proposed/python-qtawesome",
+    "janitor-team/proposed/doxygen-awesome-css",
+    "janitor-team/proposed/fonts-fork-awesome",
+    "sandra_uwah/my-awesome-project",
+    "debian/doxygen-awesome-css",
+    "tachi/doxygen-awesome-css",
+    "thegodtune/ruby-awesome-nested-set",
+    "python-team/packages/awesomeversion",
+    "r-pkg-team/r-cran-fontawesome",
+    "vinay-keshava/awesome-project",
+    "js-team/node-fortawesome-fontawesome-free",
+    "js-team/node-fortawesome-fontawesome-common-types",
+    "debian/martchus-qtforkawesome",
+    "rittich/fonts-fork-awesome"
+  ],
+  "soci": [
+    "lduboeuf/buteo-sync-plugins-social",
+    "go-team/packages/golang-github-awslabs-soci-snapshotter",
+    "tryton-team/tryton-modules-sale-product-recommendation-association-rule",
+    "ubports-team/buteo-sync-plugins-social",
+    "ubports-team/libsocialcache",
+    "aquilamacedo/socid-extractor",
+    "matomo-team/matomo-searchengine-and-social-list",
+    "janitor-team/proposed/soci"
+  ],
+  "ebumeter": [
+    "janitor-team/proposed/ebumeter",
+    "multimedia-team/ebumeter"
+  ],
+  "engauge-digitizer": [],
+  "python-m2r": [
+    "janitor-team/proposed/python-m2r",
+    "benjamin-guest/python-m2r",
+    "debian/python-m2r"
+  ],
+  "portmidi": [
+    "debian/portmidi"
+  ],
+  "rust-zram-generator": [],
+  "rust-lexical-core": [],
+  "m4": [
+    "sanvila/m4"
+  ],
+  "compiz": [
+    "hypra-team/hypra-compizconfig-cli",
+    "janitor-team/proposed/compiz-boxmenu",
+    "janitor-team/proposed/compiz-plugins-main",
+    "janitor-team/proposed/compiz-reloaded",
+    "hypra-team/compiz-plugins-experimental",
+    "jmichalon-guest/compiz-reloaded",
+    "jmichalon-guest/compiz-plugins-main",
+    "jmichalon-guest/compiz-plugins-extra",
+    "hypra-team/compizconfig-python",
+    "hypra-team/libcompizconfig",
+    "hypra-team/compiz-plugins-extra",
+    "hypra-team/compiz-plugins-main",
+    "hypra-team/compiz-reloaded",
+    "hypra-team/compiz",
+    "compiz-team/compiz-boxmenu",
+    "compiz-team/libcompizconfig",
+    "compiz-team/compizconfig-python",
+    "compiz-team/compiz-plugins-main",
+    "compiz-team/compiz-plugins-extra",
+    "compiz-team/compiz-plugins-experimental"
+  ],
+  "rust-seahash": [],
+  "python-marshmallow-enum": [
+    "python-team/packages/python-marshmallow-enum"
+  ],
+  "python-javaobj": [
+    "python-team/packages/python-javaobj"
+  ],
+  "mathomatic": [
+    "janitor-team/proposed/mathomatic",
+    "debian/mathomatic"
+  ],
+  "fflas-ffpack": [
+    "janitor-team/proposed/fflas-ffpack",
+    "math-team/fflas-ffpack"
+  ],
+  "gdigi": [],
+  "cqrlog": [
+    "janitor-team/proposed/cqrlog",
+    "debian-hamradio-team/cqrlog"
+  ],
+  "xdffileio": [
+    "luma/xdffileio",
+    "med-team/xdffileio"
+  ],
+  "kdb": [
+    "MocusEZ/duckdb",
+    "qt-kde-team/kde/kf6-kdbusaddons",
+    "mjames/libdbix-quickdb-perl",
+    "janitor-team/proposed/kdbusaddons",
+    "perl-team/modules/packages/libfile-kdbx-perl",
+    "aat596/kdbg",
+    "chronitis/duckdb",
+    "go-team/packages/golang-gopkg-rethinkdb-rethinkdb-go.v6",
+    "janitor-team/proposed/kdb",
+    "med-team/rethinkdb",
+    "qt-kde-team/extras/kdbg",
+    "perl-team/modules/packages/libtest-mockdbi-perl",
+    "perl-team/modules/packages/libdevel-ptkdb-perl",
+    "qt-kde-team/extras/kdb",
+    "qt-kde-team/kde/kdbusaddons",
+    "systemd-team/kdbus-dkms"
+  ],
+  "surf": [
+    "aelmahmoudy/netsurf-buildsystem",
+    "aelmahmoudy/netsurf",
+    "danielcosta/wavesurfer",
+    "debian/wavesurfer",
+    "vpa1977/jsurf-alggeo",
+    "janitor-team/proposed/python-isosurfaces",
+    "janitor-team/proposed/jsurf-alggeo",
+    "plessy/netsurf",
+    "janitor-team/proposed/surf-alggeo",
+    "jbicha/surf",
+    "Mobian-team/devices/surfacepro3-support",
+    "Mobian-team/devices/surfacepro3-tweaks",
+    "math-team/python-isosurfaces",
+    "janitor-team/proposed/surfraw",
+    "janitor-team/proposed/netsurf",
+    "debian/anonsurf"
+  ],
+  "msktutil": [
+    "janitor-team/proposed/msktutil",
+    "debian/msktutil"
+  ],
+  "tktray": [
+    "tcltk-team/tktray"
+  ],
+  "qdbm": [
+    "janitor-team/proposed/qdbm",
+    "debian/qdbm"
+  ],
+  "liboauth": [
+    "charles/liboauth2",
+    "perl-team/modules/packages/liboauth-lite2-perl",
+    "debian-iot-team/oauth2/liboauth2",
+    "debian/liboauth",
+    "e7appew-guest/liboauth"
+  ],
+  "lbzip2": [
+    "debian/lbzip2"
+  ],
+  "ipmitool": [
+    "harry/ipmitool",
+    "debian/ipmitool"
+  ],
+  "tuxpuck": [
+    "games-team/tuxpuck"
+  ],
+  "bsfilter": [
+    "ruby-team/bsfilter"
+  ],
+  "buffer": [
+    "jas/golang-github-globocom-go-buffer",
+    "go-team/packages/golang-github-globocom-go-buffer",
+    "FakeShell/flatbuffers",
+    "debian/buffer",
+    "debian/mbuffer",
+    "jas/golang-github-protocolbuffers-txtpbfmt",
+    "go-team/packages/golang-github-protocolbuffers-txtpbfmt",
+    "go-team/packages/golang-github-google-flatbuffers",
+    "takaswie/flatbuffers",
+    "byang/flatbuffers",
+    "janitor-team/proposed/node-buffer-equal",
+    "janitor-team/proposed/node-buffers",
+    "janitor-team/proposed/node-bufferlist",
+    "janitor-team/proposed/m-buffer-el",
+    "janitor-team/proposed/ibuffer-vc",
+    "js-team/node-smart-buffer",
+    "izzygala/node-smart-buffer",
+    "janitor-team/proposed/xmlstreambuffer",
+    "janitor-team/proposed/ibuffer-projectile"
+  ],
+  "qzxing": [
+    "ubports-team/qzxing"
+  ],
+  "sblim-wbemcli": [
+    "debian/sblim-wbemcli"
+  ],
+  "alot": [
+    "CaioA/hashalot",
+    "CaioA/hashalot_backup",
+    "janitor-team/proposed/django-cachalot",
+    "lvoytek/django-cachalot",
+    "janitor-team/proposed/alot",
+    "python-team/packages/django-cachalot",
+    "debian/hashalot",
+    "jljusten/alot",
+    "bignose/alot",
+    "python-team/packages/alot"
+  ],
+  "python-testing.postgresql": [
+    "python-team/packages/python-testing.postgresql"
+  ],
+  "zzuf": [
+    "debian/zzuf"
+  ],
+  "thinkfan": [
+    "debian/thinkfan"
+  ],
+  "libbluray": [
+    "pino/libbluray",
+    "lts-team/packages/libbluray",
+    "janitor-team/proposed/libbluray",
+    "multimedia-team/libbluray"
+  ],
+  "eb": [
+    "proletarius101/eb",
+    "janitor-team/proposed/eb",
+    "debian/eb"
+  ],
+  "ibus-table-extraphrase": [
+    "janitor-team/proposed/ibus-table-extraphrase",
+    "debian/ibus-table-extraphrase"
+  ],
+  "scummvm-tools": [
+    "janitor-team/proposed/scummvm-tools",
+    "games-team/scummvm-tools"
+  ],
+  "octave-specfun": [
+    "pkg-octave-team/octave-specfun"
+  ],
+  "nanomsg": [
+    "janitor-team/proposed/nanomsg",
+    "debian/nanomsg",
+    "perl-team/modules/packages/libnanomsg-raw-perl",
+    "python-team/packages/python-nanomsg"
+  ],
+  "abook": [
+    "ubports-team/lomiri-abook2cal-syncd",
+    "wuyy/abook",
+    "janitor-team/proposed/abook",
+    "rhonda/abook"
+  ],
+  "zpaq": [
+    "debian/zpaqfranz",
+    "janitor-team/proposed/zpaq",
+    "debian/zpaq"
+  ],
+  "angelscript": [
+    "byang/angelscript",
+    "yangfl-guest/angelscript"
+  ],
+  "sysbench": [
+    "jelmer/sysbench",
+    "jcfp/sysbench"
+  ],
+  "plexus-cipher": [
+    "java-team/plexus-cipher"
+  ],
+  "rust-rand": [],
+  "supertux": [
+    "crusoe/supertuxkart",
+    "sam-gq/supertuxkart",
+    "jscott/supertuxkart",
+    "ina/supertuxkart",
+    "QwertyChouskie-guest/supertuxkart",
+    "games-team/supertux",
+    "games-team/supertuxkart"
+  ],
+  "bpytop": [
+    "fred1m/bpytop",
+    "mantas/bpytop",
+    "debian/bpytop"
+  ],
+  "jfsutils": [],
+  "xloadimage": [
+    "janitor-team/proposed/xloadimage",
+    "debian/xloadimage"
+  ],
+  "avra": [
+    "debian/avra"
+  ],
+  "plotutils": [
+    "janitor-team/proposed/plotutils",
+    "debian/plotutils"
+  ],
+  "xiphos": [
+    "jbicha/xiphos",
+    "janitor-team/proposed/xiphos",
+    "xnox/xiphos",
+    "pkg-crosswire-team/xiphos"
+  ],
+  "popt": [
+    "science-team/coinor-ipopt",
+    "science-team/spopt",
+    "bremner/pyscipopt",
+    "bremner/scipoptsuite",
+    "mm/popt",
+    "janitor-team/proposed/dhcpoptinj",
+    "php-team/pear/php-phpoption",
+    "misje/dhcpoptinj",
+    "debian/popt"
+  ],
+  "openctm": [
+    "science-team/openctm"
+  ],
+  "fprintd": [
+    "ubuntu-dev-team/fprintd",
+    "3v1n0/fprintd",
+    "debian/fprintd"
+  ],
+  "rust-cfg-if": [],
+  "scrub": [
+    "salvage-team/scrub",
+    "perl-team/modules/packages/libhtml-scrubber-perl",
+    "med-team/dascrubber"
+  ],
+  "libdv": [
+    "carlespina/po-debconf-manager-libdvd-pkg",
+    "prahal/libdvd-pkg",
+    "jmtd/libdvdread",
+    "janitor-team/proposed/libdvdnav",
+    "janitor-team/proposed/libdvbpsi",
+    "janitor-team/proposed/libdv",
+    "debian/libdv",
+    "fabian/libdvdcss",
+    "multimedia-team/libdvdcss",
+    "multimedia-team/libdvdread",
+    "multimedia-team/libdvdnav",
+    "multimedia-team/libdvd-pkg",
+    "multimedia-team/libdvbpsi",
+    "multimedia-team/libdvbcsa"
+  ],
+  "libcec": [
+    "janitor-team/proposed/libcec",
+    "rechi-guest/libcec",
+    "debian/libcec"
+  ],
+  "dcmtk": [
+    "lts-team/packages/dcmtk",
+    "ema/dcmtk",
+    "rmb/dcmtk",
+    "med-team/dcmtk"
+  ],
+  "libkkc": [
+    "input-method-team/libkkc-data",
+    "input-method-team/libkkc"
+  ],
+  "xscorch": [],
+  "dfu-util": [
+    "tormod/dfu-util",
+    "debian/dfu-util"
+  ],
+  "fusion-icon": [
+    "retabell-guest/fusion-icon",
+    "compiz-team/fusion-icon",
+    "python-team/packages/fusion-icon"
+  ],
+  "rust-deflate": [],
+  "doclifter": [
+    "leandrocunha/doclifter",
+    "janitor-team/proposed/doclifter",
+    "debian/doclifter"
+  ],
+  "libmcrypt": [
+    "janitor-team/proposed/libmcrypt",
+    "debian/libmcrypt"
+  ],
+  "pybluez": [
+    "stefanor/pybluez",
+    "janitor-team/proposed/pybluez",
+    "basilgello/pybluez",
+    "diane/pybluez",
+    "bluetooth-team/pybluez"
+  ],
+  "rzip": [
+    "salvage-team/rzip",
+    "lts-team/packages/lrzip"
+  ],
+  "evemu": [
+    "pseudoc/evemu",
+    "janitor-team/proposed/evemu",
+    "debian/evemu"
+  ],
+  "hw-probe": [
+    "janitor-team/proposed/hw-probe",
+    "debian/hw-probe"
+  ],
+  "scapy": [
+    "kapouer/scapy",
+    "charles/scapy",
+    "santiago/scapy",
+    "pkg-security-team/scapy",
+    "gpotter2/scapy",
+    "python-team/packages/scapy",
+    "ineteng-team/scapy",
+    "ineteng-team/scapy3k"
+  ],
+  "ezstream": [
+    "janitor-team/proposed/ezstream",
+    "multimedia-team/ezstream"
+  ],
+  "libnitrokey": [
+    "janitor-team/proposed/libnitrokey",
+    "patryk/libnitrokey",
+    "jeremiah/libnitrokey",
+    "amit-guest/libnitrokey",
+    "janluca-guest/libnitrokey",
+    "kitterman/libnitrokey"
+  ],
+  "povray": [
+    "janitor-team/proposed/povray",
+    "debian/povray"
+  ],
+  "daq": [
+    "puck/daq"
+  ],
+  "xbae": [
+    "janitor-team/proposed/xbae",
+    "debian/xbae"
+  ],
+  "golang-github-viant-toolbox": [
+    "go-team/packages/golang-github-viant-toolbox"
+  ],
+  "dvdauthor": [
+    "multimedia-team/dvdauthor",
+    "erpel/dvdauthor"
+  ],
+  "overgod": [
+    "janitor-team/proposed/overgod",
+    "games-team/overgod"
+  ],
+  "gkrellm": [
+    "salvage-team/gkrellm-reminder",
+    "salvage-team/gkrellm-volume",
+    "debian/gkrellm-thinkbat",
+    "debian/gkrellm-xkb",
+    "janitor-team/proposed/gkrellm-gkrellmpc",
+    "janitor-team/proposed/gkrellm",
+    "mpd-team/gkrellm-gkrellmpc",
+    "debian/gkrellm"
+  ],
+  "dd2": [
+    "debian/wsdd2",
+    "games-team/dd2"
+  ],
+  "rust-hmac": [],
+  "telepathy-logger": [
+    "byang/telepathy-logger",
+    "janitor-team/proposed/telepathy-logger-qt",
+    "janitor-team/proposed/telepathy-logger",
+    "telepathy-team/telepathy-logger",
+    "qt-kde-team/extras/telepathy-logger-qt"
+  ],
+  "starplot": [],
+  "squeak-vm": [
+    "ina/squeak-vm",
+    "pkg-sugar-team/squeak-vm",
+    "squeak-team/squeak-vm"
+  ],
+  "tripwire": [],
+  "koules": [
+    "janitor-team/proposed/koules",
+    "games-team/koules"
+  ],
+  "rust-tokio-serde": [],
+  "gentoo": [
+    "lamby/apt-gentoo",
+    "demarchi-guest/gentoo"
+  ],
+  "gnupg1": [
+    "janitor-team/proposed/gnupg1",
+    "debian/gnupg1"
+  ],
+  "isrcsubmit": [
+    "janitor-team/proposed/isrcsubmit",
+    "multimedia-team/isrcsubmit"
+  ],
+  "python-kafka": [
+    "openstack-team/python/python-kafka"
+  ],
+  "gron": [
+    "janitor-team/proposed/golang-github-urfave-negroni",
+    "janitor-team/proposed/golang-github-codegangsta-negroni",
+    "janitor-team/proposed/gron",
+    "go-team/packages/gron",
+    "go-team/packages/golang-github-urfave-negroni",
+    "go-team/packages/golang-github-codegangsta-negroni"
+  ],
+  "devhelp": [
+    "janitor-team/proposed/sphinxcontrib-devhelp",
+    "sadiq-guest/devhelp",
+    "janitor-team/proposed/devhelp",
+    "debacle/devhelp2.el",
+    "python-team/packages/sphinxcontrib-devhelp",
+    "gnome-team/devhelp"
+  ],
+  "nexus": [
+    "debian/xfonts-nexus",
+    "python-team/packages/python-nexusformat",
+    "stuart/nexus",
+    "science-team/nexus"
+  ],
+  "festival": [
+    "debian/pidgin-festival",
+    "atzlinux-guest/festival",
+    "janitor-team/proposed/festival",
+    "janitor-team/proposed/festival-freebsoft-utils",
+    "janitor-team/proposed/festival-ca",
+    "janitor-team/proposed/festival-te",
+    "janitor-team/proposed/festival-hi",
+    "janitor-team/proposed/festival-mr",
+    "debian-in-team/festival-te",
+    "debian-in-team/festival-mr",
+    "debian-in-team/festival-hi",
+    "tts-team/festival-it",
+    "tts-team/festival",
+    "tts-team/festival-freebsoft-utils",
+    "tts-team/festival-doc",
+    "tts-team/festival-czech",
+    "tts-team/festival-ca"
+  ],
+  "dnssec-trigger": [
+    "dns-team/dnssec-trigger",
+    "debian/dnssec-trigger",
+    "diane/dnssec-trigger"
+  ],
+  "exif": [
+    "go-team/packages/golang-github-edwvee-exiffix",
+    "pkg-security-team/exiflooter",
+    "aquilamacedo/exiflooter",
+    "janitor-team/proposed/exif",
+    "janitor-team/proposed/texify",
+    "janitor-team/proposed/libexif",
+    "aron/exif",
+    "janitor-team/proposed/golang-github-rwcarlsen-goexif",
+    "alteholz/texify",
+    "python-team/packages/piexif",
+    "go-team/packages/golang-github-rwcarlsen-goexif",
+    "js-team/node-duplexify",
+    "perl-team/modules/packages/libimage-exiftool-perl",
+    "perl-team/modules/packages/libimage-exif-perl",
+    "debian-phototools-team/libexif-gtk",
+    "debian-phototools-team/exif",
+    "debian-phototools-team/libexif",
+    "python-team/packages/python-exif",
+    "pkg-security-team/exifprobe"
+  ],
+  "gsl": [
+    "perl-team/modules/packages/libpdl-gsl-perl",
+    "lts-team/packages/gsl",
+    "janitor-team/proposed/r-cran-rcppgsl",
+    "janitor-team/proposed/libmath-matrix-maybegsl-perl",
+    "janitor-team/proposed/slgsl",
+    "janitor-team/proposed/ocamlgsl",
+    "perl-team/modules/packages/libmath-matrix-maybegsl-perl",
+    "debian/slgsl",
+    "janitor-team/proposed/octave-gsl",
+    "edd/gsl-doc",
+    "edd/gsl",
+    "edd/r-cran-rcppgsl",
+    "ocaml-team/ocamlgsl",
+    "perl-team/modules/packages/libmath-gsl-perl",
+    "perl-team/modules/packages/libcatalyst-actionrole-checktrailingslash-perl",
+    "debian/ms-gsl",
+    "r-pkg-team/r-cran-gsl",
+    "science-team/yorick-ygsl",
+    "ruby-team/ruby-settingslogic",
+    "ruby-team/ruby-gsl"
+  ],
+  "golang-github-dennwc-varint": [
+    "go-team/packages/golang-github-dennwc-varint"
+  ],
+  "dmg2img": [
+    "debian/dmg2img"
+  ],
+  "maven-plugin-testing": [
+    "janitor-team/proposed/maven-plugin-testing",
+    "java-team/maven-plugin-testing",
+    "java-team/maven-plugin-testing-1.3"
+  ],
+  "python-xlib": [
+    "python-team/packages/python-xlib"
+  ],
+  "alure": [
+    "janitor-team/proposed/alure",
+    "games-team/alure"
+  ],
+  "geomview": [
+    "janitor-team/proposed/geomview",
+    "science-team/geomview"
+  ],
+  "lua-bitop": [
+    "janitor-team/proposed/lua-bitop",
+    "lua-team/lua-bitop"
+  ],
+  "collada-dom": [
+    "janitor-team/proposed/collada-dom",
+    "aluaces-guest/collada-dom",
+    "science-team/collada-dom"
+  ],
+  "libghemical": [
+    "debichem-team/libghemical"
+  ],
+  "dropwatch": [
+    "douglassantos/dropwatch",
+    "dfukui/dropwatch",
+    "debian/dropwatch",
+    "akosiaris/dropwatch"
+  ],
+  "gtkpod": [],
+  "maven-artifact-transfer": [
+    "janitor-team/proposed/maven-artifact-transfer",
+    "java-team/maven-artifact-transfer"
+  ],
+  "beansbinding": [
+    "vpa1977/beansbinding",
+    "janitor-team/proposed/beansbinding",
+    "java-team/beansbinding"
+  ],
+  "libsocketcan": [
+    "janitor-team/proposed/libsocketcan",
+    "debian/libsocketcan"
+  ],
+  "c2hs": [],
+  "ibus-kkc": [
+    "janitor-team/proposed/ibus-kkc",
+    "input-method-team/ibus-kkc"
+  ],
+  "psad": [
+    "janitor-team/proposed/psad",
+    "leandrocunha/psad",
+    "debian/psad"
+  ],
+  "asciidoc": [
+    "gioele/asciidoc",
+    "PavitKaur05/ruby-jekyll-asciidoc",
+    "janitor-team/proposed/ruby-asciidoctor-plantuml",
+    "vinay-keshava/asciidoctor",
+    "vinay-keshava/ruby-asciidoctor-include-ext",
+    "janitor-team/proposed/asciidoc",
+    "janitor-team/proposed/asciidoctor-pdf",
+    "ruby-team/ruby-asciidoctor-kroki",
+    "mika/asciidoctor-pdf",
+    "ruby-team/asciidoctor-pdf",
+    "ruby-team/ruby-jekyll-asciidoc",
+    "praveen/asciidoctor-pdf",
+    "samyak-jn/ruby-asciidoctor-plantuml",
+    "nilesh/ruby-asciidoctor-include-ext",
+    "ruby-team/ruby-asciidoctor-include-ext",
+    "boutil/asciidoctor-pdf",
+    "keithp/asciidoctor-pdf",
+    "debian/asciidoc",
+    "ruby-team/ruby-asciidoctor-plantuml",
+    "ruby-team/asciidoctor"
+  ],
+  "octave-struct": [
+    "janitor-team/proposed/octave-struct",
+    "pkg-octave-team/octave-struct"
+  ],
+  "libglade2": [],
+  "chemtool": [
+    "debichem-team/chemtool"
+  ],
+  "cglib": [
+    "janitor-team/proposed/cglib",
+    "gratuxri/vcglib-dev",
+    "java-team/cglib",
+    "java-team/cglib3"
+  ],
+  "fmit": [
+    "janitor-team/proposed/fmit",
+    "debian/fmit"
+  ],
+  "xzgv": [
+    "debian/xzgv"
+  ],
+  "ibus-input-pad": [
+    "janitor-team/proposed/ibus-input-pad",
+    "input-method-team/ibus-input-pad"
+  ],
+  "rust-sized-chunks": [],
+  "rcs": [
+    "debian/rcs-blame",
+    "janitor-team/proposed/crrcsim",
+    "janitor-team/proposed/darcsum",
+    "janitor-team/proposed/python-rcssmin",
+    "janitor-team/proposed/libjs-img.srcset",
+    "js-team/libjs-img.srcset",
+    "debian/libjs-img.srcset",
+    "js-team/node-parse-srcset",
+    "python-team/packages/python-clevercsv",
+    "dickey/rcs-blame",
+    "r-pkg-team/r-cran-rcsdp",
+    "janitor-team/proposed/isrcsubmit",
+    "debian/crrcsim",
+    "games-team/torcs",
+    "perl-team/modules/packages/librcs-perl",
+    "med-team/librcsb-core-wrapper",
+    "multimedia-team/isrcsubmit",
+    "ruby-team/attic/ruby-fastercsv",
+    "emacsen-team/darcsum"
+  ],
+  "mythes": [
+    "janitor-team/proposed/mythes",
+    "libreoffice-team/mythes"
+  ],
+  "openarena": [
+    "janitor-team/proposed/openarena-data",
+    "games-team/openarena-data",
+    "games-team/openarena"
+  ],
+  "endlessh": [
+    "philh/endlessh",
+    "kaliko/endlessh",
+    "cgzones/endlessh",
+    "debian/endlessh"
+  ],
+  "pyserial": [
+    "homeassistant-team/deps/pyserial-asyncio-fast",
+    "python-team/packages/pyserial-asyncio"
+  ],
+  "cpipe": [
+    "blade/cpipe"
+  ],
+  "shorewall": [
+    "azazel/shorewall",
+    "shorewall-team/shorewall",
+    "azazel/shorewall-orig"
+  ],
+  "msort": [],
+  "pidgin-sipe": [
+    "andrewsh/pidgin-sipe",
+    "onitake-guest/pidgin-sipe",
+    "yrro-guest/pidgin-sipe",
+    "xhaakon-guest/pidgin-sipe"
+  ],
+  "crack": [
+    "gjolly/aircrack-ng",
+    "salvage-team/rarcrack",
+    "games-team/crack-attack",
+    "nthykier/fcrackzip",
+    "vpa1977/ncrack",
+    "lts-team/packages/pdfcrack",
+    "janitor-team/proposed/sipcrack",
+    "debian/nutcracker",
+    "janitor-team/proposed/ruby-crack",
+    "janitor-team/proposed/crack",
+    "janitor-team/proposed/pkg-cracklib",
+    "pkg-security-team/cisco7crack",
+    "pkg-security-team/stegcracker",
+    "debian/sipcrack",
+    "marciosouza/sipcrack",
+    "ruby-team/ruby-crack",
+    "Manas-kashyap-guest/aircrack-ng",
+    "debian/pdfcrack",
+    "debian/pkg-cracklib",
+    "perl-team/modules/packages/libcrypt-cracklib-perl"
+  ],
+  "typespeed": [
+    "janitor-team/proposed/typespeed",
+    "debian/typespeed"
+  ],
+  "minisign": [
+    "go-team/packages/golang-github-aead-minisign",
+    "janitor-team/proposed/minisign",
+    "cdesai/minisign",
+    "debian/minisign",
+    "fancycade-guest/minisign",
+    "go-team/packages/golang-github-jedisct1-go-minisign"
+  ],
+  "libfreehand": [
+    "libreoffice-team/document-liberation/libfreehand"
+  ],
+  "iagno": [
+    "janitor-team/proposed/ros-diagnostics",
+    "janitor-team/proposed/iagno",
+    "js-team/node-dabh-diagnostics",
+    "gnome-team/iagno",
+    "r-pkg-team/r-cran-diagnosismed",
+    "science-team/ros-diagnostics"
+  ],
+  "python-boto": [
+    "toabctl/python-botocore",
+    "toabctl/python-boto3",
+    "jnpf/python-boto-fork",
+    "janitor-team/proposed/python-boto3",
+    "jspricke/python-boto",
+    "noahm/python-boto3",
+    "janitor-team/proposed/python-boto",
+    "cloud-team/python-boto3",
+    "cloud-team/python-boto",
+    "eamanu/python-boto",
+    "noahm/python-botocore",
+    "eevans/python-boto",
+    "ondrej/python-boto",
+    "eevans/python-boto3",
+    "cloud-team/python-botocore"
+  ],
+  "ptl": [
+    "jas/golang-goptlib",
+    "go-team/packages/sptlrx",
+    "jnpf/optlang-fork",
+    "vinay-keshava/golang-goptlib",
+    "python-team/packages/aptly-api-client",
+    "mattia/ptlink",
+    "meskio-guest/golang-goptlib",
+    "gladk/aptly",
+    "wouter/ptlink",
+    "janitor-team/proposed/aptly",
+    "janitor-team/proposed/golang-goptlib",
+    "science-team/ptl",
+    "r-pkg-team/r-cran-getoptlong",
+    "eighthave/aptly",
+    "pkg-privacy-team/pyptlib",
+    "pkg-privacy-team/golang-goptlib",
+    "perl-team/modules/packages/libi18n-acceptlanguage-perl",
+    "perl-team/modules/packages/libdata-optlist-perl",
+    "debian/aptly"
+  ],
+  "ganglia": [
+    "debian/ganglia-modules-linux",
+    "debian/ganglia-web",
+    "debian/ganglia",
+    "jochen-guest/ganglia-web",
+    "monitoring-team/ganglia-web",
+    "monitoring-team/ganglia-nagios-bridge",
+    "monitoring-team/ganglia-modules-linux",
+    "monitoring-team/ganglia",
+    "ellert/nordugrid-arc-gangliarc"
+  ],
+  "txt2regex": [
+    "rene/txt2regex"
+  ],
+  "js8call": [
+    "lopippo/js-8-call-fork-lopippo-qcustomplot-transition",
+    "janitor-team/proposed/js8call",
+    "debian-hamradio-team/js8call"
+  ],
+  "gifticlib": [
+    "med-team/gifticlib"
+  ],
+  "maven-common-artifact-filters": [
+    "janitor-team/proposed/maven-common-artifact-filters",
+    "java-team/maven-common-artifact-filters"
+  ],
+  "jaaa": [
+    "janitor-team/proposed/jaaa",
+    "rzr/jaaa",
+    "multimedia-team/jaaa"
+  ],
+  "yersinia": [],
+  "wmcalclock": [
+    "wmaker-team/wmcalclock"
+  ],
+  "libxdamage": [
+    "xorg-team/lib/libxdamage"
+  ],
+  "libspectrum": [
+    "janitor-team/proposed/libspectrum",
+    "berto/libspectrum"
+  ],
+  "mrtg": [
+    "carlespina/po-debconf-manager-mrtg",
+    "debian/mrtg-ping-probe",
+    "debian/mrtgutils",
+    "janitor-team/proposed/mrtg",
+    "debian/mrtg"
+  ],
+  "golang-github-nkovacs-streamquote": [
+    "janitor-team/proposed/golang-github-nkovacs-streamquote",
+    "go-team/packages/golang-github-nkovacs-streamquote"
+  ],
+  "spacefm": [
+    "debian/spacefm"
+  ],
+  "golang-github-google-nftables": [
+    "janitor-team/proposed/golang-github-google-nftables",
+    "go-team/packages/golang-github-google-nftables"
+  ],
+  "nodm": [
+    "janitor-team/proposed/nodm",
+    "smcv/nodm",
+    "debian/nodm"
+  ],
+  "bristol": [
+    "dotnet-team/monobristol",
+    "multimedia-team/bristol"
+  ],
+  "calf": [
+    "janitor-team/proposed/dune-localfunctions",
+    "pjaap/dune-localfunctions",
+    "lisajuliafog/dune-localfunctions",
+    "janitor-team/proposed/calf",
+    "python-team/packages/python-django-localflavor",
+    "multimedia-team/calf",
+    "science-team/dune-localfunctions"
+  ],
+  "rhino": [
+    "janitor-team/proposed/rhino",
+    "janitor-team/proposed/grhino",
+    "abologna/rhinote",
+    "java-team/rhino",
+    "games-team/grhino",
+    "debian/rhinote"
+  ],
+  "gearhead2": [],
+  "sloccount": [
+    "salvage-team/sloccount"
+  ],
+  "pinfo": [
+    "debian/pinfo",
+    "nilesh/python-depinfo",
+    "python-team/packages/python-depinfo",
+    "comfortablydumb-guest/ipinfo"
+  ],
+  "spamass-milter": [],
+  "cgit": [
+    "unit193/cgit",
+    "janitor-bot/cgit"
+  ],
+  "sc": [
+    "debian/sc"
+  ],
+  "distcc": [
+    "voltagex-guest/distcc"
+  ],
+  "tango-icon-theme": [],
+  "python-xstatic-smart-table": [
+    "janitor-team/proposed/python-xstatic-smart-table",
+    "openstack-team/xstatic/python-xstatic-smart-table"
+  ],
+  "golang-github-alecthomas-kong-hcl": [
+    "go-team/packages/golang-github-alecthomas-kong-hcl"
+  ],
+  "libcdio-paranoia": [
+    "janitor-team/proposed/libcdio-paranoia",
+    "phsw/libcdio-paranoia",
+    "debian/libcdio-paranoia"
+  ],
+  "gtypist": [
+    "janitor-team/proposed/gtypist",
+    "debian/gtypist"
+  ],
+  "console-bridge": [
+    "janitor-team/proposed/console-bridge",
+    "janitor-team/proposed/ros-rosconsole-bridge",
+    "science-team/ros-rosconsole-bridge",
+    "science-team/console-bridge"
+  ],
+  "gajim": [
+    "rincewind/gajim",
+    "janitor-team/proposed/gajim-antispam",
+    "janitor-team/proposed/gajim-triggers",
+    "janitor-team/proposed/gajim-openpgp",
+    "janitor-team/proposed/gajim-pgp",
+    "jscott/gajim",
+    "xmpp-team/gajim-syntaxhighlight",
+    "xmpp-team/gajim-lengthnotifier",
+    "xmpp-team/gajim-openpgp",
+    "xmpp-team/gajim-urlimagepreview",
+    "xmpp-team/gajim-triggers",
+    "xmpp-team/gajim-rostertweaks",
+    "xmpp-team/gajim-plugininstaller",
+    "xmpp-team/gajim-pgp",
+    "xmpp-team/gajim-omemo",
+    "xmpp-team/gajim-httpupload",
+    "xmpp-team/gajim-appindicatorintegration",
+    "xmpp-team/gajim-antispam",
+    "xmpp-team/gajim"
+  ],
+  "gyp": [
+    "homeassistant-team/deps/eternalegypt",
+    "r-pkg-team/r-bioc-gypsum",
+    "MrMYHuang/node-gyp",
+    "janitor-team/proposed/node-gyp-build",
+    "js-team/node-gyp-build",
+    "shibata/gyp",
+    "aerusso/node-gyp",
+    "python-team/packages/gyp",
+    "js-team/node-gyp",
+    "js-team/node-pre-gyp",
+    "go-team/packages/golang-github-kylelemons-go-gypsy"
+  ],
+  "wfuzz": [
+    "pkg-security-team/wfuzz"
+  ],
+  "pamix": [
+    "janitor-team/proposed/pamix",
+    "janitor-team/proposed/pamixer",
+    "sam-gq/pamix",
+    "debian/pamixer",
+    "tzafrir/pamixer",
+    "debian/pamix"
+  ],
+  "bustle": [
+    "gnome-team/bustle",
+    "lamby/pkg-bustle"
+  ],
+  "slapi-nis": [
+    "freeipa-team/slapi-nis"
+  ],
+  "lua-markdown": [
+    "debian/lua-markdown",
+    "janitor-team/proposed/lua-markdown",
+    "lua-team/lua-markdown"
+  ],
+  "libpgf": [
+    "debian/libpgf"
+  ],
+  "root-tail": [
+    "Lariposs/root-tail",
+    "janitor-team/proposed/root-tail",
+    "debian/root-tail"
+  ],
+  "flam3": [
+    "debian/flam3"
+  ],
+  "oggvideotools": [
+    "janitor-team/proposed/oggvideotools",
+    "multimedia-team/oggvideotools",
+    "ron/oggvideotools"
+  ],
+  "zita-ajbridge": [
+    "janitor-team/proposed/zita-ajbridge",
+    "multimedia-team/zita-ajbridge"
+  ],
+  "renameutils": [
+    "debian/renameutils"
+  ],
+  "libsquish": [],
+  "safecopy": [
+    "ricardorreis/safecopy",
+    "moraesf/safecopy",
+    "luiz734/safecopy",
+    "CBS/safecopy",
+    "AlexandrePadilha/safecopy",
+    "Mur1lol/safecopy",
+    "flacorsi/safecopy",
+    "talau/safecopy",
+    "alfonsandrade/safecopy",
+    "jvcaversan/safecopy",
+    "felypebarcellos/safecopy",
+    "franciscoldb/safecopy",
+    "PedroHGH/safecopy",
+    "analiviaexe/safecopy",
+    "Nogas/safecopy",
+    "gustavo_adame_domingues/safecopy",
+    "brunojln/safecopy",
+    "mateusvilanova/safecopy",
+    "gabrielLira/safecopy",
+    "rslabiski-gmail/safecopy"
+  ],
+  "rc": [
+    "bernhardu-guest/rc",
+    "janitor-team/proposed/rc",
+    "debian/rc"
+  ],
+  "tre": [
+    "carlespina/po-debconf-manager-openstreetmap-carto",
+    "khumba/extrepo-data",
+    "krvprashanth/extrepo-data",
+    "sanvila/node-fstream-ignore",
+    "DLC/extrepo-data",
+    "daissi/ostree",
+    "chrism/extrepo-data",
+    "uhoreg/extrepo-data",
+    "vv221/tremc",
+    "homeassistant-team/deps/aiostreammagic",
+    "go-team/packages/golang-github-tredoe-osutil",
+    "harry/ctre",
+    "wcbing/extrepo-data"
+  ],
+  "slic3r": [
+    "tobi/slic3r-prusa",
+    "freddybobjo/slic3r-prusa",
+    "vimerbf-guest/slic3r-prusa",
+    "janitor-team/proposed/slic3r",
+    "salacryl/slic3r",
+    "gladk/slic3r",
+    "janitor-team/proposed/slic3r-prusa",
+    "friki/slic3r-prusa",
+    "3dprinting-team/slic3r",
+    "3dprinting-team/slic3r-prusa"
+  ],
+  "tgif": [
+    "salvage-team/tgif"
+  ],
+  "rust-atty": [],
+  "pnm2ppa": [
+    "carlespina/po-debconf-manager-pnm2ppa",
+    "printing-team/pnm2ppa"
+  ],
+  "libcddb": [
+    "janitor-team/proposed/libcddb-file-perl",
+    "janitor-team/proposed/libcddb",
+    "nickg/libcddb",
+    "janitor-team/proposed/libcddb-get-perl",
+    "perl-team/modules/packages/libcddb-perl",
+    "perl-team/modules/packages/libcddb-get-perl",
+    "perl-team/modules/packages/libcddb-file-perl"
+  ],
+  "openscenegraph": [
+    "janitor-team/proposed/openscenegraph-3.2",
+    "psi29a/openscenegraph-3.2",
+    "psi29a/openscenegraph-3.6",
+    "openscenegraph-team/openscenegraph-3.6",
+    "psi29a/openscenegraph-3.4",
+    "games-team/unfinished/openscenegraph-3.6",
+    "openscenegraph-team/openscenegraph-3.4",
+    "openscenegraph-team/openscenegraph-3.2"
+  ],
+  "mingetty": [
+    "debian/mingetty"
+  ],
+  "tcpick": [
+    "janitor-team/proposed/tcpick",
+    "pkg-security-team/tcpick"
+  ],
+  "dasher": [
+    "janitor-team/proposed/dasher",
+    "a11y-team/dasher"
+  ],
+  "collectd": [
+    "carlespina/po-debconf-manager-pkg-collectd",
+    "morisja/pkg-collectd",
+    "bluca/pkg-collectd",
+    "gioele/pkg-collectd",
+    "janitor-team/proposed/pkg-collectd",
+    "kenhys/pkg-collectd",
+    "gladk/kcollectd",
+    "aerusso/pkg-collectd",
+    "paelzer-guest/pkg-collectd",
+    "debian/pkg-collectd",
+    "openstack-team/puppet/puppet-module-voxpupuli-collectd",
+    "qt-kde-team/extras/kcollectd",
+    "aerusso/kcollectd",
+    "go-team/packages/golang-collectd"
+  ],
+  "apr-util": [
+    "smcv/apr-util",
+    "lts-team/packages/apr-util",
+    "janitor-team/proposed/apr-util",
+    "jelmer/apr-util",
+    "apache-team/apr-util"
+  ],
+  "waffle": [
+    "smcv/waffle-branches",
+    "janitor-team/proposed/waffle",
+    "aratiu/waffle",
+    "janitor-team/proposed/python-django-waffle",
+    "xorg-team/lib/waffle",
+    "python-team/packages/python-django-waffle"
+  ],
+  "mozjs102": [],
+  "xournal": [
+    "baryluk-guest/xournal",
+    "janitor-team/proposed/xournal",
+    "sgolovan/xournalpp",
+    "debian/xournalpp",
+    "debian/xournal"
+  ],
+  "bijiben": [],
+  "bzip2": [
+    "debian/lbzip2",
+    "lts-team/packages/bzip2",
+    "janitor-team/proposed/node-unbzip2-stream",
+    "santiago/bzip2",
+    "clint/bzip2",
+    "js-team/node-unbzip2-stream",
+    "wg-guest/pbzip2",
+    "java-team/libjbzip2-java",
+    "perl-team/modules/packages/libcompress-raw-bzip2-perl",
+    "perl-team/modules/packages/libcompress-bzip2-perl",
+    "debian/bzip2"
+  ],
+  "marsshooter": [
+    "janitor-team/proposed/marsshooter",
+    "games-team/marsshooter"
+  ],
+  "dsdp": [
+    "haava/dsdp",
+    "debian/dsdp"
+  ],
+  "antlr": [
+    "vpa1977/antlr-maven-plugin",
+    "janitor-bot/antlr3",
+    "janitor-team/proposed/antlr4",
+    "janitor-team/proposed/antlr",
+    "janitor-team/proposed/antlr3",
+    "janitor-team/proposed/golang-github-antlr-antlr4",
+    "peymaneh/antlr4",
+    "go-team/packages/golang-github-antlr-antlr4",
+    "Manas-kashyap-guest/antlr4",
+    "python-team/packages/antlr4-python3-runtime",
+    "python-team/packages/python3-antlr4",
+    "janitor-team/proposed/libantlr3c",
+    "janitor-team/proposed/antlr4-cpp-runtime",
+    "debian/antlr4-cpp-runtime",
+    "debian/libantlr3c",
+    "java-team/antlr",
+    "java-team/antlr4",
+    "java-team/antlr3",
+    "java-team/antlr3.2",
+    "java-team/antlr-maven-plugin"
+  ],
+  "pipenightdreams": [
+    "games-team/pipenightdreams"
+  ],
+  "gnome-screenshot": [
+    "janitor-team/proposed/gnome-screenshot",
+    "azzar1-guest/gnome-screenshot",
+    "gnome-team/gnome-screenshot"
+  ],
+  "planets": [
+    "janitor-team/proposed/planets",
+    "ocaml-team/planets"
+  ],
+  "libgda5": [
+    "rnpalmer-guest/libgda5",
+    "ubuntu-desktop-helper/libgda5",
+    "jardon/libgda5",
+    "gnome-team/libgda5"
+  ],
+  "setserial": [
+    "carlespina/po-debconf-manager-setserial",
+    "nthykier/setserial",
+    "alteholz/setserial"
+  ],
+  "rancid": [
+    "janitor-team/proposed/rancid",
+    "salsa-pipeline-guest/rancid",
+    "debian/rancid"
+  ],
+  "gbdfed": [
+    "debian/gbdfed"
+  ],
+  "crack-attack": [
+    "games-team/crack-attack"
+  ],
+  "zinnia": [
+    "janitor-team/proposed/tegaki-zinnia-simplified-chinese",
+    "janitor-team/proposed/zinnia",
+    "janitor-team/proposed/tegaki-zinnia-japanese",
+    "debian/tegaki-zinnia-japanese",
+    "debian/tegaki-zinnia-simplified-chinese",
+    "debian/zinnia"
+  ],
+  "audiofile": [
+    "apo/audiofile",
+    "lts-team/packages/audiofile",
+    "rouca/audiofile",
+    "janitor-team/proposed/audiofile",
+    "jmm/audiofile",
+    "multimedia-team/audiofile"
+  ],
+  "tcltls": [
+    "azazel/tcltls",
+    "janitor-team/proposed/tcltls",
+    "tcltk-team/tcltls"
+  ],
+  "libmikmod": [
+    "janitor-team/proposed/libmikmod",
+    "mod-player-team/libmikmod"
+  ],
+  "cronolog": [
+    "debian/cronolog"
+  ],
+  "libmacaroons": [
+    "janitor-team/proposed/libmacaroons",
+    "ellert/libmacaroons"
+  ],
+  "vnstat": [
+    "debian/vnstat",
+    "savoury1-guest/vnstat",
+    "vergo-guest/vnstat",
+    "cgzones/vnstat"
+  ],
+  "jglobus": [
+    "janitor-team/proposed/jglobus",
+    "ellert/jglobus"
+  ],
+  "glogg": [
+    "debian/glogg",
+    "janitor-team/proposed/node-glogg",
+    "abraham/node-glogg",
+    "js-team/node-glogg"
+  ],
+  "rapidjson": [
+    "ellert/rapidjson",
+    "janitor-team/proposed/rapidjson",
+    "openstack-team/python/python-rapidjson",
+    "jollyroger-guest/rapidjson",
+    "debian/rapidjson"
+  ],
+  "libcanberra": [
+    "biebl/libcanberra",
+    "janitor-bot/libcanberra",
+    "janitor-team/proposed/libcanberra",
+    "hellsworth/libcanberra",
+    "gnome-team/libcanberra"
+  ],
+  "ebook-tools": [
+    "perl-team/modules/packages/libebook-tools-perl",
+    "janitor-team/proposed/ebook-tools",
+    "pino/ebook-tools"
+  ],
+  "fpc": [
+    "carlespina/po-debconf-manager-fpc",
+    "janitor-team/proposed/fpc",
+    "mnalis/fpc",
+    "r-pkg-team/r-cran-fpc",
+    "python-team/packages/fpconst",
+    "pascal-team/fpc"
+  ],
+  "dbench": [],
+  "libtar": [
+    "lts-team/packages/libtar"
+  ],
+  "fbterm": [
+    "janitor-bot/fcitx-fbterm",
+    "janitor-team/proposed/fbterm-ucimf",
+    "janitor-team/proposed/fcitx5-fbterm",
+    "janitor-team/proposed/fcitx-fbterm",
+    "input-method-team/fcitx5-fbterm",
+    "StygianBlues/fbterm",
+    "debian/fbterm",
+    "input-method-team/fbterm-ucimf",
+    "input-method-team/fcitx-fbterm"
+  ],
+  "hedgewars": [
+    "mitya57/hedgewars",
+    "games-team/hedgewars"
+  ],
+  "fuse": [
+    "chrism/seadrive-fuse",
+    "aurel32/libconfuse",
+    "debian/fuse-zip",
+    "lenharo/gnunet-fuse",
+    "nabijaczleweli/fuse-convmvfs",
+    "nabijaczleweli/fuse-ext2",
+    "salvage-team/fuse-umfuse-fat",
+    "debian/afuse",
+    "aquilamacedo/zfs-fuse",
+    "seafile-team/seadrive-fuse",
+    "go-team/packages/golang-github-anacrolix-fuse",
+    "janitor-team/proposed/httpdirfs-fuse",
+    "janitor-team/proposed/fuse-overlayfs",
+    "janitor-team/proposed/sshfs-fuse",
+    "bandali/httpdirfs-fuse",
+    "python-team/packages/datalad-fuse",
+    "smoser/squashfuse",
+    "janitor-team/proposed/golang-github-jacobsa-bazilfuse"
+  ],
+  "kreport": [
+    "janitor-team/proposed/kreport",
+    "qt-kde-team/extras/kreport"
+  ],
+  "gts": [
+    "science-team/gtsam",
+    "janitor-team/proposed/gts",
+    "science-team/pygts",
+    "science-team/gts"
+  ],
+  "modem-manager-gui": [
+    "marcelocripe/modem-manager-gui",
+    "pattpatel/modem-manager-gui",
+    "charlycoste/modem-manager-gui",
+    "janitor-team/proposed/modem-manager-gui",
+    "debian/modem-manager-gui"
+  ],
+  "sane-frontends": [
+    "debian/sane-frontends"
+  ],
+  "traverso": [
+    "multimedia-team/traverso"
+  ],
+  "whichwayisup": [
+    "games-team/whichwayisup"
+  ],
+  "freedroid": [
+    "Peutch-guest/freedroid",
+    "games-team/freedroid",
+    "debian/freedroid",
+    "games-team/freedroidrpg"
+  ],
+  "wide-dhcpv6": [
+    "janitor-team/proposed/wide-dhcpv6",
+    "debian/wide-dhcpv6"
+  ],
+  "fvwm": [
+    "janitor-team/proposed/fvwm-crystal",
+    "janitor-team/proposed/fvwm-icons",
+    "debian/fvwm-crystal",
+    "debian/fvwm-icons"
+  ],
+  "patch": [
+    "aleasto/speech-dispatcher",
+    "debian/makepatch",
+    "linuxpatch/debianpatching",
+    "homeassistant-team/deps/aiohttp-fast-url-dispatcher",
+    "linuxpatch/linuxpatch-ansible",
+    "linuxpatch/terraform-linuxpatch-agent",
+    "linuxpatch/linuxpatch-puppet",
+    "debian/linux-livepatching",
+    "jnpf/lomiri-url-dispatcher-natal",
+    "js-team/node-fast-json-patch"
+  ],
+  "ois": [
+    "debian/obs-noise",
+    "eriberto/obs-noise",
+    "lumin/ai-noises",
+    "science-team/oidn",
+    "homeassistant-team/deps/python-noiseprotocol",
+    "med-team/itkadaptivedenoising",
+    "homeassistant-team/deps/todoist-api-python",
+    "ncts/linenoise",
+    "jnpf/python-cymruwhois-fork",
+    "debian/libnoise",
+    "ocaml-team/ocaml-linenoise",
+    "vimerbf-guest/ocaml-linenoise",
+    "debian/python-whois",
+    "kartik-karz/python-whois",
+    "janitor-team/proposed/r-bioc-noiseq",
+    "janitor-team/proposed/python-whois",
+    "janitor-team/proposed/mckoisqldb",
+    "js-team/node-hoist-non-react-statics"
+  ],
+  "libratbag": [
+    "gioele/libratbag",
+    "janitor-team/proposed/libratbag",
+    "gogo-guest/libratbag",
+    "debian/libratbag"
+  ],
+  "eegdev": [
+    "med-team/eegdev"
+  ],
+  "gnome-menus": [
+    "carlespina/gnome-menus",
+    "osomon-guest/gnome-menus",
+    "jbicha/gnome-menus",
+    "gnome-team/gnome-menus"
+  ],
+  "wvdial": [
+    "janitor-team/proposed/wvdial",
+    "debian/wvdial"
+  ],
+  "rust-statistical": [],
+  "aesfix": [
+    "pkg-security-team/aesfix"
+  ],
+  "soqt": [
+    "janitor-team/proposed/soqt",
+    "kkremitzki/soqt",
+    "science-team/soqt"
+  ],
+  "a2jmidid": [
+    "janitor-team/proposed/a2jmidid",
+    "multimedia-team/a2jmidid"
+  ],
+  "golang-github-miekg-pkcs11": [
+    "janitor-team/proposed/golang-github-miekg-pkcs11",
+    "go-team/packages/golang-github-miekg-pkcs11"
+  ],
+  "libtool": [
+    "janitor-team/proposed/libtool",
+    "santiago/libtool",
+    "janitor-team/proposed/libtools-macro-clojure",
+    "python-team/packages/mathlibtools",
+    "kibi/libtool",
+    "mckinstry/libtool",
+    "java-team/libtools-macro-clojure",
+    "java-team/libtools-logging-clojure",
+    "metux-guest/libtool",
+    "clojure-team/libtools-macro-clojure",
+    "perl-team/modules/packages/libtoolkit-perl"
+  ],
+  "corkscrew": [
+    "berryamin-guest/corkscrew",
+    "debian/corkscrew"
+  ],
+  "mypaint": [
+    "sam-gq/mypaint-brushes",
+    "janitor-team/proposed/libmypaint",
+    "multimedia-team/libmypaint",
+    "multimedia-team/mypaint-brushes",
+    "python-team/packages/mypaint"
+  ],
+  "up-imapproxy": [],
+  "fillets-ng": [
+    "games-team/fillets-ng-data",
+    "janitor-team/proposed/fillets-ng",
+    "games-team/fillets-ng"
+  ],
+  "abe": [
+    "sur5r/glabels-qt",
+    "debian/mtkbabel",
+    "med-team/itkgenericlabelinterpolator",
+    "debian-kr-team/DebConf/property-label",
+    "debian/gmtkbabel",
+    "debian-gis-team/mapbox-polylabel",
+    "debian/pylabels",
+    "r-pkg-team/r-cran-labelled",
+    "python-team/packages/python-shippinglabel",
+    "roundcube-team/plugins-extra/thunderbird_labels",
+    "gnome-team/shell-extensions/gnome-shell-extension-alphabetical-grid",
+    "pkg-octave-team/octave-mccabe-thiele",
+    "janitor-team/proposed/node-gulp-babel",
+    "janitor-team/proposed/cl-babel",
+    "janitor-team/proposed/python-babelgladeextractor",
+    "janitor-team/proposed/fonts-babelstone-modern",
+    "elbrus/openbabel",
+    "janitor-team/proposed/glabels",
+    "janitor-team/proposed/labelme"
+  ],
+  "wslay": [
+    "janitor-team/proposed/wslay",
+    "zeha/wslay",
+    "debian/wslay"
+  ],
+  "klatexformula": [],
+  "ant-contrib": [
+    "janitor-team/proposed/ant-contrib",
+    "java-team/ant-contrib"
+  ],
+  "sendemail": [],
+  "bwa": [
+    "aelmahmoudy/libwapcaplet",
+    "games-team/blobwars",
+    "janitor-team/proposed/gatk-bwamem",
+    "janitor-team/proposed/libwacom",
+    "med-team/gatk-bwamem",
+    "go-team/packages/golang-github-gobwas-httphead",
+    "janitor-team/proposed/golang-github-gobwas-glob",
+    "frediz/bwa",
+    "med-team/bwa-mem2",
+    "debian/libwacom",
+    "perl-team/modules/packages/libwarnings-illegalproto-perl",
+    "perl-team/modules/packages/libwant-perl",
+    "med-team/bwa",
+    "go-team/packages/golang-github-gobwas-glob"
+  ],
+  "libserialport": [
+    "electronics-team/sigrok/libserialport"
+  ],
+  "virt-viewer": [
+    "janitor-team/proposed/virt-viewer",
+    "libvirt-team/virt-viewer"
+  ],
+  "rust-alloc-stdlib": [],
+  "libmpd": [
+    "RicardoPinheiro/libmpd",
+    "debian/libmpd",
+    "mpd-team/libmpdclient",
+    "kaliko/libmpdclient-gbp",
+    "kaliko/libmpdclient"
+  ],
+  "libetpan": [
+    "lts-team/packages/libetpan",
+    "janitor-team/proposed/libetpan",
+    "claws-mail-team/libetpan"
+  ],
+  "rust-font-kit": [],
+  "aubio": [
+    "vpa1977/aubio",
+    "umlaeute/aubio",
+    "ruby-team/ruby-aubio",
+    "piem/aubio"
+  ],
+  "pmount": [
+    "janitor-team/proposed/pmount",
+    "rolkau/pmount",
+    "debian/pmount",
+    "jmsrdebian/pmount"
+  ],
+  "pingus": [
+    "mantas/pingus",
+    "games-team/pingus"
+  ],
+  "snoopy": [
+    "carlespina/po-debconf-manager-snoopy",
+    "php-team/pear/snoopy",
+    "pkg-security-team/snoopy"
+  ],
+  "dvdisaster": [
+    "janitor-team/proposed/dvdisaster",
+    "optical-media-team/dvdisaster"
+  ],
+  "zipios++": [],
+  "rust-docmatic": [],
+  "xawtv": [
+    "carlespina/po-debconf-manager-xawtv",
+    "azazel/xawtv",
+    "janitor-team/proposed/xawtv",
+    "multimedia-team/xawtv",
+    "lumag/xawtv",
+    "debian/xawtv"
+  ],
+  "pfstools": [
+    "debian-phototools-team/pfstools"
+  ],
+  "libx86": [
+    "abower/libx86",
+    "mika/libx86emu",
+    "guillem/libx86emu",
+    "kkamagui/libx86",
+    "debian/libx86",
+    "debian/libx86emu"
+  ],
+  "uronode": [
+    "debian-hamradio-team/uronode"
+  ],
+  "samdump2": [
+    "charles/samdump2",
+    "janitor-team/proposed/samdump2",
+    "pkg-security-team/samdump2"
+  ],
+  "nedit": [
+    "PedroIzarias/nedit",
+    "janitor-team/proposed/nedit",
+    "janitor-team/proposed/gmanedit",
+    "janitor-team/proposed/skinedit",
+    "Dami/nedit",
+    "debian/gmanedit",
+    "debian/nedit",
+    "science-team/skinedit"
+  ],
+  "megaglest": [
+    "janitor-team/proposed/megaglest-data",
+    "janitor-team/proposed/megaglest",
+    "games-team/megaglest-data",
+    "games-team/megaglest"
+  ],
+  "rust-backoff": [],
+  "iptstate": [
+    "salvage-team/iptstate"
+  ],
+  "cups-pdf": [
+    "printing-team/cups-pdf"
+  ],
+  "clamav": [
+    "siv-guest/clamav",
+    "carlespina/po-debconf-manager-clamav",
+    "lts-team/packages/clamav",
+    "janitor-team/proposed/clamav-cvdupdate",
+    "janitor-team/proposed/libclamav-client-perl",
+    "janitor-team/proposed/clamav-unofficial-sigs",
+    "clamav-team/clamav-cvdupdate",
+    "perl-team/modules/packages/libclamav-client-perl",
+    "debian/libclamav-client-perl",
+    "iliar/clamav",
+    "sergiodj/clamav",
+    "sdeziel-guest/clamav",
+    "sudip/clamav",
+    "brentclark-guest/clamav-unofficial-sigs",
+    "clamav-team/clamav-unofficial-sigs",
+    "debian-proftpd-team/proftpd-mod-clamav",
+    "santiago/clamav",
+    "clamav-team/clamav"
+  ],
+  "libdbi-drivers": [],
+  "plplot": [
+    "science-team/plplot"
+  ],
+  "acpitool": [
+    "janitor-team/proposed/acpitool",
+    "jathan/acpitool",
+    "kkamagui/acpitool",
+    "jathan-guest/acpitool",
+    "debian/acpitool"
+  ],
+  "dmraid": [],
+  "gnome-tetravex": [
+    "janitor-team/proposed/gnome-tetravex",
+    "gnome-team/gnome-tetravex"
+  ],
+  "avahi": [
+    "slyon/avahi",
+    "biebl/avahi",
+    "televic-team/avahi",
+    "ramcq-guest/avahi",
+    "debian/guile-avahi",
+    "vagrant/guile-avahi",
+    "josh/avahi",
+    "jscott/avahi",
+    "fgeyer/avahi",
+    "gioele/avahi",
+    "lts-team/packages/avahi",
+    "janitor-team/proposed/avahi",
+    "bluca/avahi",
+    "ah/avahi",
+    "satta/avahi",
+    "perl-team/modules/packages/libnet-rendezvous-publish-backend-avahi-perl",
+    "utopia-team/avahi"
+  ],
+  "pcapy": [
+    "homeassistant-team/deps/python-pure-pcapy3",
+    "python-team/packages/pcapy"
+  ],
+  "dx": [
+    "jelmer/dx",
+    "science-team/dx"
+  ],
+  "golang-github-xeipuuv-gojsonschema": [
+    "seabass/golang-github-xeipuuv-gojsonschema",
+    "go-team/packages/golang-github-xeipuuv-gojsonschema"
+  ],
+  "catdoc": [
+    "janitor-team/proposed/catdoc",
+    "debian/catdoc"
+  ],
+  "redsocks": [
+    "janitor-team/proposed/redsocks",
+    "debian/redsocks"
+  ],
+  "wv": [
+    "debian/wv"
+  ],
+  "dssi": [
+    "janitor-team/proposed/fluidsynth-dssi",
+    "janitor-team/proposed/ocaml-dssi",
+    "janitor-team/proposed/dssi",
+    "janitor-team/proposed/xsynth-dssi",
+    "stuart/dssi",
+    "ocaml-team/ocaml-dssi",
+    "multimedia-team/xsynth-dssi",
+    "multimedia-team/wsynth-dssi",
+    "multimedia-team/libdssialsacompat",
+    "multimedia-team/fluidsynth-dssi",
+    "multimedia-team/dssi"
+  ],
+  "yajl": [
+    "lepalom/ruby-ffi-yajl",
+    "lts-team/packages/ruby-yajl",
+    "lts-team/packages/yajl",
+    "tobi/yajl",
+    "abraham/ruby-yajl",
+    "ruby-team/ruby-yajl",
+    "ruby-team/ruby-ffi-yajl"
+  ],
+  "hfsutils": [
+    "liushuyu/hfsutils",
+    "janitor-team/proposed/hfsutils",
+    "debian/hfsutils"
+  ],
+  "quilt": [
+    "janitor-team/proposed/quilt",
+    "smcv/quilt",
+    "debian/quilt"
+  ],
+  "linux-atm": [
+    "debian/linux-atm"
+  ],
+  "bitlbee": [
+    "rafaelduwe/bitlbee-facebook",
+    "debian/bitlbee-facebook",
+    "janitor-team/proposed/bitlbee-mastodon",
+    "debian/bitlbee-mastodon"
+  ],
+  "mrrescue": [
+    "janitor-team/proposed/mrrescue",
+    "games-team/mrrescue"
+  ],
+  "bc": [
+    "pino/bc",
+    "philh/bc",
+    "janitor-team/proposed/bc",
+    "tar/bc",
+    "anatolyborodin-guest/bc",
+    "debian/bc"
+  ],
+  "kobodeluxe": [
+    "games-team/kobodeluxe"
+  ],
+  "websocketpp": [
+    "janitor-team/proposed/websocketpp",
+    "debian/websocketpp"
+  ],
+  "luksmeta": [],
+  "openbox": [],
+  "prewikka": [
+    "totol-guest/prewikka"
+  ],
+  "leveldb": [
+    "janitor-team/proposed/leveldb-java",
+    "janitor-team/proposed/golang-github-golang-leveldb",
+    "janitor-team/proposed/golang-goleveldb",
+    "java-team/leveldb-java",
+    "go-team/packages/golang-goleveldb",
+    "go-team/packages/golang-github-golang-leveldb"
+  ],
+  "netplug": [],
+  "neuron": [
+    "science-team/neuron"
+  ],
+  "rust-tracing-serde": [],
+  "libcryptui": [
+    "janitor-team/proposed/libcryptui",
+    "gnome-team/libcryptui"
+  ],
+  "w3c-markup-validator": [
+    "debian/w3c-markup-validator"
+  ],
+  "bwbar": [
+    "janitor-team/proposed/bwbar",
+    "debian/bwbar"
+  ],
+  "python-logfury": [
+    "python-team/packages/python-logfury"
+  ],
+  "vte": [
+    "nteodosio/vte2.91",
+    "werdahias/vte",
+    "janitor-team/proposed/emacs-libvterm",
+    "emacsen-team/emacs-libvterm",
+    "debacle/emacs-libvterm",
+    "janitor-team/proposed/evtest",
+    "janitor-team/proposed/vte",
+    "janitor-team/proposed/golang-github-ddevault-go-libvterm",
+    "go-team/packages/golang-github-ddevault-go-libvterm",
+    "3v1n0/vte2.91",
+    "azzar1-guest/vte2.91",
+    "debian/evtest",
+    "gnome-team/vte",
+    "gnome-team/vte2.91",
+    "jamessan/libvterm"
+  ],
+  "chipmunk": [
+    "janitor-team/proposed/chipmunk",
+    "games-team/chipmunk"
+  ],
+  "kcheckers": [
+    "janitor-team/proposed/kcheckers",
+    "games-team/kcheckers"
+  ],
+  "ditaa": [
+    "python-team/packages/sphinxcontrib-ditaa",
+    "janitor-team/proposed/ditaa",
+    "java-team/ditaa"
+  ],
+  "barrier": [
+    "ruby-team/ruby-barrier"
+  ],
+  "python-httpretty": [
+    "bignose/python-httpretty",
+    "openstack-team/python/python-httpretty"
+  ],
+  "rapid-photo-downloader": [
+    "stefanor/rapid-photo-downloader",
+    "scorpi-guest/rapid-photo-downloader",
+    "janitor-team/proposed/rapid-photo-downloader",
+    "debian/rapid-photo-downloader"
+  ],
+  "libu2f-host": [
+    "janitor-team/proposed/libu2f-host",
+    "wjt/libu2f-host",
+    "auth-team/libu2f-host"
+  ],
+  "intltool": [
+    "janitor-team/proposed/intltool-debian",
+    "dbn/intltool",
+    "vagrant/intltool",
+    "rhansen/intltool-debian",
+    "debian/intltool-debian",
+    "gnome-team/intltool"
+  ],
+  "openbabel": [
+    "elbrus/openbabel",
+    "egonw-guest/openbabel",
+    "mestia/openbabel",
+    "jelmer/openbabel",
+    "mestia/openbabel-beta",
+    "debichem-team/openbabel"
+  ],
+  "libofa": [
+    "janitor-team/proposed/libofa",
+    "debian/libofa"
+  ],
+  "python-rx": [
+    "homeassistant-team/deps/python-rxv",
+    "jnpf/python-rx-fork",
+    "python-team/packages/python-rx"
+  ],
+  "glabels": [
+    "sur5r/glabels-qt",
+    "janitor-team/proposed/glabels",
+    "debian/glabels"
+  ],
+  "almanah": [
+    "janitor-team/proposed/almanah",
+    "debian/almanah"
+  ],
+  "cdrkit": [
+    "xypron/cdrkit",
+    "debian/cdrkit"
+  ],
+  "tinyxml": [
+    "rouca/tinyxml",
+    "lts-team/packages/tinyxml",
+    "janitor-team/proposed/tinyxml2",
+    "janitor-team/proposed/tinyxml",
+    "jelmer/tinyxml",
+    "debian/tinyxml2",
+    "debian/tinyxml"
+  ],
+  "opendbx": [
+    "debian/libopendbx"
+  ],
+  "behave": [
+    "jnpf/behave-fork",
+    "janitor-team/proposed/behave",
+    "mbanck/behave",
+    "python-team/packages/behave"
+  ],
+  "nose": [
+    "hypra-team/unoserver",
+    "jnpf/django-nose-fork",
+    "janitor-team/proposed/python-nosehtmloutput",
+    "janitor-team/proposed/nose-el",
+    "janitor-team/proposed/python-nose-exclude",
+    "janitor-team/proposed/python-rednose",
+    "janitor-team/proposed/python-nose-timer",
+    "janitor-team/proposed/python-nose-random",
+    "janitor-team/proposed/openstack-nose",
+    "python-team/packages/python-noseofyeti",
+    "openstack-team/libs/openstack-nose",
+    "emacsen-team/nose-el",
+    "perl-team/modules/packages/libkinosearch1-perl",
+    "perl-team/modules/attic/libkinosearch-perl",
+    "python-team/packages/nose2",
+    "python-team/packages/nose2-cov",
+    "python-team/packages/nose",
+    "python-team/packages/django-nose"
+  ],
+  "pyphen": [
+    "manuziny/pyphen",
+    "python-team/packages/pyphen"
+  ],
+  "dumb": [
+    "debian/libdumbnet",
+    "tts-team/libdumbtts",
+    "jelmer/libstruct-dumb-perl",
+    "java-team/dumbster",
+    "games-team/libdumb",
+    "perl-team/modules/packages/libstruct-dumb-perl",
+    "emacsen-team/dumb-jump-el",
+    "debian/dumb-init"
+  ],
+  "flake8-polyfill": [
+    "python-team/packages/flake8-polyfill"
+  ],
+  "kitchen": [
+    "vpa1977/kitchensink-clojure",
+    "jnpf/kitchen-fork",
+    "clojure-team/kitchensink-clojure",
+    "kibi/kitchensink-clojure",
+    "ruby-team/ruby-kitchen-docker",
+    "ruby-team/ruby-kitchen-salt",
+    "sathieu/test-kitchen",
+    "java-team/kitchensink-clojure",
+    "debian/sdl-kitchensink",
+    "python-team/packages/kitchen",
+    "ruby-team/test-kitchen"
+  ],
+  "pybtex": [
+    "janitor-team/proposed/pybtex-docutils",
+    "mitya57/pybtex",
+    "science-team/pybtex",
+    "science-team/pybtex-docutils"
+  ],
+  "eperl": [
+    "janitor-team/proposed/libdigest-murmurhash3-pureperl-perl",
+    "perl-team/modules/packages/libdigest-murmurhash3-pureperl-perl",
+    "debian/eperl",
+    "perl-team/modules/packages/libogg-vorbis-header-pureperl-perl",
+    "perl-team/modules/packages/libnet-traceroute-pureperl-perl",
+    "perl-team/modules/packages/libgit-pureperl-perl"
+  ],
+  "terminaltables": [
+    "pablolucas890/terminaltables",
+    "debian/terminaltables3",
+    "python-team/packages/terminaltables"
+  ],
+  "jinja2-time": [
+    "python-team/packages/jinja2-time"
+  ],
+  "soil": [
+    "janitor-team/proposed/libsoil",
+    "games-team/libsoil"
+  ],
+  "piexif": [
+    "python-team/packages/piexif"
+  ],
+  "pyaes": [
+    "python-team/packages/pyaes"
+  ],
+  "m4ri": [
+    "science-team/libm4ri",
+    "science-team/libm4rie"
+  ],
+  "openobex": [
+    "janitor-team/proposed/libopenobex",
+    "debian/libopenobex",
+    "iwamatsu/libopenobex"
+  ],
+  "gsm": [
+    "kenhys/gr-gsm",
+    "scansio/libgsm",
+    "izzygala/libgsm",
+    "janitor-team/proposed/libgsm",
+    "debian-mobcom-team/libgsm",
+    "janitor-team/proposed/gsmlib",
+    "debian/gsmlib",
+    "StefanKropp/dugsmap",
+    "janitor-team/proposed/gsmartcontrol",
+    "debian/gsmartcontrol",
+    "perl-team/modules/packages/libdevice-gsm-perl",
+    "debian-hamradio-team/gsmc",
+    "debian-hamradio-team/gr-gsm"
+  ],
+  "pmtools": [
+    "debian/cpmtools",
+    "perl-team/modules/packages/pmtools"
+  ],
+  "svgwrite": [
+    "janitor-team/proposed/svgwrite",
+    "python-team/packages/svgwrite"
+  ],
+  "python-mock": [
+    "manuziny/python-mockito",
+    "python-team/packages/python-mock-open",
+    "python-team/packages/python-mockito",
+    "python-team/packages/python-mockupdb",
+    "python-team/packages/python-mock",
+    "openstack-team/python/python-mockito"
+  ],
+  "oomd": [
+    "obbardc/oomd",
+    "federico/oomd",
+    "yangfl-guest/oomd"
+  ],
+  "pysimplesoap": [
+    "janitor-team/proposed/pysimplesoap",
+    "python-team/packages/pysimplesoap"
+  ],
+  "html5lib": [
+    "saraedum-guest/html5lib",
+    "python-team/packages/html5lib"
+  ]
+}

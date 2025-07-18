@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RElibrary - 软件包分析和比较工具</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        header {
+            background-color: #3498db;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .distributions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .distribution {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            min-width: 120px;
+            text-align: center;
+        }
+        .api-section {
+            margin-bottom: 30px;
+        }
+        code {
+            background-color: #f8f9fa;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            border: 1px solid #ddd;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>RElibrary - 软件包分析和比较工具</h1>
+            <p>分析和比较不同Linux发行版之间的软件包和补丁差异</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="card">
+            <h2>支持的发行版</h2>
+            <div class="distributions">
+                {% for dist in distributions %}
+                <div class="distribution">
+                    <h3>{{ dist }}</h3>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="api-section card">
+            <h2>API 端点</h2>
+            
+            <h3>获取发行版列表</h3>
+            <code>GET /api/distributions</code>
+            
+            <h3>获取软件包列表</h3>
+            <code>GET /api/packages/{distribution}</code>
+            
+            <h3>搜索软件包</h3>
+            <code>GET /api/packages/search?q={query}&distribution={distribution}</code>
+            
+            <h3>获取软件包详情</h3>
+            <code>GET /api/package/{distribution}/{package_name}</code>
+            
+            <h3>比较软件包</h3>
+            <code>POST /api/compare</code>
+            <p>请求体示例:</p>
+            <pre>{
+    "distributions": ["Fedora", "openEuler-24.03"]
+}</pre>
+            
+            <h3>比较补丁</h3>
+            <code>POST /api/compare/patches</code>
+            <p>请求体示例:</p>
+            <pre>{
+    "distributions": ["Fedora", "openEuler-24.03"],
+    "packages_json": "common_packages.json"
+}</pre>
+        </section>
+
+        <section class="card">
+            <h2>快速开始</h2>
+            <p>要比较两个发行版的软件包，请使用以下命令:</p>
+            <pre>from relibrary.analysis.package_compare import compare_distribution_packages
+
+# 比较Fedora和openEuler的软件包
+result = compare_distribution_packages(['Fedora', 'openEuler-24.03'])</pre>
+            
+            <p>要比较补丁，请使用以下命令:</p>
+            <pre>from relibrary.analysis.patch_compare import compare_patches_between_distros
+
+# 比较Fedora和openEuler的补丁
+compare_patches_between_distros(
+    ['Fedora', 'openEuler-24.03'], 
+    'common_packages.json', 
+    'patch_comparison_report.json'
+)</pre>
+        </section>
+
+        <footer class="footer">
+            <p>RElibrary &copy; 2023-2024</p>
+        </footer>
+    </div>
+</body>
+</html> 

@@ -4,16 +4,13 @@ import os
 def load_and_transform(path):
     with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    # 兼容有无packages_comparison包裹
     if 'packages_comparison' in data:
         data = data['packages_comparison']
     result = {}
     for pkg, info in data.items():
         in_list = []
-        # 合并common_patches和same_function_different_content
         for k in ['common_patches', 'same_function_different_content']:
             for patch in info.get(k, []):
-                # 统一补丁键名为小写
                 patch_lower = {kk.lower(): vv for kk, vv in patch.items()}
                 in_list.append({
                     'fedora': patch_lower.get('fedora', ''),
@@ -54,7 +51,6 @@ def main():
     diff = compare_in_sets_detail(dict1, dict2)
     with open(out_file, 'w', encoding='utf-8') as f:
         json.dump(diff, f, ensure_ascii=False, indent=2)
-    print(f'已输出in集合差异（file1独有/file2独有）到: {out_file}')
 
 if __name__ == '__main__':
     main() 

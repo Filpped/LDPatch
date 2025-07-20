@@ -28,12 +28,9 @@ def get_package_list(distribution):
         command_packages = f'''wsl -d {distribution} -- bash -c "dnf repoquery --queryformat '%{{source_name}}|%{{name}}|%{{url}}|%{{version}}-%{{release}}|%{{summary}}\\n' --available"'''
         command_sources = None
     else:
-        logging.warning(f'未知的发行版: {distribution}')
-        print(f'未知的发行版: {distribution}')
         return {}
 
     try:
-        logging.info(f'执行命令：{command_packages}')
         env = os.environ.copy()
         env['LANG'] = 'C.UTF-8'
 
@@ -94,8 +91,6 @@ def get_package_list(distribution):
             process_packages.wait()
 
             if command_sources:
-                logging.info(f'执行命令：{command_sources}')
-                print(f'执行命令：{command_sources}')
                 process_sources = subprocess.Popen(
                     command_sources,
                     shell=True,
@@ -148,7 +143,6 @@ def get_package_list(distribution):
                     }
                 process_sources.stdout.close()
                 process_sources.wait()
-            logging.info(f'完成处理 {distribution} 的输出，时间：{time.strftime("%Y-%m-%d %H:%M:%S")}')
             return source_to_binaries
 
         else:
@@ -176,7 +170,6 @@ def get_package_list(distribution):
                     description = description.strip()
 
                     if not source_pkg or source_pkg.lower() == '(none)':
-                        logging.warning(f"跳过 source_pkg 为 '(none)' 或空的包: {line}")
                         continue  
 
                     if source_pkg in source_to_binaries:
@@ -189,30 +182,24 @@ def get_package_list(distribution):
                             source_to_binaries[source_pkg]['version'] = version
                         else:
                             existing_version = source_to_binaries[source_pkg].get('version', '')
-                            if existing_version != version:
-                                logging.warning(f"源码包 {source_pkg} 存在不同的版本：{existing_version} vs {version}。保留第一个版本。")
                     else:
                         source_to_binaries[source_pkg] = {
                             'binaries': [binary_pkg],
-                            'homepage': homepage if homepage else '未知',
-                            'description': description if description else '无描述',
+                            'homepage': homepage if homepage else 'UNKNOWN',
+                            'description': description if description else 'UNKNOWN',
                             'version': version
                         }
                 else:
-                    logging.warning(f"无效的行格式: {line}")
+                    logging.warning("ERROR")
             process_packages.stdout.close()
             process_packages.wait()
-            logging.info(f'完成处理 {distribution} 的输出，时间：{time.strftime("%Y-%m-%d %H:%M:%S")}')
             return source_to_binaries
 
     except subprocess.TimeoutExpired:
-        logging.error(f'获取 {distribution} 的软件包时超时')
         return {}
     except subprocess.CalledProcessError as e:
-        logging.error(f'获取 {distribution} 的软件包时出错:\n{e.stderr}')
         return {}
     except Exception as e:
-        logging.error(f'获取 {distribution} 的软件包时出错: {e}')
         return {}
 
 def sort_packages(package_list):
@@ -234,7 +221,7 @@ def generate_html(package_data, distros):
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>源码包分析</title>
+    <title>analysis</title>
     <style>
         body {font-family: Arial, sans-serif;}
         ul {list-style-type: none;}
@@ -275,34 +262,34 @@ def generate_html(package_data, distros):
 </head>
 <body>
     <div class="menu">
-        <a href="#" onclick="showSection('ubuntu_all')">1. Ubuntu-24.04 全部软件包</a>
-        <a href="#" onclick="showSection('debian_all')">2. Debian12 全部软件包</a>
-        <a href="#" onclick="showSection('fedora_all')">3. Fedora41 全部软件包</a>
-        <a href="#" onclick="showSection('openeuler_all')">4. openEuler-24.03 全部软件包</a>
-        <a href="#" onclick="showSection('ubuntu_debian_common')">5. Ubuntu24.04和Debian12共有的软件包</a>
-        <a href="#" onclick="showSection('ubuntu_fedora_common')">6. Ubuntu24.04和Fedora41共有的软件包</a>
-        <a href="#" onclick="showSection('ubuntu_openeuler_common')">7. Ubuntu24.04和openEuler24.03共有的软件包</a>
-        <a href="#" onclick="showSection('debian_fedora_common')">8. Debian12和Fedora41共有的软件包</a>
-        <a href="#" onclick="showSection('debian_openeuler_common')">9. Debian12和openEuler24.03共有的软件包</a>
-        <a href="#" onclick="showSection('fedora_openeuler_common')">10. Fedora41和openEuler24.03共有的软件包</a>
-        <a href="#" onclick="showSection('ubuntu_debian_fedora_common')">11. Ubuntu24.04、Debian12和Fedora41共有的软件包</a>
-        <a href="#" onclick="showSection('all_common')">12. 四个发行版共有的软件包</a>
+        <a href="#" onclick="showSection('ubuntu_all')">1. Ubuntu-24.04 ALL</a>
+        <a href="#" onclick="showSection('debian_all')">2. Debian12 ALL</a>
+        <a href="#" onclick="showSection('fedora_all')">3. Fedora41 ALL</a>
+        <a href="#" onclick="showSection('openeuler_all')">4. openEuler-24.03 ALL</a>
+        <a href="#" onclick="showSection('ubuntu_debian_common')">5. Ubuntu24.04 AND Debian12COMMON</a>
+        <a href="#" onclick="showSection('ubuntu_fedora_common')">6. Ubuntu24.04 AND Fedora41COMMON</a>
+        <a href="#" onclick="showSection('ubuntu_openeuler_common')">7. Ubuntu24.04 AND openEuler24.03COMMON</a>
+        <a href="#" onclick="showSection('debian_fedora_common')">8. Debian12 AND Fedora41COMMON</a>
+        <a href="#" onclick="showSection('debian_openeuler_common')">9. Debian12 AND openEuler24.03COMMON</a>
+        <a href="#" onclick="showSection('fedora_openeuler_common')">10. Fedora41 AND openEuler24.03COMMON</a>
+        <a href="#" onclick="showSection('ubuntu_debian_fedora_common')">11. Ubuntu24.04、Debian12 AND Fedora41COMMON</a>
+        <a href="#" onclick="showSection('all_common')">12. FOUR DISTROS COMMON</a>
     </div>
 '''
 
     titles = {
-        'ubuntu_all': '1. Ubuntu-24.04 全部软件包',
-        'debian_all': '2. Debian12 全部软件包',
-        'fedora_all': '3. Fedora41 全部软件包',
-        'openeuler_all': '4. openEuler-24.03 全部软件包',
-        'ubuntu_debian_common': '5. Ubuntu24.04和Debian12共有的软件包',
-        'ubuntu_fedora_common': '6. Ubuntu24.04和Fedora41共有的软件包',
-        'ubuntu_openeuler_common': '7. Ubuntu24.04和openEuler24.03共有的软件包',
-        'debian_fedora_common': '8. Debian12和Fedora41共有的软件包',
-        'debian_openeuler_common': '9. Debian12和openEuler24.03共有的软件包',
-        'fedora_openeuler_common': '10. Fedora41和openEuler24.03共有的软件包',
-        'ubuntu_debian_fedora_common': '11. Ubuntu24.04、Debian12和Fedora41共有的软件包',
-        'all_common': '12. 四个发行版共有的软件包'
+        'ubuntu_all': '1. Ubuntu-24.04 ALL',
+        'debian_all': '2. Debian12 ALL',
+        'fedora_all': '3. Fedora41 ALL',
+        'openeuler_all': '4. openEuler-24.03 ALL',
+        'ubuntu_debian_common': '5. Ubuntu24.04 AND Debian12COMMON',
+        'ubuntu_fedora_common': '6. Ubuntu24.04 AND Fedora41COMMON',
+        'ubuntu_openeuler_common': '7. Ubuntu24.04 AND openEuler24.03COMMON',
+        'debian_fedora_common': '8. Debian12 AND Fedora41COMMON',
+        'debian_openeuler_common': '9. Debian12 AND openEuler24.03COMMON',
+        'fedora_openeuler_common': '10. Fedora41 AND openEuler24.03COMMON',
+        'ubuntu_debian_fedora_common': '11. Ubuntu24.04、Debian12 AND Fedora41COMMON',
+        'all_common': '12. FOUR DISTROS COMMON'
     }
     logging.debug("Package data keys: %s", list(package_data.keys()))
     print("Package data keys:", list(package_data.keys()))
@@ -315,7 +302,7 @@ def generate_html(package_data, distros):
 
         html_content += f'<div id="{key}" class="section hidden">\n'
         title = titles.get(key, key)
-        html_content += f'<h2>{title} 共{len(pkg_dict)}个源软件包</h2>\n'
+        html_content += f'<h2>{title} {len(pkg_dict)} SOURCE_PACKAGES</h2>\n'
         html_content += '<ul>\n'
         for i, src_pkg in enumerate(sort_packages(list(pkg_dict.keys()))):
             data = pkg_dict[src_pkg]
@@ -327,9 +314,9 @@ def generate_html(package_data, distros):
                 for distro in data:
                     distro_data = data[distro]
                     binary_pkgs = distro_data.get('binaries', [])
-                    homepage = distro_data.get('homepage', '未知')
-                    description = distro_data.get('description', '无描述')
-                    version = distro_data.get('version', '未知')
+                    homepage = distro_data.get('homepage', 'UNKNOWN')
+                    description = distro_data.get('description', 'UNKNOWN')
+                    version = distro_data.get('version', 'UNKNOWN')
                     pkg_name = distro_data.get('package_name', src_pkg)  
 
                     homepage_escaped = html.escape(homepage)
@@ -340,21 +327,21 @@ def generate_html(package_data, distros):
                     binary_pkgs_html = ''.join(f'<li>{html.escape(bin_pkg)}</li>' for bin_pkg in binary_pkgs)
 
                     html_content += f'            <h3>{distro}:</h3>\n'
-                    html_content += f'            <p>包名：{html.escape(pkg_name)}</p>\n'
-                    html_content += f'            <p>版本：{version_escaped}</p>\n'
-                    html_content += f'            <p>上游项目版本：{upstream_version_escaped}</p>\n'
+                    html_content += f'            <p>PACKAGE：{html.escape(pkg_name)}</p>\n'
+                    html_content += f'            <p>VERSION：{version_escaped}</p>\n'
+                    html_content += f'            <p>UPSTREAMVERSION：{upstream_version_escaped}</p>\n'
 
-                    if homepage != '未知':
-                        html_content += f'            <p>主页：<a href="{homepage_escaped}" target="_blank">{homepage_escaped}</a></p>\n'
+                    if homepage != 'UNKNOWN':
+                        html_content += f'            <p>HOMEPAGE：<a href="{homepage_escaped}" target="_blank">{homepage_escaped}</a></p>\n'
                     else:
-                        html_content += f'            <p>主页：未知</p>\n'
-                    html_content += f'            <p>描述：{description_escaped}</p>\n'
+                        html_content += f'            <p>HOMEPAGE：UNKNOWN</p>\n'
+                    html_content += f'            <p>DES：{description_escaped}</p>\n'
                     html_content += f'            <ul>\n{binary_pkgs_html}\n            </ul>\n'
             else:
                 binary_pkgs = data.get('binaries', [])
-                homepage = data.get('homepage', '未知')
-                description = data.get('description', '无描述')
-                version = data.get('version', '未知')
+                homepage = data.get('homepage', 'UNKNOWN')
+                description = data.get('description', 'UNKNOWN')
+                version = data.get('version', 'UNKNOWN')
 
                 homepage_escaped = html.escape(homepage)
                 description_escaped = html.escape(description)
@@ -363,19 +350,18 @@ def generate_html(package_data, distros):
                 upstream_version_escaped = html.escape(upstream_version)
                 binary_pkgs_html = ''.join(f'<li>{html.escape(bin_pkg)}</li>' for bin_pkg in binary_pkgs)
                 pkg_name = data.get('package_name', src_pkg)
-                html_content += f'            <p>包名：{html.escape(pkg_name)}</p>\n'
-                html_content += f'            <p>版本：{version_escaped}</p>\n'
-                html_content += f'            <p>上游项目版本：{upstream_version_escaped}</p>\n'
-                if homepage != '未知':
-                    html_content += f'            <p>主页：<a href="{homepage_escaped}" target="_blank">{homepage_escaped}</a></p>\n'
+                html_content += f'            <p>PACKAGE：{html.escape(pkg_name)}</p>\n'
+                html_content += f'            <p>VERSION：{version_escaped}</p>\n'
+                html_content += f'            <p>UPSTREAMVERSION：{upstream_version_escaped}</p>\n'
+                if homepage != 'UNKNOWN':
+                    html_content += f'            <p>HOMEPAGE：<a href="{homepage_escaped}" target="_blank">{homepage_escaped}</a></p>\n'
                 else:
-                    html_content += f'            <p>主页：未知</p>\n'
-                html_content += f'            <p>描述：{description_escaped}</p>\n'
+                    html_content += f'            <p>HOMEPAGE：UNKNOWN</p>\n'
+                html_content += f'            <p>DES：{description_escaped}</p>\n'
                 html_content += f'            <ul>\n{binary_pkgs_html}\n            </ul>\n'
             html_content += f'        </div>\n'
             html_content += '    </li>\n'
         html_content += '</ul>\n</div>\n'
-        logging.debug(f'生成了 section: {key}')
 
     html_content += '''
     <script>
@@ -387,14 +373,10 @@ def generate_html(package_data, distros):
     try:
         with open('Source_packages_withVersion.html', 'w', encoding='utf-8') as f:
             f.write(html_content)
-        logging.info('已生成HTML文件：Source_packages_withVersion.html')
-        print('已生成HTML文件：Source_packages_withVersion.html')
     except Exception as e:
-        logging.error(f'写入 HTML 文件时发生错误: {e}')
-        print(f'写入 HTML 文件时发生错误: {e}')
+        logging.error("ERROR")
 
 def extract_upstream_version(version):
-    """提取上游版本，即第一个 '-' 前的部分"""
     return version.split('-', 1)[0]
 
 def find_common_packages(package_lists, description_threshold=0.8, description_threshold_no_homepage=0.95):
@@ -417,7 +399,6 @@ def find_common_packages(package_lists, description_threshold=0.8, description_t
                 pkgname_to_packages[pkg_name_lower] = {distro: src_pkg}
 
     common_pkg_names_all = [pkg_name_lower for pkg_name_lower, distros_pkgs in pkgname_to_packages.items() if len(distros_pkgs) == len(distros)]
-    logging.info(f"找到 {len(common_pkg_names_all)} 个在所有发行版中具有相同名称的包。")
 
     num_name_and_version_matching_packages = 0
     for pkg_name_lower in common_pkg_names_all:
@@ -446,9 +427,6 @@ def find_common_packages(package_lists, description_threshold=0.8, description_t
             src_pkg_name = distros_pkgs[base_distro]
             common_pkgs_dict[src_pkg_name] = pkg_data_all_distros
             num_name_and_version_matching_packages += 1
-
-    logging.info(f"包名和上游版本一致的包数量：{num_name_and_version_matching_packages}")
-
     combination_common_pkgs = {}
 
     desired_combinations = [
@@ -471,7 +449,6 @@ def find_common_packages(package_lists, description_threshold=0.8, description_t
             pkgname_to_distro_pkgs[pkg_name_lower][distro] = pkg_name
 
     for combo, combo_key in desired_combinations:
-        logging.info(f"计算组合：{combo}")
         common_pkgs = {}
         for pkg_name_lower, distros_pkgs in pkgname_to_distro_pkgs.items():
             if all(distro in distros_pkgs for distro in combo):
@@ -499,7 +476,6 @@ def find_common_packages(package_lists, description_threshold=0.8, description_t
                     pkg_name_base = distros_pkgs[base_distro]
                     common_pkgs[pkg_name_base] = pkg_data_all_distros
         combination_common_pkgs[combo_key] = common_pkgs
-        logging.info(f"组合 {combo} 共有包数量：{len(common_pkgs)}")
 
     return combination_common_pkgs
 
@@ -508,17 +484,15 @@ def main():
     distros = ['Ubuntu-24.04', 'Debian', 'Fedora', 'openEuler-24.03']
     package_lists = {}
     for distro in distros:
-        print(f'正在获取 {distro} 的软件包...')
-        logging.info(f'正在获取 {distro} 的软件包...')
         packages_dict = get_package_list(distro)
         package_lists[distro] = packages_dict
 
     combination_common_pkgs = find_common_packages(package_lists, description_threshold=0.8, description_threshold_no_homepage=0.95)
 
-    print(f"1. Ubuntu-24.04 全部软件包 {len(package_lists['Ubuntu-24.04'])} 个")
-    print(f"2. Debian12 全部软件包 {len(package_lists['Debian'])} 个")
-    print(f"3. Fedora41 全部软件包 {len(package_lists['Fedora'])} 个")
-    print(f"4. openEuler-24.03 全部软件包 {len(package_lists['openEuler-24.03'])} 个")
+    print(f"1. Ubuntu-24.04 ALL {len(package_lists['Ubuntu-24.04'])} ")
+    print(f"2. Debian12 ALL {len(package_lists['Debian'])} ")
+    print(f"3. Fedora41 ALL {len(package_lists['Fedora'])} ")
+    print(f"4. openEuler-24.03 ALL {len(package_lists['openEuler-24.03'])} ")
     package_data = {
         'ubuntu_all': package_lists['Ubuntu-24.04'],
         'debian_all': package_lists['Debian'],
@@ -535,12 +509,8 @@ def main():
     try:
         with open('packages_data_all_distributions.json', 'w', encoding='utf-8') as json_file:
             json.dump(package_data, json_file, ensure_ascii=False, indent=4)
-        logging.info('已生成JSON文件：packages_data_all_distributions.json')
-        print('已生成JSON文件：packages_data_all_distributions.json')
     except Exception as e:
-        logging.error(f'写入 JSON 文件时发生错误: {e}')
-        print(f'写入 JSON 文件时发生错误: {e}')
-
+        logging.error("ERROR")
     generate_html(package_data,distros)
 
 if __name__ == '__main__':

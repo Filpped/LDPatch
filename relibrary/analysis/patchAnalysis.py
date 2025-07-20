@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from upsetplot import UpSet, from_contents
 
-# 你的文件路径和输出目录
 FILES = [
     ("relibrary/core/patch/rpm_patch_comparison_report.json", "Fedora-openEuler"),
     ("relibrary/core/patch/deb_rpm_patch_comparison_report.json", "Fedora-Debian")

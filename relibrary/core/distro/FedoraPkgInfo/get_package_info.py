@@ -259,8 +259,6 @@ def ensure_tools_installed():
 
 def process_package(package_name):
     try:
-        logging.info(f"处理软件包: {package_name}")
-
         download_dir = os.path.join(download_base_dir, f"downloads_{uuid.uuid4().hex}")
 
         success = download_source_package(package_name, download_dir)

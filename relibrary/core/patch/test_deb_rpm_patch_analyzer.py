@@ -520,7 +520,7 @@ def test_from_common_packages(json_file=DEFAULT_COMMON_PACKAGES_FILE, output_pre
     return stats
 
 def main():
-    parser = argparse.ArgumentParser(description="比较Fedora和Debian的软件包补丁")
+    parser = argparse.ArgumentParser(description="Fedora and Debian")
     
     parser.add_argument('--common_packages', type=str, default=DEFAULT_COMMON_PACKAGES_FILE,
                       help='path')

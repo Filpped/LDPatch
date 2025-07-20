@@ -269,7 +269,6 @@ def process_package(package_name):
         if not srpm_files:
             return None
         srpm_path = srpm_files[0]
-        logging.info(f"找到 SRPM 文件: {srpm_path}")
         srpm_filename = os.path.basename(srpm_path)
         srpm_basename = srpm_filename[:-8]  
         if srpm_basename.startswith(package_name + '-'):

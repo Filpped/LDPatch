@@ -113,7 +113,7 @@ Below is a breakdown of the main Python scripts, their purposes, and their input
 - **Purpose:**  
   Compares patches for common packages between Fedora and openEuler-24.03, supporting strip_level adaptation. Outputs comparison results and summary statistics.
 - **Input:**  
-  - data/packages/package_analysis_withVersion.json  
+  - data/FO_common_same_version.json
   - Local Fedora/openEuler source and patch directories
 - **Output:**  
   - data/patches/rpm_patch_comparison_report.json  
@@ -131,7 +131,7 @@ Below is a breakdown of the main Python scripts, their purposes, and their input
 - **Purpose:**  
   Compares and analyzes patches for common packages between Fedora and Debian. Automatically extracts, normalizes, and compares patch content, and outputs detailed reports and logs.
 - **Input:**  
-  - data/packages/package_analysis_withVersion.json  
+  - data/repology_DF_same_version.json  
   - Local Fedora/Debian source and patch directories
 - **Output:**  
   - data/patches/deb_rpm_patch_comparison_report.json  

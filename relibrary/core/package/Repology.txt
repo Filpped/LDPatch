@@ -1,4 +1,4 @@
-获取两个发行版之间同源软件包的SQL语句，以Fedora-Dedian为例：
+SQL query for extracting homologous packages between two distributions, using Fedora-Debian as an example:
 
 \copy (
 WITH
@@ -277,7 +277,7 @@ SELECT (SELECT obj FROM final_obj)::text
 
 
 
-获取三个发行版之间同源软件包的SQL语句，以Fedora-Dedian-openEuler为例：
+SQL query for extracting homologous packages between three distributions, using Fedora-Debian-openEuler as an example:
 \copy (
 WITH
 REPOS(repo) AS ( VALUES ('debian_12'), ('fedora_41'), ('openeuler_24_03_lts') ),
@@ -546,11 +546,7 @@ SELECT (SELECT obj FROM final_obj)::text
 
 
 
-
-
-
-
-获取四个发行版之间同源软件包的SQL语句：
+SQL query for extracting homologous packages between four distributions:
 \copy (
 WITH
 REPOS(repo) AS ( VALUES ('debian_12'), ('ubuntu_24_04'), ('fedora_41'), ('openeuler_24_03_lts') ),

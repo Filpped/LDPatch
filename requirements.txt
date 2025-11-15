@@ -1,7 +1,5 @@
 # Minimum version requirements for Python packages
-# For reproducibility, exact versions used during experiments are documented in requirements-exact.txt
-# To install exact versions: pip install -r requirements-exact.txt
-# To generate a new exact version file: pip freeze > requirements-exact.txt
+
 
 scikit-learn>=1.0.0
 requests>=2.25.0
@@ -18,7 +16,6 @@ upsetplot>=0.6.0
 
 # Exact versions of Python packages used during experiments
 # This file was generated to ensure reproducibility as suggested by reviewers.
-# To install these exact versions, use: pip install -r requirements-exact.txt
 
 adjustText==1.3.0
 matplotlib==3.10.3

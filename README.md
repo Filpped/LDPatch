@@ -69,6 +69,10 @@ Below is a breakdown of the main Python scripts, their purposes, and their input
 - **Purpose:**  
   Analyzes the introduction time of patches in different distributions, computes delay statistics, and generates visualizations (e.g., ECDF, boxplots, scatter plots) for patch synchronization and origin.
 
+### relibrary/core/package/Repology.txt
+- **Purpose:**  
+  Contains SQL queries for extracting homologous (same-source) package data from the Repology database. The queries support identifying common packages across 2, 3, or 4 distributions (e.g., Fedora-Debian, Fedora-Debian-openEuler, Debian-Ubuntu-Fedora-openEuler) by matching packages through multiple methods: effective names (effname), source names (srcname), and upstream URLs (including project keys and normalized URLs). The Repology database dumps can be downloaded from [https://dumps.repology.org/](https://dumps.repology.org/).
+
 ### relibrary/core/package/package_analyzer.py
 - **Purpose:**  
   Provides functions for extracting, normalizing, and comparing package lists and metadata from different distributions (Debian, Ubuntu, Fedora, openEuler), including similarity analysis and advanced comparison.

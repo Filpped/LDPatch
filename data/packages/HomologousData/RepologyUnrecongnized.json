@@ -1,0 +1,259 @@
+{
+  "LDPatch_DF": {
+    "srcname": {
+      "screenruler": {
+        "Debian": {
+          "binaries": [
+            "screenruler"
+          ],
+          "homepage": "http://gnomecoder.wordpress.com/screenruler/",
+          "description": "measure objects on screen with a variety of metrics",
+          "version": "1.2-3",
+          "package_name": "screenruler"
+        },
+        "Fedora": {
+          "binaries": [
+            "screenruler"
+          ],
+          "homepage": "https://salsa.debian.org/georgesk/screenruler",
+          "description": "GNOME screen ruler",
+          "version": "1.2.1",
+          "package_name": "screenruler"
+        }
+      },
+      "browserpass": {
+        "Debian": {
+          "binaries": [
+            "webext-browserpass"
+          ],
+          "homepage": "https://github.com/browserpass",
+          "description": "web extension for the password manager pass",
+          "version": "3.7.2-1+b10",
+          "package_name": "browserpass"
+        },
+        "Fedora": {
+          "binaries": [
+            "browserpass-chromium",
+            "browserpass-firefox",
+            "browserpass"
+          ],
+          "homepage": "https://github.com/browserpass/browserpass",
+          "description": "Native component for the Chromium extension Native component for the Firefox extension Native messaging host",
+          "version": "3.1.0",
+          "package_name": "browserpass"
+        }
+      }
+    },
+    "URL": {
+      "x-oauth2": {
+        "Debian": {
+          "binaries": [
+            "golang-golang-x-oauth2-dev",
+            "golang-golang-x-oauth2-google-dev"
+          ],
+          "homepage": "https://golang.org/x/oauth2",
+          "description": "make OAuth2 authorized and authenticated HTTP requests Google APIs support for OAuth2",
+          "version": "0.3.0-1",
+          "package_name": "golang-golang-x-oauth2"
+        },
+        "Fedora": {
+          "binaries": [
+            "golang-x-oauth2-devel",
+            "golang-x-oauth2-devel",
+            "golang-x-oauth2"
+          ],
+          "homepage": "https://github.com/golang/oauth2",
+          "description": "Client implementation for OAuth 2.0 spec",
+          "version": "0.21.0",
+          "package_name": "golang-x-oauth2"
+        }
+      },
+      "dxflib": {
+        "Debian": {
+          "binaries": [
+            "libdxflib-dev",
+            "libdxflib3"
+          ],
+          "homepage": "https://www.qcad.org/en/what-is-dxflib",
+          "description": "Library for reading and writing DXF files Development files for the dxflib library",
+          "version": "3.26.4-1+b1",
+          "package_name": "dxflib"
+        },
+        "Fedora": {
+          "binaries": [
+            "libdxflib-devel",
+            "libdxflib-doc",
+            "libdxflib"
+          ],
+          "homepage": "https://www.ribbonsoft.com/en/90-dxflib",
+          "description": "Development files for libdxflib Documentation and examples for libdxflib A C++ library for reading and writing DXF files",
+          "version": "3.26.4",
+          "package_name": "libdxflib"
+        }
+      }
+    },
+    "DUF": {
+      "glimpse": {
+        "Ubuntu-24.04": {
+          "binaries": [
+            "glimpse"
+          ],
+          "homepage": "",
+          "description": "search quickly through entire file systems",
+          "version": "4.18.7-8build1",
+          "package_name": "glimpse"
+        },
+        "Debian": {
+          "binaries": [
+            "glimpse"
+          ],
+          "homepage": "",
+          "description": "search quickly through entire file systems",
+          "version": "4.18.7-6",
+          "package_name": "glimpse"
+        },
+        "Fedora": {
+          "binaries": [
+            "glimpse"
+          ],
+          "homepage": "https://github.com/gvelez17/glimpse",
+          "description": "Powerful file indexing and query system",
+          "version": "4.12.6^git20161025.4945711",
+          "package_name": "glimpse"
+        }
+      },
+      "icon": {
+        "Ubuntu-24.04": {
+          "binaries": [
+            "icont",
+            "iconx",
+            "icon-ipl"
+          ],
+          "homepage": "",
+          "description": "Libraries for Icon, a high-level programming language Executor for Icon, a high-level programming language Interpreter for Icon, a high-level programming language",
+          "version": "9.4.3-7ubuntu1",
+          "package_name": "icon"
+        },
+        "Debian": {
+          "binaries": [
+            "icont",
+            "iconx",
+            "icon-ipl"
+          ],
+          "homepage": "",
+          "description": "Libraries for Icon, a high-level programming language Executor for Icon, a high-level programming language Interpreter for Icon, a high-level programming language",
+          "version": "9.4.3-7",
+          "package_name": "icon"
+        },
+        "Fedora": {
+          "binaries": [
+            "icon-utils",
+            "icon"
+          ],
+          "homepage": "https://www2.cs.arizona.edu/icon/",
+          "description": "Icon utility programs Icon programming language",
+          "version": "9.5.20i",
+          "package_name": "icon"
+        }
+      },
+      "bliss": {
+        "Ubuntu-24.04": {
+          "binaries": [
+            "libbliss2",
+            "libbliss-dev",
+            "libbliss-dev-common",
+            "bliss",
+            "bliss-doc"
+          ],
+          "homepage": "https://users.aalto.fi/~tjunttil/bliss/",
+          "description": "development files to compute graph automorphisms and labelings -- libdev tool to compute graph automorphisms and labelings -- bin library to compute graph automorphisms and labelings development files to compute graph automorphisms and labelings -- headers suite to compute graph automorphisms and labelings -- doc",
+          "version": "0.77-3build1",
+          "package_name": "bliss"
+        },
+        "Debian": {
+          "binaries": [
+            "libbliss2",
+            "libbliss-dev",
+            "libbliss-dev-common",
+            "bliss",
+            "bliss-doc"
+          ],
+          "homepage": "http://www.tcs.hut.fi/Software/bliss/",
+          "description": "development files to compute graph automorphisms and labelings -- libdev tool to compute graph automorphisms and labelings -- bin library to compute graph automorphisms and labelings development files to compute graph automorphisms and labelings -- headers suite to compute graph automorphisms and labelings -- doc",
+          "version": "0.73-5",
+          "package_name": "bliss"
+        },
+        "Fedora": {
+          "binaries": [
+            "bliss-devel",
+            "bliss-libs",
+            "bliss"
+          ],
+          "homepage": "https://users.aalto.fi/~tjunttil/bliss/",
+          "description": "Headers and library files for developing with bliss Compute automorphism groups and canonical labelings of graphs",
+          "version": "0.77",
+          "package_name": "bliss"
+        }
+      },
+      "chatty": {
+        "Ubuntu-24.04": {
+          "binaries": [
+            "chatty"
+          ],
+          "homepage": "https://source.puri.sm/Librem5/chatty",
+          "description": "Messaging application for mobile and desktop",
+          "version": "0.8.2-1ubuntu2",
+          "package_name": "chatty"
+        },
+        "Debian": {
+          "binaries": [
+            "chatty"
+          ],
+          "homepage": "https://source.puri.sm/Librem5/chatty",
+          "description": "XMPP and SMS messaging",
+          "version": "0.7.0-1",
+          "package_name": "chatty"
+        },
+        "Fedora": {
+          "binaries": [
+            "chatty",
+            "chatty"
+          ],
+          "homepage": "https://gitlab.gnome.org/World/Chatty",
+          "description": "A libpurple messaging client",
+          "version": "0.8.4",
+          "package_name": "chatty"
+        }
+      },
+      "screenruler": {
+        "Ubuntu-24.04": {
+          "binaries": [
+            "screenruler"
+          ],
+          "homepage": "http://gnomecoder.wordpress.com/screenruler/",
+          "description": "measure objects on screen with a variety of metrics",
+          "version": "1.2.1-1",
+          "package_name": "screenruler"
+        },
+        "Debian": {
+          "binaries": [
+            "screenruler"
+          ],
+          "homepage": "http://gnomecoder.wordpress.com/screenruler/",
+          "description": "measure objects on screen with a variety of metrics",
+          "version": "1.2-3",
+          "package_name": "screenruler"
+        },
+        "Fedora": {
+          "binaries": [
+            "screenruler"
+          ],
+          "homepage": "https://salsa.debian.org/georgesk/screenruler",
+          "description": "GNOME screen ruler",
+          "version": "1.2.1",
+          "package_name": "screenruler"
+        }
+      }
+    }
+  }
+}

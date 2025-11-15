@@ -1,213 +1,259 @@
 #!/usr/bin/env python3
-
 import sys
 import os
 import json
 import argparse
 import subprocess
 import logging
-from relibrary.core.patch.rpm_patch_analyzer_fileName import (
-    get_patch_names,
+import hashlib
+from rpm_patch_analyzer import (
     get_patch_info,
     get_patch_file_content,
-    normalize_patch_content,
-    get_patch_hash,
-    compare_patches
+    compare_patches_by_diff_only,
+    extract_diff_lines_only,
+    normalize_patch_content
 )
 
 DEFAULT_FEDORA_DISTRO = "Fedora"
 DEFAULT_OPENEULER_DISTRO = "openEuler-24.03"
-DEFAULT_SPEC_DIR = "/home/XXX/rpmbuild/SPECS"
-DEFAULT_SOURCE_DIR = "/home/XXX/rpmbuild/SOURCES"
+DEFAULT_SPEC_DIR = "/home/penny/rpmbuild/SPECS"
+DEFAULT_SOURCE_DIR = "/home/penny/rpmbuild/SOURCES"
 
+log_filename = 'patch_compare.log'
 logging.basicConfig(
-    filename='patch_compare.log',
+    filename=log_filename,
     level=logging.INFO,
     format='%(asctime)s %(levelname)s %(message)s',
-    encoding='utf-8'
+    encoding='utf-8',
+    filemode='w' 
 )
 console = logging.StreamHandler()
 console.setLevel(logging.WARNING)
 logging.getLogger().addHandler(console)
 
+
 def get_spec_content(package_name, distribution, spec_dir=DEFAULT_SPEC_DIR):
     spec_path = f"{spec_dir}/{package_name}.spec"
-    command = f"wsl -d {distribution} bash -c 'cat \"{spec_path}\"'"
+    cmd = f"wsl -d {distribution} bash -c 'cat \"{spec_path}\"'"
     try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=60)
-        if result.returncode != 0 or not result.stdout.strip():
-            return None
-        return result.stdout
+        res = subprocess.run(cmd, shell=True, capture_output=True, text=True,
+                             encoding='utf-8', errors='replace', timeout=60)
+        return res.stdout if res.returncode == 0 and res.stdout.strip() else None
     except Exception as e:
+        logging.error(f": {package_name}({distribution}): {e}")
         return None
 
-def main(package_analysis_file, output_file="rpm_patch_comparison_report.json"):
-    with open(package_analysis_file, 'r', encoding='utf-8') as f:
-        package_data = json.load(f)
-    common_packages = package_data.get("fedora_openeuler-24.03_common", {})
-    packages_comparison = {}
 
-    total_pkgs = len(common_packages)
-    for idx, (package_key, package_info) in enumerate(common_packages.items(), 1):
+def normalize_content(content):
+
+    if isinstance(content, list):
+        return '\n'.join(str(line) for line in content)
+    return content
+
+
+def filter_diff_lines(diff_lines):
+
+    filtered = []
+    for l in diff_lines:
+        if l in ('+', '-'):
+            continue
+        if l.startswith('--- ') or l.startswith('+++ '):
+            continue
+        filtered.append(l)
+    return filtered
+
+
+def match_round(threshold, label, left_src, left_tgt, record, src_dict, tgt_dict):
+    logging.info(f" {threshold} ({label})")
+    matched_src, matched_tgt = set(), set()
+    for s in list(left_src):
+        s_txt = src_dict[s]
+        raw_s = extract_diff_lines_only(normalize_patch_content(s_txt))
+        d_s = filter_diff_lines(raw_s)
+        for t in list(left_tgt):
+            t_txt = tgt_dict[t]
+            raw_t = extract_diff_lines_only(normalize_patch_content(t_txt))
+            d_t = filter_diff_lines(raw_t)
+            sim, ok = compare_patches_by_diff_only(s_txt, t_txt, threshold=threshold)
+            logging.info(f"{label}: {s} vs {t}, sim={sim:.3f}")
+            logging.info(f"Fed diff(filtered): {d_s}")
+            logging.info(f"Oe diff(filtered): {d_t}")
+            if ok:
+                record.append({"fedora": s, "openeuler": t, "similarity": round(sim, 3)})
+                left_src.remove(s)
+                left_tgt.remove(t)
+                matched_src.add(s)
+                matched_tgt.add(t)
+                logging.info(f" [{label}]: {s} <==> {t}")
+                break
+
+
+def extract_package_pairs(data):
+  
+    package_pairs = []
+    
+    for top_key, top_value in data.items():
+        if isinstance(top_value, dict):
+            for pkg_key, package_data in top_value.items():
+                if isinstance(package_data, dict):
+                    fedora_data = package_data.get('Fedora', {})
+                    openeuler_data = None
+                    openeuler_key = None
+                    for key in package_data.keys():
+                        if key.startswith('openEuler'):
+                            openeuler_key = key
+                            openeuler_data = package_data.get(key, {})
+                            break
+                    
+                    fed_name = fedora_data.get('package_name', '')
+                    ope_name = openeuler_data.get('package_name', '') if openeuler_data else ''
+                    
+                    if fed_name and ope_name:
+                        package_pairs.append({
+                            'key': pkg_key,
+                            'fedora': {
+                                'package_name': fed_name,
+                                'version': fedora_data.get('version', ''),
+                            },
+                            'openeuler': {
+                                'package_name': ope_name,
+                                'version': openeuler_data.get('version', '') if openeuler_data else '',
+                                'openeuler_key': openeuler_key
+                            }
+                        })
+    
+    return package_pairs
+
+
+def main(input_file, output_file):
+    with open(input_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    logging.info("=" * 70)
+    logging.info(f"{input_file}")
+    logging.info("=" * 70)
+    
+    package_pairs = extract_package_pairs(data)
+    report = {}
+    total = len(package_pairs)
+    
+
+    for idx, pair in enumerate(package_pairs, start=1):
+        pkg_key = pair['key']
+        fed_name = pair['fedora']['package_name']
+        ope_name = pair['openeuler']['package_name']
+        
+        if idx % 100 == 0 or idx == 1:
+            print(f"[{idx}/{total}] : {idx*100//total}%")
+        
         try:
-            fedora_info = package_info.get("Fedora", {})
-            openeuler_info = package_info.get("openEuler-24.03", {})
-            fedora_package_name = fedora_info.get("package_name", package_key)
-            openeuler_package_name = openeuler_info.get("package_name", package_key)
-            fedora_spec_content = get_spec_content(fedora_package_name, DEFAULT_FEDORA_DISTRO)
-            openeuler_spec_content = get_spec_content(openeuler_package_name, DEFAULT_OPENEULER_DISTRO)
-            if not fedora_spec_content or not openeuler_spec_content:
-                packages_comparison[package_key] = {"error": "spec file missing"}
+            logging.info(f"  Fedora: {fed_name} (: {pair['fedora']['version']})")
+            logging.info(f"  OpenEuler: {ope_name} (: {pair['openeuler']['version']})")
+
+            fed_spec = get_spec_content(fed_name, DEFAULT_FEDORA_DISTRO, DEFAULT_SPEC_DIR)
+            ope_spec = get_spec_content(ope_name, DEFAULT_OPENEULER_DISTRO, DEFAULT_SPEC_DIR)
+            
+            if not fed_spec:
+                logging.warning(f"Fedora spec missing: {fed_name}")
+                report[pkg_key] = {
+                    "fedora_package": fed_name,
+                    "openeuler_package": ope_name,
+                    "error": f"Fedora spec missing: {fed_name}"
+                }
+                continue
+            
+            if not ope_spec:
+                logging.warning(f"OpenEuler spec missing: {ope_name}")
+                report[pkg_key] = {
+                    "fedora_package": fed_name,
+                    "openeuler_package": ope_name,
+                    "error": f"OpenEuler spec missing: {ope_name}"
+                }
                 continue
 
-            fedora_patch_info = get_patch_info(fedora_spec_content)
-            openeuler_patch_info = get_patch_info(openeuler_spec_content)
-            fedora_patches = list(fedora_patch_info.keys())
-            openeuler_patches = list(openeuler_patch_info.keys())
+            fed_patches = list(get_patch_info(fed_spec).keys())
+            ope_patches = list(get_patch_info(ope_spec).keys())
 
-            fedora_patch_contents = {}
-            openeuler_patch_contents = {}
-            for patch_name in fedora_patches:
-                content = get_patch_file_content(DEFAULT_FEDORA_DISTRO, patch_name)
-                if content:
-                    fedora_patch_contents[patch_name] = content
-            for patch_name in openeuler_patches:
-                content = get_patch_file_content(DEFAULT_OPENEULER_DISTRO, patch_name)
-                if content:
-                    openeuler_patch_contents[patch_name] = content
-            matched_fedora = set()
-            matched_openeuler = set()
-            fedora_hash_map = {}
-            openeuler_hash_map = {}
-            for fname, content in fedora_patch_contents.items():
-                stripA = fedora_patch_info.get(fname, {}).get('strip_level', 0)
-                norm = normalize_patch_content(content)
-                hashval = get_patch_hash(norm)
-                fedora_hash_map[fname] = (hashval, stripA)
-            for oname, content in openeuler_patch_contents.items():
-                stripB = openeuler_patch_info.get(oname, {}).get('strip_level', 0)
-                norm = normalize_patch_content(content)
-                hashval = get_patch_hash(norm)
-                openeuler_hash_map[oname] = (hashval, stripB)
+        
+            fed_contents = {}
+            ope_contents = {}
+            
+            for name in fed_patches:
+                raw = get_patch_file_content(DEFAULT_FEDORA_DISTRO, name, DEFAULT_SOURCE_DIR)
+                if raw:
+                    txt = normalize_content(raw)
+                    fed_contents[name] = txt
+                    logging.info(f"Fedora: {name}, {len(txt.splitlines())} ")
+                else:
+                    logging.warning(f"Fedora: {name}")
+            
+            for name in ope_patches:
+                raw = get_patch_file_content(DEFAULT_OPENEULER_DISTRO, name, DEFAULT_SOURCE_DIR)
+                if raw:
+                    txt = normalize_content(raw)
+                    ope_contents[name] = txt
+                    logging.info(f": {name}, {len(txt.splitlines())} ")
+                else:
+                    logging.warning(f": {name}")
 
-            common_patches = []
-            fedora_left = set(fedora_patch_contents)
-            openeuler_left = set(openeuler_patch_contents)
-            matched_fedora = set()
-            matched_openeuler = set()
+            fed_left = set(fed_contents.keys())
+            ope_left = set(ope_contents.keys())
 
-            for fname in list(fedora_left):
-                fcontent = fedora_patch_contents[fname]
-                stripA = fedora_patch_info.get(fname, {}).get('strip_level', 0)
-                found = False
-                for oname in list(openeuler_left):
-                    ocontent = openeuler_patch_contents[oname]
-                    stripB = openeuler_patch_info.get(oname, {}).get('strip_level', 0)
-                    sim, _ = compare_patches(fcontent, ocontent, stripA, stripB)
-                    if sim == 1.0:
-                        common_patches.append({"fedora": fname, "openeuler": oname})
-                        fedora_left.discard(fname)
-                        openeuler_left.discard(oname)
-                        matched_fedora.add(fname)
-                        matched_openeuler.add(oname)
-                        found = True
-                        break
-                if found:
-                    continue
+            for n in sorted(fed_contents):
+                h = hashlib.md5(fed_contents[n].encode('utf-8', 'ignore')).hexdigest()
+                logging.info(f"Fedora: {n} -> {h}")
+            for n in sorted(ope_contents):
+                h = hashlib.md5(ope_contents[n].encode('utf-8', 'ignore')).hexdigest()
+                logging.info(f"OpenEuler: {n} -> {h}")
 
-            same_func_diff_content = []
-            for fname in list(fedora_left):
-                fcontent = fedora_patch_contents[fname]
-                stripA = fedora_patch_info.get(fname, {}).get('strip_level', 0)
-                for oname in list(openeuler_left):
-                    ocontent = openeuler_patch_contents[oname]
-                    stripB = openeuler_patch_info.get(oname, {}).get('strip_level', 0)
-                    sim, is_sim = compare_patches(fcontent, ocontent, stripA, stripB)
-                    if is_sim:
-                        same_func_diff_content.append({"fedora": fname, "openeuler": oname, "similarity": round(sim, 3)})
-                        fedora_left.discard(fname)
-                        openeuler_left.discard(oname)
-                        matched_fedora.add(fname)
-                        matched_openeuler.add(oname)
-                    
-                        break
+            common_list = []
+            similar_list = []
+            match_round(1.0, 'common', fed_left, ope_left, common_list, fed_contents, ope_contents)
+            match_round(0.8,'sim', fed_left, ope_left, similar_list, fed_contents, ope_contents)
 
-            unique_fedora = [x for x in fedora_left if x not in matched_fedora]
-            unique_openeuler = [x for x in openeuler_left if x not in matched_openeuler]
-            final_matched_fedora = set()
-            final_matched_openeuler = set()
-
-            for fpatch in unique_fedora:
-                fcontent = fedora_patch_contents[fpatch]
-                stripA = fedora_patch_info.get(fpatch, {}).get('strip_level', 0)
-                for opatch in unique_openeuler:
-                    if opatch in final_matched_openeuler:
-                        continue
-                    ocontent = openeuler_patch_contents[opatch]
-                    stripB = openeuler_patch_info.get(opatch, {}).get('strip_level', 0)
-                    sim, is_sim = compare_patches(fcontent, ocontent, stripA, stripB)
-                    if sim == 1.0:
-                        common_patches.append({"fedora": fpatch, "openeuler": opatch})
-                        final_matched_fedora.add(fpatch)
-                        final_matched_openeuler.add(opatch)
-                        break
-                    elif is_sim:
-                        same_func_diff_content.append({
-                            "fedora": fpatch,
-                            "openeuler": opatch,
-                            "similarity": round(sim, 3)
-                        })
-                        final_matched_fedora.add(fpatch)
-                        final_matched_openeuler.add(opatch)
-                        break
-
-            unique_fedora = [x for x in unique_fedora if x not in final_matched_fedora]
-            unique_openeuler = [x for x in unique_openeuler if x not in final_matched_openeuler]
-
-            def _make_patch_pair_set(pairlist):
-                return set((item["fedora"], item["openeuler"]) for item in pairlist)
-
-            common_pairs = _make_patch_pair_set(common_patches)
-            same_func_diff_content = [
-                item for item in same_func_diff_content
-                if (item["fedora"], item["openeuler"]) not in common_pairs
-            ]
-
-            packages_comparison[package_key] = {
-                "common_patches": common_patches,
-                "same_function_different_content": same_func_diff_content,
-                "unique_fedora_patches": unique_fedora,
-                "unique_openeuler_patches": unique_openeuler
+            unique_fed = list(fed_left)
+            unique_ope = list(ope_left)
+            report[pkg_key] = {
+                "fedora_package": fed_name,
+                "openeuler_package": ope_name,
+                "fedora_version": pair['fedora']['version'],
+                "openeuler_version": pair['openeuler']['version'],
+                "common_patches": common_list,
+                "same_function_different_content": similar_list,
+                "unique_fedora_patches": unique_fed,
+                "unique_openeuler_patches": unique_ope,
+                "fedora_patch_count": len(fed_contents),
+                "openeuler_patch_count": len(ope_contents)
             }
+            
+            
         except Exception as e:
-            packages_comparison[package_key] = {"error": str(e)}
+            logging.error(f": {pkg_key} (Fedora: {fed_name}, OpenEuler: {ope_name}), error: {e}", exc_info=True)
+            report[pkg_key] = {
+                "fedora_package": fed_name if 'fed_name' in locals() else '',
+                "openeuler_package": ope_name if 'ope_name' in locals() else '',
+                "error": str(e)
+            }
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(packages_comparison, f, ensure_ascii=False, indent=2)
-    total_common = 0
-    total_similar = 0
-    total_fedora_unique = 0
-    total_openeuler_unique = 0
-    total_missing_fedora = 0
-    total_missing_openeuler = 0
+        json.dump(report, f, ensure_ascii=False, indent=2)
 
-    for pkg, result in packages_comparison.items():
-        common_patches = result.get("common_patches", [])
-        similar_patches = result.get("same_function_different_content", [])
-        fedora_unique = result.get("unique_fedora_patches", [])
-        openeuler_unique = result.get("unique_openeuler_patches", [])
-        fedora_missing = result.get("missing_patches", {}).get("fedora", [])
-        openeuler_missing = result.get("missing_patches", {}).get("openeuler", [])
-        total_common += len(common_patches)
-        total_similar += len(similar_patches)
-        total_fedora_unique += len(fedora_unique)
-        total_openeuler_unique += len(openeuler_unique)
-        total_missing_fedora += len(fedora_missing)
-        total_missing_openeuler += len(openeuler_missing)
 
-if __name__ == "__main__":
+    totals = (
+        sum(len(v.get('common_patches', [])) for v in report.values() if 'error' not in v),
+        sum(len(v.get('same_function_different_content', [])) for v in report.values() if 'error' not in v),
+        sum(len(v.get('unique_fedora_patches', [])) for v in report.values() if 'error' not in v),
+        sum(len(v.get('unique_openeuler_patches', [])) for v in report.values() if 'error' not in v)
+    )
+    
+    total_fedora_patches = sum(v.get('fedora_patch_count', 0) for v in report.values() if 'error' not in v)
+    total_openeuler_patches = sum(v.get('openeuler_patch_count', 0) for v in report.values() if 'error' not in v)
+    
+    error_count = sum(1 for v in report.values() if 'error' in v)
+
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--input', required=True, help='JSON of common packages')
-    parser.add_argument('--output', default='rpm_patch_comparison_report.json', help='Output report')
+    parser.add_argument('--input', required=True)
+    parser.add_argument('--output', default='rpm_patch_comparison_report.json')
     args = parser.parse_args()
     main(args.input, args.output)

@@ -1,0 +1,822 @@
+获取两个发行版之间同源软件包的SQL语句，以Fedora-Dedian为例：
+
+\copy (
+WITH
+pk AS (
+  SELECT repo, effname, srcname, visiblename, origversion AS version,
+         versionclass, id, links
+  FROM repology.packages
+  WHERE repo IN ('debian_12','fedora_41') AND shadow = false
+),
+pick_eff_one AS (
+  SELECT repo, effname, srcname, visiblename, version
+  FROM (
+    SELECT p.*,
+           row_number() OVER (
+             PARTITION BY repo, effname
+             ORDER BY versionclass DESC, version DESC, id DESC
+           ) AS rn
+    FROM pk p
+  ) s
+  WHERE rn = 1
+),
+pick_src_one AS (
+  SELECT repo, srcname, effname, visiblename, version
+  FROM (
+    SELECT p.*,
+           row_number() OVER (
+             PARTITION BY repo, srcname
+             ORDER BY versionclass DESC, version DESC, id DESC
+           ) AS rn
+    FROM pk p
+  ) s
+  WHERE rn = 1
+),
+ru AS (
+  SELECT p.repo, p.effname, p.srcname, p.visiblename, p.version,
+         COALESCE(l.ipv4_permanent_redirect_target,
+                  l.ipv6_permanent_redirect_target,
+                  l.url) AS final_url
+  FROM pk p
+  JOIN LATERAL jsonb_array_elements(p.links::jsonb) AS e(elem) ON TRUE
+  JOIN repology.links l ON l.id = (e.elem->>1)::bigint
+  WHERE (e.elem->>0)::int = 0
+),
+norm_base AS (
+  SELECT
+    ru.*,
+    lower(split_part(final_url,'/',3)) AS host,
+    regexp_replace(final_url,'^https?://[^/]+/','') AS path,
+    repology.simplify_url(final_url) AS norm_url
+  FROM ru
+  WHERE final_url IS NOT NULL
+),
+norm AS (
+  SELECT
+    nb.*,
+    CASE
+      WHEN host IN ('github.com','gitlab.com','bitbucket.org')
+        THEN lower(split_part(path,'/',1)) || '/' || lower(split_part(path,'/',2))
+      WHEN host ~ 'github\.io$'
+        THEN lower(split_part(host,'.',1))
+      WHEN host='sourceforge.net' AND path LIKE 'projects/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='pypi.org'        AND path LIKE 'project/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='crates.io'       AND path LIKE 'crates/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='rubygems.org'    AND path LIKE 'gems/%'
+        THEN lower(split_part(path,'/',2))
+      ELSE NULL
+    END AS project_key
+  FROM norm_base nb
+),
+ru_scored AS (
+  SELECT *,
+         CASE
+           WHEN host IN ('github.com','gitlab.com','bitbucket.org','sourceforge.net') THEN 0
+           WHEN host IN ('pypi.org','crates.io','rubygems.org','www.npmjs.com','hackage.haskell.org') THEN 1
+           WHEN host LIKE '%.apache.org' OR host='www.gnu.org' OR host LIKE '%.readthedocs.io' THEN 2
+           WHEN host NOT IN (
+             'packages.ubuntu.com','launchpad.net','packages.debian.org',
+             'src.fedoraproject.org','kojipkgs.fedoraproject.org','bodhi.fedoraproject.org'
+           ) THEN 3
+           ELSE 9
+         END AS score
+  FROM norm
+),
+eff_best AS (
+  SELECT repo, effname,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored GROUP BY repo, effname
+),
+src_best AS (
+  SELECT repo, srcname,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored GROUP BY repo, srcname
+),
+proj_best AS (
+  SELECT repo, project_key,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  WHERE project_key IS NOT NULL
+  GROUP BY repo, project_key
+),
+exact_best AS (
+  SELECT repo, norm_url,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  WHERE norm_url IS NOT NULL
+  GROUP BY repo, norm_url
+),
+eff_payload AS (
+  SELECT e.repo, e.effname,
+         jsonb_build_object(
+           'srcname',      e.srcname,
+           'version',      e.version,
+           'visiblename',  e.visiblename,
+           'upstream_url', eb.upstream_url
+         ) AS payload
+  FROM pick_eff_one e
+  LEFT JOIN eff_best eb ON eb.repo=e.repo AND eb.effname=e.effname
+),
+src_payload AS (
+  SELECT s.repo, s.srcname,
+         jsonb_build_object(
+           'effname',      s.effname,
+           'version',      s.version,
+           'visiblename',  s.visiblename,
+           'upstream_url', sb.upstream_url
+         ) AS payload
+  FROM pick_src_one s
+  LEFT JOIN src_best sb ON sb.repo=s.repo AND sb.srcname=s.srcname
+),
+pick_url_proj_one AS (
+  SELECT repo, project_key,
+         (array_agg(jsonb_build_object(
+            'effname',     effname,
+            'srcname',     srcname,
+            'visiblename', visiblename,
+            'version',     version
+          ) ORDER BY version DESC, srcname))[1] AS meta
+  FROM norm
+  WHERE project_key IS NOT NULL
+  GROUP BY repo, project_key
+),
+pick_url_exact_one AS (
+  SELECT repo, norm_url,
+         (array_agg(jsonb_build_object(
+            'effname',     effname,
+            'srcname',     srcname,
+            'visiblename', visiblename,
+            'version',     version
+          ) ORDER BY version DESC, srcname))[1] AS meta
+  FROM norm
+  WHERE norm_url IS NOT NULL
+  GROUP BY repo, norm_url
+),
+eff_pairs AS (
+  SELECT d.effname AS key_eff,
+         d.payload AS debian_12,
+         f.payload AS fedora_41
+  FROM eff_payload d
+  JOIN eff_payload f
+    ON d.effname=f.effname
+   AND d.repo='debian_12' AND f.repo='fedora_41'
+),
+eff_keys AS (SELECT key_eff FROM eff_pairs),
+src_pairs AS (
+  SELECT d.srcname AS key_src,
+         d.payload AS debian_12,
+         f.payload AS fedora_41
+  FROM src_payload d
+  JOIN src_payload f
+    ON d.srcname=f.srcname
+   AND d.repo='debian_12' AND f.repo='fedora_41'
+  WHERE (d.payload->>'effname') IS DISTINCT FROM (f.payload->>'effname')
+    AND d.srcname NOT IN (SELECT key_eff FROM eff_keys)
+),
+url_pairs_proj AS (
+  SELECT d.project_key AS key_url,
+         jsonb_build_object(
+           'effname',      (d.meta->>'effname'),
+           'srcname',      (d.meta->>'srcname'),
+           'visiblename',  (d.meta->>'visiblename'),
+           'version',      (d.meta->>'version'),
+           'upstream_url', pb_d.upstream_url
+         ) AS debian_12,
+         jsonb_build_object(
+           'effname',      (f.meta->>'effname'),
+           'srcname',      (f.meta->>'srcname'),
+           'visiblename',  (f.meta->>'visiblename'),
+           'version',      (f.meta->>'version'),
+           'upstream_url', pb_f.upstream_url
+         ) AS fedora_41
+  FROM pick_url_proj_one d
+  JOIN pick_url_proj_one f
+    ON d.project_key=f.project_key
+   AND d.repo='debian_12' AND f.repo='fedora_41'
+  LEFT JOIN proj_best pb_d ON pb_d.repo='debian_12' AND pb_d.project_key=d.project_key
+  LEFT JOIN proj_best pb_f ON pb_f.repo='fedora_41'  AND pb_f.project_key=f.project_key
+  WHERE (d.meta->>'effname') IS DISTINCT FROM (f.meta->>'effname')
+    AND (d.meta->>'srcname')  IS DISTINCT FROM (f.meta->>'srcname')
+    AND (d.meta->>'effname') NOT IN (SELECT key_eff FROM eff_keys)
+    AND (f.meta->>'effname') NOT IN (SELECT key_eff FROM eff_keys)
+    AND (d.meta->>'srcname') NOT IN (SELECT key_src FROM src_pairs)
+    AND (f.meta->>'srcname') NOT IN (SELECT key_src FROM src_pairs)
+),
+url_pairs_exact AS (
+  SELECT d.norm_url AS key_url,
+         jsonb_build_object(
+           'effname',      (d.meta->>'effname'),
+           'srcname',      (d.meta->>'srcname'),
+           'visiblename',  (d.meta->>'visiblename'),
+           'version',      (d.meta->>'version'),
+           'upstream_url', eb_d.upstream_url
+         ) AS debian_12,
+         jsonb_build_object(
+           'effname',      (f.meta->>'effname'),
+           'srcname',      (f.meta->>'srcname'),
+           'visiblename',  (f.meta->>'visiblename'),
+           'version',      (f.meta->>'version'),
+           'upstream_url', eb_f.upstream_url
+         ) AS fedora_41
+  FROM pick_url_exact_one d
+  JOIN pick_url_exact_one f
+    ON d.norm_url=f.norm_url
+   AND d.repo='debian_12' AND f.repo='fedora_41'
+  LEFT JOIN exact_best eb_d ON eb_d.repo='debian_12' AND eb_d.norm_url=d.norm_url
+  LEFT JOIN exact_best eb_f ON eb_f.repo='fedora_41'  AND eb_f.norm_url=f.norm_url
+  WHERE (d.meta->>'effname') IS DISTINCT FROM (f.meta->>'effname')
+    AND (d.meta->>'srcname')  IS DISTINCT FROM (f.meta->>'srcname')
+    AND d.norm_url NOT IN (
+          SELECT n.norm_url
+          FROM norm n
+          JOIN url_pairs_proj up ON n.project_key = up.key_url
+        )
+    AND (d.meta->>'effname') NOT IN (SELECT key_eff FROM eff_keys)
+    AND (f.meta->>'effname') NOT IN (SELECT key_eff FROM eff_keys)
+    AND (d.meta->>'srcname') NOT IN (SELECT key_src FROM src_pairs)
+    AND (f.meta->>'srcname') NOT IN (SELECT key_src FROM src_pairs)
+),
+url_all AS (
+  SELECT 'proj:'||key_url AS k, debian_12, fedora_41 FROM url_pairs_proj
+  UNION ALL
+  SELECT 'url:' ||key_url AS k, debian_12, fedora_41 FROM url_pairs_exact
+),
+eff_json AS (
+  SELECT COALESCE(jsonb_object_agg(key_eff,
+    jsonb_build_object('debian_12', debian_12, 'fedora_41', fedora_41)
+  ), '{}'::jsonb) AS obj
+  FROM eff_pairs
+),
+src_json AS (
+  SELECT COALESCE(jsonb_object_agg(key_src,
+    jsonb_build_object('debian_12', debian_12, 'fedora_41', fedora_41)
+  ), '{}'::jsonb) AS obj
+  FROM src_pairs
+),
+url_json AS (
+  SELECT COALESCE(jsonb_object_agg(k,
+    jsonb_build_object('debian_12', debian_12, 'fedora_41', fedora_41)
+  ), '{}'::jsonb) AS obj
+  FROM url_all
+),
+final_obj AS (
+  SELECT jsonb_build_object(
+           'debian12_fedora41_common_merged_precise',
+           jsonb_build_object(
+             'effname', (SELECT obj FROM eff_json),
+             'srcname', (SELECT obj FROM src_json),
+             'URL',     (SELECT obj FROM url_json)
+           )
+         ) AS obj
+)
+SELECT (SELECT obj FROM final_obj)::text
+) TO '/tmp/debian12_fedora_41_common_merged_precise.json';
+
+
+
+获取三个发行版之间同源软件包的SQL语句，以Fedora-Dedian-openEuler为例：
+\copy (
+WITH
+REPOS(repo) AS ( VALUES ('debian_12'), ('fedora_41'), ('openeuler_24_03_lts') ),
+OUT_LABEL AS (SELECT 'debian12_fedora41_openeuler24.03-lts_common_merged_precise'::text AS k),
+NREPO AS (SELECT COUNT(*)::int AS n FROM REPOS),
+
+pk AS (
+  SELECT p.repo, p.effname, p.srcname, p.visiblename,
+         p.origversion AS version, p.versionclass, p.id, p.links
+  FROM repology.packages p
+  JOIN REPOS r ON r.repo = p.repo
+  WHERE p.shadow = false
+),
+
+pick_eff_one AS (
+  SELECT repo, effname, srcname, visiblename, version
+  FROM (
+    SELECT
+      p.*,
+      row_number() OVER (
+        PARTITION BY repo, effname
+        ORDER BY versionclass DESC, version DESC, id DESC
+      ) AS rn
+    FROM pk p
+  ) s
+  WHERE rn = 1
+),
+
+pick_src_one AS (
+  SELECT repo, srcname, effname, visiblename, version
+  FROM (
+    SELECT
+      p.*,
+      row_number() OVER (
+        PARTITION BY repo, srcname
+        ORDER BY versionclass DESC, version DESC, id DESC
+      ) AS rn
+    FROM pk p
+  ) s
+  WHERE rn = 1
+),
+
+ru AS (
+  SELECT p.repo, p.effname, p.srcname, p.visiblename, p.version,
+         COALESCE(l.ipv4_permanent_redirect_target,
+                  l.ipv6_permanent_redirect_target,
+                  l.url) AS final_url
+  FROM pk p
+  JOIN LATERAL jsonb_array_elements(p.links::jsonb) AS e(elem) ON TRUE
+  JOIN repology.links l ON l.id = (e.elem->>1)::bigint
+  WHERE (e.elem->>0)::int = 0
+),
+
+norm_base AS (
+  SELECT
+    ru.*,
+    lower(split_part(final_url,'/',3)) AS host,
+    regexp_replace(final_url,'^https?://[^/]+/','') AS path,
+    repology.simplify_url(final_url) AS norm_url
+  FROM ru
+  WHERE final_url IS NOT NULL
+),
+
+norm AS (
+  SELECT
+    nb.*,
+    CASE
+      WHEN host IN ('github.com','gitlab.com','bitbucket.org')
+        THEN lower(split_part(path,'/',1)) || '/' || lower(split_part(path,'/',2))
+      WHEN host ~ 'github\.io$'
+        THEN lower(split_part(host,'.',1))
+      WHEN host='sourceforge.net' AND path LIKE 'projects/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='pypi.org'        AND path LIKE 'project/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='crates.io'       AND path LIKE 'crates/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='rubygems.org'    AND path LIKE 'gems/%'
+        THEN lower(split_part(path,'/',2))
+      ELSE NULL
+    END AS project_key
+  FROM norm_base nb
+),
+
+ru_scored AS (
+  SELECT *,
+         CASE
+           WHEN host IN ('github.com','gitlab.com','bitbucket.org','sourceforge.net') THEN 0
+           WHEN host IN ('pypi.org','crates.io','rubygems.org','www.npmjs.com','hackage.haskell.org') THEN 1
+           WHEN host LIKE '%.apache.org' OR host='www.gnu.org' OR host LIKE '%.readthedocs.io' THEN 2
+           WHEN host NOT IN (
+             'packages.debian.org','sources.debian.org','bugs.debian.org',
+             'src.fedoraproject.org','kojipkgs.fedoraproject.org','bodhi.fedoraproject.org',
+             'repo.openeuler.org','gitee.com'
+           ) THEN 3
+           ELSE 9
+         END AS score
+  FROM norm
+),
+
+best_eff AS (
+  SELECT repo, effname,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  GROUP BY repo, effname
+),
+
+best_src AS (
+  SELECT repo, srcname,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  GROUP BY repo, srcname
+),
+
+best_proj AS (
+  SELECT repo, project_key,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  WHERE project_key IS NOT NULL
+  GROUP BY repo, project_key
+),
+
+best_exact AS (
+  SELECT repo, norm_url,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  WHERE norm_url IS NOT NULL
+  GROUP BY repo, norm_url
+),
+
+eff_payload AS (
+  SELECT e.repo, e.effname,
+         jsonb_build_object(
+           'srcname',      e.srcname,
+           'version',      e.version,
+           'visiblename',  e.visiblename,
+           'upstream_url', be.upstream_url
+         ) AS payload
+  FROM pick_eff_one e
+  LEFT JOIN best_eff be ON be.repo = e.repo AND be.effname = e.effname
+),
+
+src_payload AS (
+  SELECT s.repo, s.srcname,
+         jsonb_build_object(
+           'effname',      s.effname,
+           'version',      s.version,
+           'visiblename',  s.visiblename,
+           'upstream_url', bs.upstream_url
+         ) AS payload
+  FROM pick_src_one s
+  LEFT JOIN best_src bs ON bs.repo = s.repo AND bs.srcname = s.srcname
+),
+
+pick_url_proj_one AS (
+  SELECT repo, project_key,
+         (array_agg(jsonb_build_object(
+            'effname',effname, 'srcname',srcname,
+            'visiblename',visiblename, 'version',version
+          ) ORDER BY version DESC, srcname))[1] AS meta
+  FROM norm
+  WHERE project_key IS NOT NULL
+  GROUP BY repo, project_key
+),
+
+pick_url_exact_one AS (
+  SELECT repo, norm_url,
+         (array_agg(jsonb_build_object(
+            'effname',effname, 'srcname',srcname,
+            'visiblename',visiblename, 'version',version
+          ) ORDER BY version DESC, srcname))[1] AS meta
+  FROM norm
+  WHERE norm_url IS NOT NULL
+  GROUP BY repo, norm_url
+),
+
+eff_groups AS (
+  SELECT effname AS key_eff,
+         jsonb_object_agg(repo, payload) AS per_repo
+  FROM eff_payload
+  GROUP BY effname
+  HAVING COUNT(DISTINCT repo) = (SELECT n FROM NREPO)
+),
+eff_keys AS (SELECT key_eff FROM eff_groups),
+
+src_groups AS (
+  SELECT srcname AS key_src,
+         jsonb_object_agg(repo, payload) AS per_repo
+  FROM src_payload
+  GROUP BY srcname
+  HAVING COUNT(DISTINCT repo) = (SELECT n FROM NREPO)
+     AND COUNT(DISTINCT (payload->>'effname')) > 1
+     AND srcname <> ALL (SELECT key_eff FROM eff_keys)
+),
+
+url_groups_proj AS (
+  SELECT p.project_key AS key_url,
+         jsonb_object_agg(
+           p.repo,
+           jsonb_build_object(
+             'effname',     (p.meta->>'effname'),
+             'srcname',     (p.meta->>'srcname'),
+             'visiblename', (p.meta->>'visiblename'),
+             'version',     (p.meta->>'version'),
+             'upstream_url', bp.upstream_url
+           )
+         ) AS per_repo
+  FROM pick_url_proj_one p
+  LEFT JOIN best_proj bp
+    ON bp.repo = p.repo AND bp.project_key = p.project_key
+  GROUP BY p.project_key
+  HAVING COUNT(DISTINCT p.repo) = (SELECT n FROM NREPO)
+     AND COUNT(DISTINCT (p.meta->>'effname')) > 1
+     AND COUNT(DISTINCT (p.meta->>'srcname'))  > 1
+),
+
+url_groups_exact AS (
+  SELECT p.norm_url AS key_url,
+         jsonb_object_agg(
+           p.repo,
+           jsonb_build_object(
+             'effname',     (p.meta->>'effname'),
+             'srcname',     (p.meta->>'srcname'),
+             'visiblename', (p.meta->>'visiblename'),
+             'version',     (p.meta->>'version'),
+             'upstream_url', be.upstream_url
+           )
+         ) AS per_repo
+  FROM pick_url_exact_one p
+  LEFT JOIN best_exact be
+    ON be.repo = p.repo AND be.norm_url = p.norm_url
+  GROUP BY p.norm_url
+  HAVING COUNT(DISTINCT p.repo) = (SELECT n FROM NREPO)
+     AND COUNT(DISTINCT (p.meta->>'effname')) > 1
+     AND COUNT(DISTINCT (p.meta->>'srcname'))  > 1
+     AND p.norm_url NOT IN (
+       SELECT n.norm_url
+       FROM norm n
+       JOIN url_groups_proj up ON n.project_key = up.key_url
+     )
+),
+
+url_groups AS (
+  SELECT 'proj:' || key_url AS k, per_repo FROM url_groups_proj
+  UNION ALL
+  SELECT 'url:'  || key_url AS k, per_repo FROM url_groups_exact
+),
+
+eff_json AS (SELECT COALESCE(jsonb_object_agg(key_eff, per_repo), '{}'::jsonb) AS obj FROM eff_groups),
+src_json AS (SELECT COALESCE(jsonb_object_agg(key_src, per_repo), '{}'::jsonb) AS obj FROM src_groups),
+url_json  AS (SELECT COALESCE(jsonb_object_agg(k,       per_repo), '{}'::jsonb) AS obj FROM url_groups),
+
+final_obj AS (
+  SELECT jsonb_build_object(
+    (SELECT k FROM OUT_LABEL),
+    jsonb_build_object(
+      'effname', (SELECT obj FROM eff_json),
+      'srcname', (SELECT obj FROM src_json),
+      'URL',     (SELECT obj FROM url_json)
+    )
+  ) AS obj
+)
+
+SELECT (SELECT obj FROM final_obj)::text
+) TO '/tmp/debian12_fedora41_openeuler24.03-lts_common_merged_precise.json';
+
+
+
+
+
+
+
+获取四个发行版之间同源软件包的SQL语句：
+\copy (
+WITH
+REPOS(repo) AS ( VALUES ('debian_12'), ('ubuntu_24_04'), ('fedora_41'), ('openeuler_24_03_lts') ),
+OUT_LABEL AS (SELECT 'debian12_ubuntu24.04_fedora41_openeuler24.03-lts_common_merged_precise'::text AS k),
+NREPO AS (SELECT COUNT(*)::int AS n FROM REPOS),
+
+pk AS (
+  SELECT p.repo, p.effname, p.srcname, p.visiblename,
+         p.origversion AS version, p.versionclass, p.id, p.links
+  FROM repology.packages p
+  JOIN REPOS r ON r.repo = p.repo
+  WHERE p.shadow = false
+),
+
+pick_eff_one AS (
+  SELECT repo, effname, srcname, visiblename, version
+  FROM (
+    SELECT
+      p.*,
+      row_number() OVER (
+        PARTITION BY repo, effname
+        ORDER BY versionclass DESC, version DESC, id DESC
+      ) AS rn
+    FROM pk p
+  ) s
+  WHERE rn = 1
+),
+
+pick_src_one AS (
+  SELECT repo, srcname, effname, visiblename, version
+  FROM (
+    SELECT
+      p.*,
+      row_number() OVER (
+        PARTITION BY repo, srcname
+        ORDER BY versionclass DESC, version DESC, id DESC
+      ) AS rn
+    FROM pk p
+  ) s
+  WHERE rn = 1
+),
+
+ru AS (
+  SELECT p.repo, p.effname, p.srcname, p.visiblename, p.version,
+         COALESCE(l.ipv4_permanent_redirect_target,
+                  l.ipv6_permanent_redirect_target,
+                  l.url) AS final_url
+  FROM pk p
+  JOIN LATERAL jsonb_array_elements(p.links::jsonb) AS e(elem) ON TRUE
+  JOIN repology.links l ON l.id = (e.elem->>1)::bigint
+  WHERE (e.elem->>0)::int = 0
+),
+
+norm_base AS (
+  SELECT
+    ru.*,
+    lower(split_part(final_url,'/',3)) AS host,
+    regexp_replace(final_url,'^https?://[^/]+/','') AS path,
+    repology.simplify_url(final_url) AS norm_url
+  FROM ru
+  WHERE final_url IS NOT NULL
+),
+
+norm AS (
+  SELECT
+    nb.*,
+    CASE
+      WHEN host IN ('github.com','gitlab.com','bitbucket.org')
+        THEN lower(split_part(path,'/',1)) || '/' || lower(split_part(path,'/',2))
+      WHEN host ~ 'github\.io$'
+        THEN lower(split_part(host,'.',1))
+      WHEN host='sourceforge.net' AND path LIKE 'projects/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='pypi.org'        AND path LIKE 'project/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='crates.io'       AND path LIKE 'crates/%'
+        THEN lower(split_part(path,'/',2))
+      WHEN host='rubygems.org'    AND path LIKE 'gems/%'
+        THEN lower(split_part(path,'/',2))
+      ELSE NULL
+    END AS project_key
+  FROM norm_base nb
+),
+
+ru_scored AS (
+  SELECT *,
+         CASE
+           WHEN host IN ('github.com','gitlab.com','bitbucket.org','sourceforge.net') THEN 0
+           WHEN host IN ('pypi.org','crates.io','rubygems.org','www.npmjs.com','hackage.haskell.org') THEN 1
+           WHEN host LIKE '%.apache.org' OR host='www.gnu.org' OR host LIKE '%.readthedocs.io' THEN 2
+           WHEN host NOT IN (
+             'packages.debian.org','sources.debian.org','bugs.debian.org',
+             'packages.ubuntu.com','launchpad.net',
+             'src.fedoraproject.org','kojipkgs.fedoraproject.org','bodhi.fedoraproject.org',
+             'repo.openeuler.org','gitee.com'
+           ) THEN 3
+           ELSE 9
+         END AS score
+  FROM norm
+),
+
+best_eff AS (
+  SELECT repo, effname,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  GROUP BY repo, effname
+),
+
+best_src AS (
+  SELECT repo, srcname,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  GROUP BY repo, srcname
+),
+
+best_proj AS (
+  SELECT repo, project_key,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  WHERE project_key IS NOT NULL
+  GROUP BY repo, project_key
+),
+
+best_exact AS (
+  SELECT repo, norm_url,
+         (array_agg(final_url ORDER BY score, final_url))[1] AS upstream_url
+  FROM ru_scored
+  WHERE norm_url IS NOT NULL
+  GROUP BY repo, norm_url
+),
+
+eff_payload AS (
+  SELECT e.repo, e.effname,
+         jsonb_build_object(
+           'srcname',      e.srcname,
+           'version',      e.version,
+           'visiblename',  e.visiblename,
+           'upstream_url', be.upstream_url
+         ) AS payload
+  FROM pick_eff_one e
+  LEFT JOIN best_eff be ON be.repo = e.repo AND be.effname = e.effname
+),
+
+src_payload AS (
+  SELECT s.repo, s.srcname,
+         jsonb_build_object(
+           'effname',      s.effname,
+           'version',      s.version,
+           'visiblename',  s.visiblename,
+           'upstream_url', bs.upstream_url
+         ) AS payload
+  FROM pick_src_one s
+  LEFT JOIN best_src bs ON bs.repo = s.repo AND bs.srcname = s.srcname
+),
+
+pick_url_proj_one AS (
+  SELECT repo, project_key,
+         (array_agg(jsonb_build_object(
+            'effname',effname, 'srcname',srcname,
+            'visiblename',visiblename, 'version',version
+          ) ORDER BY version DESC, srcname))[1] AS meta
+  FROM norm
+  WHERE project_key IS NOT NULL
+  GROUP BY repo, project_key
+),
+
+pick_url_exact_one AS (
+  SELECT repo, norm_url,
+         (array_agg(jsonb_build_object(
+            'effname',effname, 'srcname',srcname,
+            'visiblename',visiblename, 'version',version
+          ) ORDER BY version DESC, srcname))[1] AS meta
+  FROM norm
+  WHERE norm_url IS NOT NULL
+  GROUP BY repo, norm_url
+),
+
+eff_groups AS (
+  SELECT effname AS key_eff,
+         jsonb_object_agg(repo, payload) AS per_repo
+  FROM eff_payload
+  GROUP BY effname
+  HAVING COUNT(DISTINCT repo) = (SELECT n FROM NREPO)
+),
+eff_keys AS (SELECT key_eff FROM eff_groups),
+
+src_groups AS (
+  SELECT srcname AS key_src,
+         jsonb_object_agg(repo, payload) AS per_repo
+  FROM src_payload
+  GROUP BY srcname
+  HAVING COUNT(DISTINCT repo) = (SELECT n FROM NREPO)
+     AND COUNT(DISTINCT (payload->>'effname')) > 1
+     AND srcname <> ALL (SELECT key_eff FROM eff_keys)
+),
+
+url_groups_proj AS (
+  SELECT p.project_key AS key_url,
+         jsonb_object_agg(
+           p.repo,
+           jsonb_build_object(
+             'effname',     (p.meta->>'effname'),
+             'srcname',     (p.meta->>'srcname'),
+             'visiblename', (p.meta->>'visiblename'),
+             'version',     (p.meta->>'version'),
+             'upstream_url', bp.upstream_url
+           )
+         ) AS per_repo
+  FROM pick_url_proj_one p
+  LEFT JOIN best_proj bp
+    ON bp.repo = p.repo AND bp.project_key = p.project_key
+  GROUP BY p.project_key
+  HAVING COUNT(DISTINCT p.repo) = (SELECT n FROM NREPO)
+     AND COUNT(DISTINCT (p.meta->>'effname')) > 1
+     AND COUNT(DISTINCT (p.meta->>'srcname'))  > 1
+),
+
+url_groups_exact AS (
+  SELECT p.norm_url AS key_url,
+         jsonb_object_agg(
+           p.repo,
+           jsonb_build_object(
+             'effname',     (p.meta->>'effname'),
+             'srcname',     (p.meta->>'srcname'),
+             'visiblename', (p.meta->>'visiblename'),
+             'version',     (p.meta->>'version'),
+             'upstream_url', be.upstream_url
+           )
+         ) AS per_repo
+  FROM pick_url_exact_one p
+  LEFT JOIN best_exact be
+    ON be.repo = p.repo AND be.norm_url = p.norm_url
+  GROUP BY p.norm_url
+  HAVING COUNT(DISTINCT p.repo) = (SELECT n FROM NREPO)
+     AND COUNT(DISTINCT (p.meta->>'effname')) > 1
+     AND COUNT(DISTINCT (p.meta->>'srcname'))  > 1
+     AND p.norm_url NOT IN (
+       SELECT n.norm_url
+       FROM norm n
+       JOIN url_groups_proj up ON n.project_key = up.key_url
+     )
+),
+
+url_groups AS (
+  SELECT 'proj:' || key_url AS k, per_repo FROM url_groups_proj
+  UNION ALL
+  SELECT 'url:'  || key_url AS k, per_repo FROM url_groups_exact
+),
+
+eff_json AS (SELECT COALESCE(jsonb_object_agg(key_eff, per_repo), '{}'::jsonb) AS obj FROM eff_groups),
+src_json AS (SELECT COALESCE(jsonb_object_agg(key_src, per_repo), '{}'::jsonb) AS obj FROM src_groups),
+url_json  AS (SELECT COALESCE(jsonb_object_agg(k,       per_repo), '{}'::jsonb) AS obj FROM url_groups),
+
+final_obj AS (
+  SELECT jsonb_build_object(
+    (SELECT k FROM OUT_LABEL),
+    jsonb_build_object(
+      'effname', (SELECT obj FROM eff_json),
+      'srcname', (SELECT obj FROM src_json),
+      'URL',     (SELECT obj FROM url_json)
+    )
+  ) AS obj
+)
+
+SELECT (SELECT obj FROM final_obj)::text
+) TO '/tmp/debian12_ubuntu24.04_fedora41_openeuler24.03-lts_common_merged_precise.json';
+
+
+

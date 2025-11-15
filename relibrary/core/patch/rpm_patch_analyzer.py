@@ -10,28 +10,109 @@ NORMAL_EXTS = {
     ".go", ".sh", ".bash", ".pl", ".php", ".html", ".htm", ".css", ".xml",
     ".json", ".yaml", ".yml", ".toml", ".ini", ".txt", ".md", ".rst", ".conf",
     ".in", ".am", ".m4", ".po", ".pot", ".desktop", ".service", ".spec", ".xslt",
-    ".make", ".mk", ".ac", ".cmake", ".cfg", ".csv", ".svg",".1"
+    ".make", ".mk", ".ac", ".cmake", ".cfg", ".csv", ".svg", ".1"
 }
 
-def normalize_patch_filename(filename, normal_exts=NORMAL_EXTS):
-    base, ext = os.path.splitext(filename)
-    if not ext and base:
-        base = re.sub(r'(~|\.bak|\.orig|\.backup)$', '', base)
-        filename = base
-    elif ext.lower() not in normal_exts:
-        while ext and ext.lower() not in normal_exts:
-            base, ext = os.path.splitext(base)
-        filename = base + ext
-    filename = re.sub(r'(~|\.bak|\.orig|\.backup)$', '', filename)
-    return filename
+def normalize_patch_content(patch_content):
+    if isinstance(patch_content, list):
+        lines = patch_content
+    else:
+        lines = patch_content.splitlines()
+    normalized_lines = []
+    in_hunk = False
+    for line in lines:
+        if line.startswith('@@ '):
+            in_hunk = True
+            normalized_lines.append('@@')
+            continue
+        if not in_hunk:
+            continue
+        clean_line = line.replace('\r', '').strip()
+        if clean_line == '':
+            continue
+        if clean_line.startswith(('--- ', '+++ ')):
+            normalized_lines.append(clean_line)
+            continue
+        normalized_lines.append(clean_line)
+    return normalized_lines
 
-def strip_patch_path(file_path, strip_level):
-    if not file_path or strip_level == 0:
-        return file_path
-    parts = file_path.split('/')
-    if len(parts) <= strip_level:
-        return parts[-1]
-    return '/'.join(parts[strip_level:])
+def normalize_code_line(line):
+    line = re.sub(r'\s+', '', line)
+    line = line.replace('{', '').replace('}', '')
+    return line
+
+def extract_diff_lines_only(normalized_content):
+    diff_lines = []
+    for line in normalized_content:
+        if re.match(r'^[-+]{3} ', line):
+            continue
+        if line.startswith('+') or line.startswith('-'):
+            content = line[1:].strip()
+            if not content:
+                continue
+            if content in ('-', '+', '--', '++', '===', '====', 'diff', 'index'):
+                continue
+            if re.fullmatch(r'[-=+]+', content):
+                continue
+            if content.lstrip().startswith('//'):
+                continue
+            norm_line = line[0] + re.sub(r'\s+', '', content)
+            diff_lines.append(norm_line)
+    return diff_lines
+
+
+def diff_lines_similarity(diff1, diff2):
+    set1, set2 = set(diff1), set(diff2)
+    if not set1 or not set2:
+        return 0
+    return len(set1 & set2) / len(set1 | set2)
+
+def compare_patches_by_diff_only(contentA, contentB, threshold=0.8):
+    normA = normalize_patch_content(contentA)
+    normB = normalize_patch_content(contentB)
+    diffA = extract_diff_lines_only(normA)
+    diffB = extract_diff_lines_only(normB)
+    sim = diff_lines_similarity(diffA, diffB)
+    return sim, sim >= threshold
+
+def get_patch_hash(normalized_patch_content):
+    if isinstance(normalized_patch_content, list):
+        norm_text = '\n'.join(normalized_patch_content)
+    else:
+        norm_text = str(normalized_patch_content)
+    return hashlib.md5(norm_text.encode('utf-8')).hexdigest()
+
+def get_patch_names(spec_content):
+    patch_info = get_patch_info(spec_content)
+    return list(patch_info.keys())
+
+def get_patch_file_content(distribution, patch_name, source_dir="/home/penny/rpmbuild/SOURCES"):
+
+    import urllib.parse
+    if patch_name.startswith('http://') or patch_name.startswith('https://') or patch_name.startswith('ftp://'):
+        parsed = urllib.parse.urlparse(patch_name)
+        if parsed.fragment:
+            real_name = parsed.fragment
+        else:
+            real_name = os.path.basename(parsed.path)
+    else:
+        real_name = patch_name
+    patch_path = f"{source_dir}/{real_name}"
+    command_check = f"wsl -d {distribution} bash -c 'test -e \"{patch_path}\"'"
+    command_cat = f"wsl -d {distribution} bash -c 'cat \"{patch_path}\"'"
+    try:
+        result_check = subprocess.run(command_check, shell=True, capture_output=True, text=True, encoding='utf-8', errors='replace')
+        if result_check.returncode == 0:
+            result_cat = subprocess.run(command_cat, shell=True, capture_output=True, text=True, encoding='utf-8', errors='replace')
+            if result_cat.returncode == 0:
+                patch_content = result_cat.stdout.splitlines()
+                return patch_content
+            else:
+                return None
+        else:
+            return None
+    except Exception:
+        return None
 
 def parse_defines(spec_content):
     defines = {}
@@ -117,7 +198,6 @@ def get_patch_info(spec_content):
     parse_patch_applications(spec_content, patch_info)
     return patch_info
 
-
 def parse_patch_applications(spec_content, patch_info):
     default_strip = 0
     prep_match = re.search(
@@ -142,118 +222,3 @@ def parse_patch_applications(spec_content, patch_info):
     for patch_name in patch_info:
         if patch_info[patch_name]['strip_level'] is None:
             patch_info[patch_name]['strip_level'] = default_strip
-
-
-def get_patch_hash(normalized_patch_content):
-    if isinstance(normalized_patch_content, list):
-        norm_text = '\n'.join(normalized_patch_content)
-    else:
-        norm_text = str(normalized_patch_content)
-    import hashlib
-    return hashlib.md5(norm_text.encode('utf-8')).hexdigest()
-
-def get_patch_names(spec_content):
-    patch_info = get_patch_info(spec_content)
-    return list(patch_info.keys())
-
-def get_patch_file_content(distribution, patch_name, source_dir="/home/XXX/rpmbuild/SOURCES"):
-    import urllib.parse
-    if patch_name.startswith('http://') or patch_name.startswith('https://') or patch_name.startswith('ftp://'):
-        parsed = urllib.parse.urlparse(patch_name)
-        if parsed.fragment:
-            real_name = parsed.fragment
-        else:
-            real_name = os.path.basename(parsed.path)
-    else:
-        real_name = patch_name
-    patch_path = f"{source_dir}/{real_name}"
-    command_check = f"wsl -d {distribution} bash -c 'test -e \"{patch_path}\"'"
-    command_cat = f"wsl -d {distribution} bash -c 'cat \"{patch_path}\"'"
-    try:
-        result_check = subprocess.run(command_check, shell=True, capture_output=True, text=True, encoding='utf-8', errors='replace')
-        if result_check.returncode == 0:
-            result_cat = subprocess.run(command_cat, shell=True, capture_output=True, text=True, encoding='utf-8', errors='replace')
-            if result_cat.returncode == 0:
-                patch_content = result_cat.stdout.splitlines()
-                return patch_content
-            else:
-                return None
-        else:
-            return None
-    except Exception:
-        return None
-
-def normalize_patch_content(patch_content):
-    if isinstance(patch_content, list):
-        lines = patch_content
-    else:
-        lines = patch_content.splitlines()
-    normalized_lines = []
-    in_hunk = False
-    for line in lines:
-        if line.startswith('@@ '):
-            in_hunk = True
-            normalized_lines.append('@@')
-            continue
-        if not in_hunk:
-            continue
-        clean_line = line.replace('\r', '').strip()
-        if clean_line == '':
-            continue
-        if clean_line.startswith(('--- ', '+++ ')):
-            fname = clean_line.split()[-1]
-            fname = re.sub(r'^([ab]/)+', '', fname)
-            normalized_lines.append(clean_line[:4] + fname)
-            continue
-        normalized_lines.append(clean_line)
-    return normalized_lines
-
-def extract_patch_features(normalized_content, strip_level=0):
-    modified_files = []
-    diff_lines = []
-    for line in normalized_content:
-        if line.startswith('--- ') or line.startswith('+++ '):
-            file_name = line[4:].strip()
-            file_name = re.sub(r'^([ab]/)+', '', file_name)
-            file_stripped = strip_patch_path(file_name, strip_level)
-            norm_name = normalize_patch_filename(os.path.basename(file_stripped))
-            modified_files.append(norm_name)
-        if line.startswith('+') or line.startswith('-'):
-            diff_lines.append(line)
-    return {
-        "normalized_filenames": list(set(modified_files)),
-        "normalized_diff_lines": diff_lines
-    }
-
-
-def file_list_similarity(files1, files2):
-    set1, set2 = set(files1), set(files2)
-    if not set1 or not set2:
-        return 0
-    return len(set1 & set2) / len(set1 | set2)
-
-def diff_lines_similarity(diff1, diff2):
-    set1, set2 = set(diff1), set(diff2)
-    if not set1 or not set2:
-        return 0
-    return len(set1 & set2) / len(set1 | set2)
-
-def patch_similarity(patchA, patchB, file_weight=0.5, diff_weight=0.5):
-    filesA, filesB = patchA["normalized_filenames"], patchB["normalized_filenames"]
-    linesA, linesB = patchA["normalized_diff_lines"], patchB["normalized_diff_lines"]
-    files_score = file_list_similarity(filesA, filesB)
-    lines_score = diff_lines_similarity(linesA, linesB)
-    return file_weight * files_score + diff_weight * lines_score
-
-def compare_patches(contentA, contentB, strip_levelA=0, strip_levelB=0, file_weight=0.3, diff_weight=0.7, threshold=0.7):
-    normA = normalize_patch_content(contentA)
-    normB = normalize_patch_content(contentB)
-    hashA = get_patch_hash(normA)
-    hashB = get_patch_hash(normB)
-    if hashA == hashB:
-        return 1.0, True
-    featuresA = extract_patch_features(normA, strip_levelA)
-    featuresB = extract_patch_features(normB, strip_levelB)
-    sim = patch_similarity(featuresA, featuresB, file_weight, diff_weight)
-    return sim, sim >= threshold
-

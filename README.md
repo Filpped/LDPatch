@@ -1,4 +1,8 @@
+
+
 # Toward Efficient Package Maintenance: An Empirical Study of Patch Sharing across Four Linux Distributions
+
+![DOI: 10.5281/zenodo.18150449](https://zenodo.org/badge/DOI/10.5281/zenodo.18150449.svg)
 
 This repository contains the data, scripts, and analysis code for a comprehensive empirical study on patch sharing and maintenance practices across four major Linux distributions: Fedora, Debian, openEuler, and Ubuntu. The project aims to systematically extract, compare, and analyze software patches, revealing patterns of patch reuse, divergence, and collaboration in the open-source ecosystem.
 

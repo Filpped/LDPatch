@@ -4,12 +4,6 @@ This repository contains the data, scripts, and analysis code for a comprehensiv
 
 Below is an overview of the repository’s structure and the purpose of each file or directory.
 
-## Notice on RQ4-Related Data
-
-The dataset related to Research Question 4 (RQ4) is **not included** in this repository, as it may potentially reveal author identities and compromise the anonymity required for the review process. 
-
-If access is needed after the review period, please contact the authors directly.
-
 ## Directory Overview
 
 ```
